@@ -1,14 +1,21 @@
-FROM python:3.15.2-slim-bookworm@sha256:4e03260adeeebafccd084f3584e6b84823aba5651cfb53ef8a078ed441ddf9cd
+FROM python:3.15.2-slim-bookworm@sha256:4e03260adeeebafccd084f3584e6b84823aba5651cfb53ef8a078ed441ddf9cd AS os-candidate
 
-# Candidate toolchain: OS package locks remain a DC-007 release gate.
+# This intermediate target produces review candidates, never a qualified workspace.
+COPY requirements/os/debian.sources /etc/apt/sources.list.d/debian.sources
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
        ca-certificates git openssh-client postgresql-client make less \
     && rm -rf /var/lib/apt/lists/*
 
+FROM os-candidate AS os-locked
+COPY requirements/os /opt/datacon/requirements/os
+COPY scripts/verify_os.py /opt/datacon/scripts/verify_os.py
+RUN python /opt/datacon/scripts/verify_os.py
+
+FROM os-locked AS workspace
 COPY requirements/workspace.txt /opt/datacon/requirements/workspace.txt
 RUN python -m venv /opt/datacon/venv \
-    && /opt/datacon/venv/bin/pip install --no-cache-dir --only-binary=:all: \
+    && /opt/datacon/venv/bin/pip install --no-cache-dir --only-binary=:all: --require-hashes \
        -r /opt/datacon/requirements/workspace.txt \
     && /opt/datacon/venv/bin/pip check
 

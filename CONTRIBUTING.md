@@ -8,14 +8,14 @@ Verified: 2026-10-29. The user created local Git history with initial commit `60
 
 On resumption, approved Git writes created `feat/DC-002-core-runtime` while preserving the working tree. Docker and GitHub access also succeeded with approval. The default sandbox still protects Git metadata and the Docker socket; use the session approval mechanism when needed and recheck access in each new session. No repository ownership repair or permission change through `chmod` is indicated. [HANDOVER.md](HANDOVER.md) records the current state.
 
-The user supplied this remote on 2026-10-29. Its initial commit `6b955ac` contains the MIT licence and was merged with the local design history, preserving both roots. `main` holds that bootstrap; `feat/DC-002-core-runtime` carries the implementation for PR review. Use ordinary pushes and preserve remote history. `.gitignore` excludes common local secrets, environments, outputs and delivery checkout directories; inspect staged files before committing.
+The user supplied this remote on 2026-10-29. Its initial commit `6b955ac` contains the MIT licence and was merged with the local design history, preserving both roots. `main` now includes the merged core implementation (`dd2989c`); `feat/DC-007-core-locks-ci` carries the next dependency-lock and CI increment. The previous feature branch is retained. Use ordinary pushes and preserve remote history. `.gitignore` excludes common local secrets, environments, outputs and delivery checkout directories; inspect staged files before committing.
 
 ## Normal change workflow
 
 1. Select or update a stable `DC-XXX` backlog item and its acceptance criteria.
 2. Create a focused branch from current `main`, for example `feat/DC-002-core-runtime` or `docs/DC-006-onboarding`.
 3. Implement the change and update its documentation. Declare any dependency change to the Tech Lead before it becomes a delivery prerequisite.
-4. Review the diff, run `git diff --check`, and execute checks appropriate to the change. `./datacon check` runs host tests and `./datacon config` validates Compose without a daemon. For runtime changes, follow [the core quick-start](docs/CORE_QUICKSTART.md) and record actual versions, host architecture and execution evidence.
+4. Review the diff, run `git diff --check`, and execute checks appropriate to the change. `./datacon check` runs host tests and `./datacon config` validates Compose without a daemon. For runtime changes, follow [the core quick-start](docs/CORE_QUICKSTART.md) and [shared qualification procedure](docs/CORE_LOCKS.md), and record actual versions, host architecture and execution evidence.
 5. Commit the reviewed files. Use a short imperative subject explaining the change; include the backlog ID in subsequent implementation commits or the PR.
 6. Open a PR using the template. Record validation, unavailable environments and any compatibility or migration impact.
 
