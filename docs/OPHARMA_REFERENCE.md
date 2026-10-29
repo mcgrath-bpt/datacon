@@ -2,7 +2,7 @@
 
 Reviewed on 2026-10-29: [PR #1 — Adopt ODCS contracts, recurring S1–S5 model and Power BI TMDL](https://github.com/mcgrath-bpt/opharma/pull/1).
 
-Inspected head: `b43c6897f6bdda2adcf60fc468fe8aaff31f52eb`, branch `feat/odcs-pharma-operations-tmdl`. The PR was open when inspected. Do not assume that a checkout of `main` includes these assets. Pin the commit for the first compatibility run and deliberately refresh that pin after review or merge.
+Inspected head: `b43c6897f6bdda2adcf60fc468fe8aaff31f52eb`, branch `feat/odcs-pharma-operations-tmdl`. The PR was open when initially inspected. It has since merged as `f1d68d01e6659ba3b279b98afbb9538cbece7473`; the merge has the same tree as the tested head. `platform/reference.json` now selects that merge commit. The retained dirty checkout remains on the earlier head.
 
 This review read the PR description, root and nested READMEs, operating guide, acceptance scenarios, existing backlog, dependency file, selected Snowflake runner code and Power BI binding plan. It did not run the project or validate any live target. The upstream repository and PR were not changed.
 

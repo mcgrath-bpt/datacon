@@ -1,0 +1,31 @@
+name: Core qualification
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  core-amd64:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Check out the tested revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - name: Qualify native AMD64 core twice
+        timeout-minutes: 27 # Reserve time for the always-run evidence upload.
+        run: python3 scripts/qualify.py --expected-architecture amd64 --output artifacts/core-qualification
+      - name: Upload sanitised qualification evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: core-amd64-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/core-qualification/
+          if-no-files-found: error
+          retention-days: 30

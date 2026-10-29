@@ -1,0 +1,9 @@
+Collecting attrs==25.4.0 (from -r /tmp/tmp6jcwwssy/bad.txt (line 1))
+  Downloading attrs-25.4.0-py3-none-any.whl (67 kB)
+ERROR: THESE PACKAGES DO NOT MATCH THE HASHES FROM THE REQUIREMENTS FILE. If you have updated the package versions, please update the hashes. Otherwise, examine the package contents carefully; someone may have tampered with them.
+    attrs==25.4.0 from https://files.pythonhosted.org/packages/3a/2a/7cc015f5b9f5db42b7d48157e23356022889fc354a2813c15934b7cb5c0e/attrs-25.4.0-py3-none-any.whl (from -r /tmp/tmp6jcwwssy/bad.txt (line 1)):
+        Expected sha256 0000000000000000000000000000000000000000000000000000000000000000
+             Got        adcf7e2a1fb3b36ac48d97835bb6d8ade15b8dcce26aba8bf1d14847b57a3373
+
+datacon: command failed with exit status 1.
+Run ./datacon doctor to check Docker availability and session access.

@@ -4,6 +4,8 @@
 !.devcontainer/Dockerfile
 !requirements/
 !requirements/workspace.txt
+!requirements/os/
+!requirements/os/*
 !scripts/
 !scripts/*.py
 !platform/

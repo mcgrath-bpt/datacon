@@ -1,7 +1,7 @@
 {
   "name": "opharma",
   "repository": "https://github.com/mcgrath-bpt/opharma.git",
-  "commit": "b43c6897f6bdda2adcf60fc468fe8aaff31f52eb",
+  "commit": "f1d68d01e6659ba3b279b98afbb9538cbece7473",
   "subdirectory": "pharma-commercial-lab",
   "expected_checkpoints": 14,
   "expected_tests": 35,

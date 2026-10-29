@@ -1,6 +1,6 @@
 # First core increment
 
-Updated: 2026-10-29. This core increment implements parts of DC-002/DC-003/DC-007 and completes DC-008's local reference acceptance. Host tests, Compose validation, ARM64 build/smoke, Opharma acceptance and retained/fresh lifecycle checks have passed. WSL, AMD64 and resource-envelope certification remain outstanding. It is not the complete v1 release: OpenMetadata, GX integration and native Snowflake execution remain on the backlog.
+Updated: 2026-10-29. This core increment implements parts of DC-002/DC-003/DC-007 and completes DC-008's local reference acceptance. Host tests, Compose validation, ARM64 build/smoke, Opharma acceptance and retained/fresh lifecycle checks have passed. WSL and resource-envelope certification remain outstanding; native ARM64 and AMD64 core locks are now qualified in [the core lock report](evidence/2026-10-29-core-locks.md). It is not the complete v1 release: OpenMetadata, GX integration and native Snowflake execution remain on the backlog.
 
 ## Prerequisites
 
@@ -76,12 +76,12 @@ Open Datacon in an editor supporting Dev Containers, then reopen using `.devcont
 
 | Component | Candidate | Qualification remaining |
 | --- | --- | --- |
-| Workspace image | `python:3.15.2-slim-bookworm`, digest pinned in Dockerfile | ARM64 build passed; AMD64 and OS package locks remain |
-| Warehouse image | `pgduckdb/pgduckdb:17-v1.1.1`, digest pinned in Compose; PostgreSQL 17.7, SQL extension 1.1.0 | ARM64 smoke passed; AMD64 and full RLS/concurrency matrix remain |
-| Python dependency set | Exact versions in `requirements/workspace.txt`, including `jsonschema==4.26.0` and `rpds-py==2026.9.1` | Clean Python 3.15.2 binary install and reference passed on ARM64; wheel hashes and AMD64 remain |
+| Workspace image | `python:3.15.2-slim-bookworm`, digest pinned in Dockerfile | Snapshot repositories and full architecture inventories enforced; two uncached builds passed on ARM64/AMD64 |
+| Warehouse image | `pgduckdb/pgduckdb:17-v1.1.1`, digest pinned in Compose; PostgreSQL 17.7, SQL extension 1.1.0 | ARM64/AMD64 smoke passed; full RLS/concurrency matrix remains |
+| Python dependency set | Exact versions in `requirements/workspace.txt`, including `jsonschema==4.26.0` and `rpds-py==2026.9.1` | Binary-only, hash-checked installs passed on ARM64/AMD64 with identical repeated inventories |
 | Opharma | Commit in `platform/reference.json` | Local reference and identical replay passed; native Snowflake remains separate |
 
-These are candidate pins, not complete release locks. Both external image inputs use immutable digests; Compose's local workspace build tag is not a release identity. Docker builds run `pip check`, and the ARM64 clean build passed. OS package locks and wheel hashes remain required before releasing an approved baseline. GX, ODCS conversion tools and Snowflake clients will be qualified through their backlog items rather than installed implicitly on startup.
+These core inputs now have OS inventories, dated Debian snapshots and wheel hashes. Both external image inputs use immutable digests; Compose's local workspace build tag is not a release identity. Docker builds enforce the OS inventory, binary-only hash-checked installs and `pip check`. See [core locks and qualification](CORE_LOCKS.md) for the shared local/CI command, evidence policy and deliberate lock refresh procedure. GX, ODCS conversion tools and Snowflake clients will be qualified through their backlog items rather than installed implicitly on startup.
 
 Python 3.15.2 was released on 2026-10-25. The official image manifest lists the selected tag for ARM64 and AMD64. `rpds-py` was updated from 0.30.0 to 2026.9.1 because that release publishes CPython 3.15 Linux wheels for both target architectures. Registry metadata does not establish installation or runtime compatibility. See [Python downloads](https://www.python.org/downloads/) and [rpds-py 2026.9.1](https://pypi.org/project/rpds-py/2026.9.1/).
 

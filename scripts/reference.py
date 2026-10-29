@@ -70,11 +70,12 @@ sys.exit(0 if result.wasSuccessful() else 1)
     report_file = fixture / "evidence/operations-report.json"
     initial_report = json.loads(report_file.read_text())
     (evidence / "first-run.json").write_text(json.dumps(initial_report, indent=2) + "\n")
+    validate_report(initial_report, spec["expected_checkpoints"])
     before = database_snapshot(database)
     run(command, project, env)
     report = json.loads(report_file.read_text())
-    if not report["passed"] or len(report["checkpoints"]) != spec["expected_checkpoints"]:
-        raise RuntimeError("Reference checkpoint acceptance failed")
+    (evidence / "replay.json").write_text(json.dumps(report, indent=2) + "\n")
+    validate_report(report, spec["expected_checkpoints"])
     if database_snapshot(database) != before:
         raise RuntimeError("Identical replay changed stored table rows")
     hashes = {}
@@ -88,6 +89,11 @@ sys.exit(0 if result.wasSuccessful() else 1)
                "file_sha256": hashes, "snowflake": "NOT_EXECUTED", "passed": True}
     (evidence / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps({"passed": True, "checkout": str(destination), "evidence": str(evidence)}, indent=2))
+
+
+def validate_report(report, expected):
+    if not report["passed"] or len(report["checkpoints"]) != expected:
+        raise RuntimeError("Reference checkpoint acceptance failed")
 
 
 if __name__ == "__main__":
