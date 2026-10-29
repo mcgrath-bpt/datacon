@@ -4,7 +4,7 @@ A versioned development environment and working method for building governed dat
 
 **Current state:** the existing core builds and runs with Python 3.15.2 on macOS ARM64 and native Linux AMD64 CI; both architectures passed repeated uncached builds with identical dependency inventories. [Core lock evidence](docs/evidence/2026-10-29-core-locks.md) records the actual CI run. Host tests, database smoke, the pinned Opharma reference and retained/fresh instance checks pass. [Runtime evidence](docs/evidence/2026-10-29-core-runtime.md) records the results and remaining qualification. The core and dependency-lock/CI increments are merged on `main`; `origin` is [mcgrath-bpt/datacon](https://github.com/mcgrath-bpt/datacon). This is not a released v1 platform.
 
-Independent deliveries can now share an instance with host/volume checkouts, separate SQL identities and scoped database reset. The [delivery workspace guide](docs/DELIVERY_WORKSPACES.md) explains the commands; [acceptance evidence](docs/evidence/2026-10-30-delivery-workspaces.md) records the two-project and actual graphical editor checks.
+Independent deliveries can now share an instance with host/volume checkouts, separate SQL identities and scoped database reset. The [delivery workspace guide](docs/DELIVERY_WORKSPACES.md) explains the commands; [acceptance evidence](docs/evidence/2026-10-30-delivery-workspaces.md) records native ARM64/AMD64 two-project checks and actual Mac graphical attachment.
 
 Use the [core quick-start](docs/CORE_QUICKSTART.md) for commands, persistence behaviour and the current evidence boundary. Start with `./datacon check`, `./datacon config` and `./datacon doctor`.
 
