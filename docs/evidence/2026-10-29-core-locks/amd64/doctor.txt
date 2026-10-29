@@ -1,0 +1,19 @@
+{
+  "instance": "qual-20261029223745-edea66ec",
+  "host": "Linux",
+  "architecture": "x86_64",
+  "host_python": "3.12.3",
+  "host_python_executable": "/usr/bin/python3.12",
+  "workspace_python_target": "3.15.2",
+  "platform_commit": "f481455100a6517246d6adf97ed0cc817c9aae91",
+  "docker_client": "Docker version 28.0.4, build b8034c0",
+  "compose": "2.38.2",
+  "daemon_available": true,
+  "docker_error": null,
+  "runtime_qualification": "NOT_EXECUTED",
+  "docker_server": "28.0.4",
+  "daemon_architecture": "x86_64",
+  "cpus": 4,
+  "memory_bytes": 16759304192,
+  "next_step": "Run up, smoke and reference. Resource and supported-host acceptance remain separate checks."
+}

@@ -54,7 +54,29 @@ class EvidenceTests(unittest.TestCase):
                 runner.run('failure', ['test'], expected_failure='OS inventory mismatch')
 
     def test_reference_collection_cannot_copy_database_or_fixture(self):
-        self.assertEqual(set(qualify.REFERENCE_FILES), {'tests.json', 'first-run.json', 'replay.json', 'summary.json'})
+        import json
+        import subprocess
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            evidence = root / 'source' / 'opharma-test'
+            evidence.mkdir(parents=True)
+            (evidence / 'summary.json').write_text('{"passed": true}')
+            (evidence / 'model.sqlite').write_text('private database contents')
+            (evidence / 'fixture').mkdir()
+            (evidence / 'fixture' / 'rows.json').write_text('private fixture rows')
+            output = root / 'output'
+            output.mkdir()
+            runner = qualify.Qualification(output, 'test')
+
+            def execute_collector(label, *arguments):
+                code = arguments[-1].replace('/workspaces/.datacon-evidence', str(root / 'source'))
+                return subprocess.check_output([sys.executable, '-c', code], text=True)
+
+            with patch.object(runner, 'cli', side_effect=execute_collector):
+                runner.collect_reference(1)
+            result = (output / 'build-1-reference.json').read_text()
+            self.assertEqual(json.loads(result), {'opharma-test': {'summary.json': '{"passed": true}'}})
+            self.assertNotIn('private', result)
 
     def test_failure_before_ownership_does_not_stop_retained_instances(self):
         with tempfile.TemporaryDirectory() as directory:

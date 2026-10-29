@@ -2,7 +2,7 @@
 
 A versioned development environment and working method for building governed data pipelines in independent delivery repositories.
 
-**Current state:** the core increment builds and runs on macOS ARM64 with Python 3.15.2. Host tests, database smoke, the pinned Opharma reference and retained/fresh instance checks pass. [Runtime evidence](docs/evidence/2026-10-29-core-runtime.md) records the results and remaining qualification. The merged core is on `main`; the dependency-lock/CI increment is on `feat/DC-007-core-locks-ci`; `origin` is [mcgrath-bpt/datacon](https://github.com/mcgrath-bpt/datacon). This is not a released v1 platform.
+**Current state:** the existing core builds and runs with Python 3.15.2 on macOS ARM64 and native Linux AMD64 CI; both architectures passed repeated uncached builds with identical dependency inventories. [Core lock evidence](docs/evidence/2026-10-29-core-locks.md) records the actual CI run. Host tests, database smoke, the pinned Opharma reference and retained/fresh instance checks pass. [Runtime evidence](docs/evidence/2026-10-29-core-runtime.md) records the results and remaining qualification. The merged core is on `main`; the dependency-lock/CI increment is on `feat/DC-007-core-locks-ci`; `origin` is [mcgrath-bpt/datacon](https://github.com/mcgrath-bpt/datacon). This is not a released v1 platform.
 
 Use the [core quick-start](docs/CORE_QUICKSTART.md) for commands, persistence behaviour and the current evidence boundary. Start with `./datacon check`, `./datacon config` and `./datacon doctor`.
 
@@ -28,7 +28,7 @@ Snowflake Semantic Views and the existing Opharma Power BI TMDL model are distin
 ## Next implementation batch
 
 1. **DC-001: finish repository/release setup.** The GitHub remote is configured. Establish review controls and immutable release conventions.
-2. **DC-007: finish toolchain qualification.** Image digests are pinned and ARM64 reference acceptance passed. The [core lock/CI increment](docs/CORE_LOCKS.md) adds dated OS snapshots, full package inventories, wheel hashes and native AMD64 CI. Record actual native runs before claiming qualification; GX and additional adapters remain open. DC-008's local reference is complete.
+2. **DC-007: finish toolchain qualification.** Image digests are pinned and ARM64 reference acceptance passed. The [core lock/CI increment](docs/CORE_LOCKS.md) adds dated OS snapshots, full package inventories, wheel hashes and native AMD64 CI. Native ARM64 and AMD64 runs passed; GX and additional adapters remain open. DC-008's local reference is complete.
 3. **DC-002/DC-003: extend the first increment.** Finish graphical editor/host acceptance, host-mounted checkouts and per-project identities. Retained/fresh instance checks now have runtime evidence.
 4. **DC-014–DC-016: prove the target early.** Prepare Snowflake access alongside local work, then demonstrate S2/S4 and one native Semantic View. Full OpenMetadata integration follows and remains required for v1.
 

@@ -23,7 +23,16 @@ Selected inspectable evidence: [doctor](2026-10-29-core-locks/arm64/doctor.txt),
 
 ## Native AMD64 CI
 
-The workflow is implemented for `ubuntu-24.04`, pull requests, pushes to `main` and manual dispatch. Actions are SHA-pinned, repository permissions are read-only, the timeout is 30 minutes, and sanitised evidence is uploaded on success or failure. Actual native run results will be added after the PR executes; AMD64 is not yet claimed as qualified in this report.
+[Native AMD64 run 40967301222](https://github.com/mcgrath-bpt/datacon/actions/runs/40967301222) passed on `ubuntu-24.04`. PR head: `1bd679f2f753dae15dda78f56d025bfea39ba119`; GitHub tested merge revision: `f481455100a6517246d6adf97ed0cc817c9aae91`. Qualification ran from 2026-10-29 22:37:45 UTC to 22:39:51 UTC. [Run and artefact metadata](2026-10-29-core-locks/ci-run.json) bind the source and uploaded evidence.
+
+- Native Linux/x86_64 host and daemon; host Python 3.12.3, Docker 28.0.4, Compose 2.38.2. Workspace Python 3.15.2, UID 1000, pip 26.2.2. No emulation was used.
+- Both uncached builds passed with identical workspace OS, warehouse OS and Python inventories. The complete 131-package AMD64 workspace lock matched. Smoke, `pip check`, both restart policies and both deliberate integrity failures passed.
+- Each build passed 34 Opharma tests with one expected skip and all 14 initial/replay checkpoints, with identical database row multisets. All 31 host tests passed.
+- The evidence upload passed: artefact `core-amd64-40967301222-1`, ID `12938910937`, 81,352 bytes. Downloaded ZIP SHA-256 matched GitHub's digest `21b80e561d57f747bf26633568ac8fc47c50204acb35f014a217f9866dfc7a50`. Its 52 members were all named JSON/text reports/transcripts; selected reports are committed here so they outlive the 30-day CI retention period.
+
+Inspect [qualification](2026-10-29-core-locks/amd64/qualification.json), [doctor](2026-10-29-core-locks/amd64/doctor.txt), [first inventory](2026-10-29-core-locks/amd64/build-1-inventories.json), [second inventory](2026-10-29-core-locks/amd64/build-2-inventories.json), [first identities](2026-10-29-core-locks/amd64/build-1-identities.json), [second identities](2026-10-29-core-locks/amd64/build-2-identities.json), [initial checkpoints](2026-10-29-core-locks/amd64/build-1-opharma-first-run.json), [replay](2026-10-29-core-locks/amd64/build-1-opharma-replay.json) and [second reference summary](2026-10-29-core-locks/amd64/build-2-opharma-summary.json).
+
+The workflow covers pull requests, pushes to `main` and manual dispatch. Actions are SHA-pinned, repository permissions are read-only, the job timeout is 30 minutes, and sanitised evidence is uploaded on success or failure. The qualification step has a 27-minute limit to reserve upload time.
 
 ## Remaining boundaries
 

@@ -19,6 +19,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Qualify native AMD64 core twice
+        timeout-minutes: 27 # Reserve time for the always-run evidence upload.
         run: python3 scripts/qualify.py --expected-architecture amd64 --output artifacts/core-qualification
       - name: Upload sanitised qualification evidence
         if: always()

@@ -1,0 +1,28 @@
+{
+  "run_id": 40967301222,
+  "url": "https://github.com/mcgrath-bpt/datacon/actions/runs/40967301222",
+  "head_sha": "1bd679f2f753dae15dda78f56d025bfea39ba119",
+  "event": "pull_request",
+  "conclusion": "success",
+  "created_at": "2026-10-29T22:37:40Z",
+  "updated_at": "2026-10-29T22:39:55Z",
+  "artifact": {
+    "id": 12938910937,
+    "name": "core-amd64-40967301222-1",
+    "size_in_bytes": 81352,
+    "url": "https://api.github.com/repos/mcgrath-bpt/datacon/actions/artifacts/12938910937",
+    "archive_download_url": "https://api.github.com/repos/mcgrath-bpt/datacon/actions/artifacts/12938910937/zip",
+    "expired": false,
+    "created_at": "2026-10-29T22:39:52Z",
+    "expires_at": "2026-11-28T22:39:51Z",
+    "updated_at": "2026-10-29T22:39:52Z",
+    "digest": "sha256:21b80e561d57f747bf26633568ac8fc47c50204acb35f014a217f9866dfc7a50",
+    "workflow_run": {
+      "id": 40967301222,
+      "repository_id": 1438775944,
+      "head_repository_id": 1438775944,
+      "head_branch": "feat/DC-007-core-locks-ci",
+      "head_sha": "1bd679f2f753dae15dda78f56d025bfea39ba119"
+    }
+  }
+}
