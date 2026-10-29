@@ -1,0 +1,19 @@
+{
+  "instance": "projects-20261029230440-d2e0ed",
+  "host": "Darwin",
+  "architecture": "arm64",
+  "host_python": "3.14.8",
+  "host_python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+  "workspace_python_target": "3.15.2",
+  "platform_commit": "62d7582b00779d0acf8c409f9fef69b40101f758",
+  "docker_client": "Docker version 29.9.2, build a82e528",
+  "compose": "5.6.1",
+  "daemon_available": true,
+  "docker_error": null,
+  "runtime_qualification": "NOT_EXECUTED",
+  "docker_server": "29.9.2",
+  "daemon_architecture": "aarch64",
+  "cpus": 4,
+  "memory_bytes": 14636896256,
+  "next_step": "Run up, smoke and reference. Resource and supported-host acceptance remain separate checks."
+}

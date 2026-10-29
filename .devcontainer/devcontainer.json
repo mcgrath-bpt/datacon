@@ -1,6 +1,10 @@
 {
   "name": "Datacon core (development candidate)",
-  "dockerComposeFile": "../compose.yaml",
+  "dockerComposeFile": [
+    "../compose.yaml",
+    "../.local/instances/default/instance.compose.json",
+    "../.local/instances/default/projects.compose.json"
+  ],
   "service": "workspace",
   "runServices": ["workspace", "warehouse"],
   "workspaceFolder": "/workspaces",

@@ -1,12 +1,14 @@
 # Datacon session handover
 
-Updated: 2026-10-29. Resume this repository and its retained Docker volumes. Check Git status before changing anything; do not recreate the project or discard uncommitted files.
+Updated: 2026-10-30. Resume this repository and its retained Docker volumes. Check Git status before changing anything; do not recreate the project or discard uncommitted files.
 
 ## Current outcome
 
-DC-007 core lock/CI increment: local `main` was fast-forwarded to Datacon merge `dd2989c5d866e69669e0804a183832d825bc1756`; work continues on `feat/DC-007-core-locks-ci`. The previous branch is retained. Opharma now pins merge `f1d68d01e6659ba3b279b98afbb9538cbece7473`, whose tree matches the previously tested head. Existing versions and input image digests are unchanged.
+The user merged [PR #2](https://github.com/mcgrath-bpt/datacon/pull/2). Local `main` was fast-forwarded to `62d7582b00779d0acf8c409f9fef69b40101f758`, then `feat/DC-003-delivery-workspaces` was created. Previous branches and all retained runtime state are preserved.
 
-Two uncached native ARM64 builds passed with identical complete dependency inventories, enforced wheel hashes and dated signed Debian snapshots. Smoke, both restart policies, deliberate lock failures and the reference all passed on both builds. There are now 31 host tests. See [core lock evidence](docs/evidence/2026-10-29-core-locks.md) and [the refresh/qualification procedure](docs/CORE_LOCKS.md). Native AMD64 [CI run 40967301222](https://github.com/mcgrath-bpt/datacon/actions/runs/40967301222) also passed both builds and all checks; its uploaded evidence was downloaded, digest-verified and archived. [PR #2](https://github.com/mcgrath-bpt/datacon/pull/2) is open; no merge or release was performed. DC-007 remains open for GX and additional adapters.
+The new core delivery workflow registers independent host/volume Git checkouts, provisions separate SQL identities, resets only the named managed database, and generates a per-project editor folder outside delivery history. New Linux instances persist unprivileged host UID/GID for bind mounts; retained instances preserve their original ownership. Existing commands, dependency pins and restart policies are unchanged.
+
+Native ARM64 two-project acceptance and two uncached core regression builds passed. There are 41 host tests, passing on Python 3.14.8 and 3.12.15. Actual VS Code graphical attachment, the project terminal database identity and saving/reopening a delivery file also passed on this Mac. See [delivery evidence](docs/evidence/2026-10-30-delivery-workspaces.md) and [the guide](docs/DELIVERY_WORKSPACES.md). Native AMD64 qualification for the new workflow is pending its PR run; the earlier core-only [run 40967301222](https://github.com/mcgrath-bpt/datacon/actions/runs/40967301222) passed. No release is claimed.
 
 The ARM64 core builds and runs with Python 3.15.2. Host checks, SQL/RLS smoke, the pinned Opharma reference and real retained/fresh lifecycle checks passed. DC-008’s local reference acceptance is complete. This is a development increment, not a qualified v1 release.
 
@@ -42,6 +44,8 @@ The default sandbox still denies Git metadata writes, Docker socket access and s
 - A deliberate uncommitted `.datacon-retention-20261029.txt` probe remains in that checkout and the developer home. The database probe is `workspace.datacon_retention_20261029`. Both are acceptance artefacts; their survival is recorded. No original project file was modified.
 - Local lifecycle harness/log: ignored `.local/acceptance/`. Credentials: ignored `.local/instances/`. Preserve them with their volumes; never commit them or rotate passwords for existing databases.
 
+The 2026-10-30 qualification instances `projects-20261029230440-d2e0ed`, `qual-20261029230640-b21be4b9` and graphical instance `projects-20261029230140-2e22c5` have had only their containers/network removed; all volumes, credentials and dirty source checkouts remain. Raw evidence lives in ignored `.local/project-qualification/` and `.local/qualification/2026-10-30-core-projects/`. The graphical instance retains `editor-acceptance.txt` as an uncommitted probe. The default instance was rechecked running/healthy with its original dirty Opharma probe intact.
+
 ## Changes and observed validation
 
 The existing launcher, core containers, database setup, reference runner and 23 host tests are now executed. Both external image inputs are pinned by multi-platform digest. The smoke assertion was corrected to SQL extension version **1.1.0**, as declared by the upstream **v1.1.1** image’s control file; the image and security assertions were retained.
@@ -52,18 +56,18 @@ The existing launcher, core containers, database setup, reference runner and 23 
 - Non-root UID 1000, non-superuser database access, forced RLS through PostgreSQL and DuckDB, and an actual `DuckDBScan` passed. PostgreSQL is **17.7**.
 - Opharma: **35 tests run, 34 passed, one expected static-workbook skip**; five ODCS bundles validated; **14 checkpoints** reconciled on initial hydration and identical replay. Every database table’s row multiset remained unchanged. Source, fixture and contract hashes are retained.
 - Actual container recreation preserved the dirty checkout, home state, database data and credentials. A fresh instance was isolated, refused name reuse and left the retained instance intact when stopped.
-- Installed VS Code Dev Containers extension **0.469.0**, CLI **0.89.0**: descriptor initialisation and `up` succeeded for `datacon-default`, `developer`, `/workspaces`. **Graphical editor attachment remains untested.**
+- Installed VS Code Dev Containers extension **0.469.0**, CLI **0.89.0**: descriptor initialisation and `up` succeeded for `datacon-default`, `developer`, `/workspaces`. Actual graphical project attachment subsequently passed on 2026-10-30; see the current delivery evidence.
 
 The reference runner always creates a new checkout. The doctor reports prerequisite availability and leaves its generic `runtime_qualification` as `NOT_EXECUTED`; it does not discover previous acceptance evidence. Use the evidence reports for observed qualification.
 
 ## Next work
 
-1. Read `AGENTS.md`, `CONTRIBUTING.md`, `docs/OPERATING_MODEL.md`, this handover and the relevant backlog item. Recheck Git/Docker access and preserve current state.
-2. Finish DC-007: the existing core locks now have native ARM64 and AMD64 evidence; qualify the remaining capabilities. Qualify GX/Snowflake dependencies before making them delivery prerequisites. An isolated platform-owned environment is allowed when agreed; do not silently downgrade the workspace.
-3. Finish DC-002/DC-003: graphical editor attachment, host-mounted checkout configuration, two independent deliveries in one instance and per-project database identities. Existing lifecycle checks prove instance separation, not the full per-project reset matrix.
-4. Measure DC-005 under an actual 4-GiB/two-vCPU allocation, including peak memory, VM overhead and cold start. Current cached startup observations and idle samples do not qualify the envelope. Schedule actual Windows/WSL 3.0.3 acceptance separately.
-5. Establish GitHub review controls and immutable release identity under DC-001/DC-032. The canonical remote is configured; no qualified release or enforced remote review policy exists yet.
-6. Start early Snowflake access/semantics work (DC-014–DC-016) alongside remaining local qualification. Native Snowflake, GX, OpenMetadata and broader RLS/concurrency acceptance have not run.
+1. Read repository instructions, this handover and the relevant backlog item; recheck Git/Docker access and preserve retained state.
+2. Review the DC-003 delivery-workspace PR and its actual AMD64 CI results. Existing-core mounts, two repositories, project identities, scoped reset and Mac graphical attachment are implemented. Broader DC-002/DC-003 criteria still include fresh-machine acceptance and approved dependency/release adoption.
+3. Qualify GX/Snowflake dependencies under DC-007 before making them delivery prerequisites. A platform-owned isolated environment requires Tech Lead agreement; do not silently downgrade the workspace.
+4. Measure DC-005 under an actual 4-GiB/two-vCPU allocation, including peak memory, VM overhead and cold start. Arrange actual Windows/WSL 3.0.3 acceptance under DC-004.
+5. Establish required review controls and immutable release identity under DC-001/DC-032. No qualified release or enforced remote review policy exists yet.
+6. Start early Snowflake access/semantics work (DC-014–DC-016). Native Snowflake, GX, OpenMetadata and broader RLS/concurrency acceptance have not run.
 
 For routine core checks:
 

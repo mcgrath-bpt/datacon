@@ -19,8 +19,11 @@ RUN python -m venv /opt/datacon/venv \
        -r /opt/datacon/requirements/workspace.txt \
     && /opt/datacon/venv/bin/pip check
 
-RUN groupadd --gid 1000 developer \
-    && useradd --uid 1000 --gid 1000 --create-home --shell /bin/bash developer \
+ARG WORKSPACE_UID=1000
+ARG WORKSPACE_GID=1000
+RUN test "$WORKSPACE_UID" -gt 0 && test "$WORKSPACE_GID" -gt 0 \
+    && groupadd --gid "$WORKSPACE_GID" developer \
+    && useradd --uid "$WORKSPACE_UID" --gid "$WORKSPACE_GID" --create-home --shell /bin/bash developer \
     && mkdir -p /workspaces \
     && chown developer:developer /workspaces
 

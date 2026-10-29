@@ -1,0 +1,99 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 720B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.75kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.15.2-slim-bookworm@sha256:4e03260adeeebafccd084f3584e6b84823aba5651cfb53ef8a078ed441ddf9cd
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 409B done
+#4 DONE 0.0s
+
+#5 [os-candidate 1/3] FROM docker.io/library/python:3.15.2-slim-bookworm@sha256:4e03260adeeebafccd084f3584e6b84823aba5651cfb53ef8a078ed441ddf9cd
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 84.08kB done
+#6 DONE 0.0s
+
+#7 [workspace 1/8] COPY requirements/workspace.txt /opt/datacon/requirements/workspace.txt
+#7 CACHED
+
+#8 [os-candidate 3/3] RUN apt-get update     && apt-get install -y --no-install-recommends        ca-certificates git openssh-client postgresql-client make less     && rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [workspace 2/8] RUN python -m venv /opt/datacon/venv     && /opt/datacon/venv/bin/pip install --no-cache-dir --only-binary=:all: --require-hashes        -r /opt/datacon/requirements/workspace.txt     && /opt/datacon/venv/bin/pip check
+#9 CACHED
+
+#10 [os-locked 1/3] COPY requirements/os /opt/datacon/requirements/os
+#10 CACHED
+
+#11 [os-locked 2/3] COPY scripts/verify_os.py /opt/datacon/scripts/verify_os.py
+#11 CACHED
+
+#12 [os-candidate 2/3] COPY requirements/os/debian.sources /etc/apt/sources.list.d/debian.sources
+#12 CACHED
+
+#13 [os-locked 3/3] RUN python /opt/datacon/scripts/verify_os.py
+#13 CACHED
+
+#14 [workspace 3/8] RUN test "1000" -gt 0 && test "1000" -gt 0     && groupadd --gid "1000" developer     && useradd --uid "1000" --gid "1000" --create-home --shell /bin/bash developer     && mkdir -p /workspaces     && chown developer:developer /workspaces
+#14 CACHED
+
+#15 [workspace 4/8] COPY scripts /opt/datacon/scripts
+#15 DONE 0.0s
+
+#16 [workspace 5/8] COPY platform /opt/datacon/platform
+#16 DONE 0.0s
+
+#17 [workspace 6/8] COPY docs /opt/datacon/docs
+#17 DONE 0.0s
+
+#18 [workspace 7/8] COPY AGENTS.md README.md PLAN.md BACKLOG.md CONTRIBUTING.md HANDOVER.md .python-version /opt/datacon/
+#18 DONE 0.0s
+
+#19 [workspace 8/8] WORKDIR /workspaces
+#19 DONE 0.0s
+
+#20 exporting to image
+#20 exporting layers 0.0s done
+#20 writing image sha256:202d5373ca63625b6dff591f79ad09642b4d7494a042b6000317eed791a54452 done
+#20 naming to docker.io/library/datacon-projects-20261029230440-d2e0ed-workspace done
+#20 DONE 0.0s
+
+#21 resolving provenance for metadata file
+#21 DONE 0.0s
+ Image datacon-projects-20261029230440-d2e0ed-workspace Building
+ Image datacon-projects-20261029230440-d2e0ed-workspace Built
+ Volume datacon-projects-20261029230440-d2e0ed_developer-home Creating
+ Network datacon-projects-20261029230440-d2e0ed_default Creating
+ Volume datacon-projects-20261029230440-d2e0ed_warehouse-data Creating
+ Volume datacon-projects-20261029230440-d2e0ed_workspaces Creating
+ Volume datacon-projects-20261029230440-d2e0ed_warehouse-data Creating
+ Volume datacon-projects-20261029230440-d2e0ed_developer-home Creating
+ Network datacon-projects-20261029230440-d2e0ed_default Creating
+ Volume datacon-projects-20261029230440-d2e0ed_workspaces Creating
+ Volume datacon-projects-20261029230440-d2e0ed_warehouse-data Created
+ Volume datacon-projects-20261029230440-d2e0ed_warehouse-data Created
+ Volume datacon-projects-20261029230440-d2e0ed_developer-home Created
+ Volume datacon-projects-20261029230440-d2e0ed_developer-home Created
+ Volume datacon-projects-20261029230440-d2e0ed_workspaces Created
+ Volume datacon-projects-20261029230440-d2e0ed_workspaces Created
+ Network datacon-projects-20261029230440-d2e0ed_default Created
+ Network datacon-projects-20261029230440-d2e0ed_default Created
+ Container datacon-projects-20261029230440-d2e0ed-workspace-1 Creating
+ Container datacon-projects-20261029230440-d2e0ed-warehouse-1 Creating
+ Container datacon-projects-20261029230440-d2e0ed-warehouse-1 Created
+ Container datacon-projects-20261029230440-d2e0ed-workspace-1 Created
+ Container datacon-projects-20261029230440-d2e0ed-warehouse-1 Starting
+ Container datacon-projects-20261029230440-d2e0ed-workspace-1 Starting
+ Container datacon-projects-20261029230440-d2e0ed-warehouse-1 Started
+ Container datacon-projects-20261029230440-d2e0ed-workspace-1 Started
+ Container datacon-projects-20261029230440-d2e0ed-workspace-1 Waiting
+ Container datacon-projects-20261029230440-d2e0ed-warehouse-1 Waiting
+ Container datacon-projects-20261029230440-d2e0ed-warehouse-1 Healthy
+ Container datacon-projects-20261029230440-d2e0ed-workspace-1 Healthy

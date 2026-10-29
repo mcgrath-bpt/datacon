@@ -19,7 +19,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Qualify native AMD64 core twice
-        timeout-minutes: 27 # Reserve time for the always-run evidence upload.
+        timeout-minutes: 18 # Reserve time for delivery checks and evidence uploads.
         run: python3 scripts/qualify.py --expected-architecture amd64 --output artifacts/core-qualification
       - name: Upload sanitised qualification evidence
         if: always()
@@ -28,4 +28,15 @@ jobs:
           name: core-amd64-${{ github.run_id }}-${{ github.run_attempt }}
           path: artifacts/core-qualification/
           if-no-files-found: error
+          retention-days: 30
+      - name: Qualify independent delivery workspaces
+        timeout-minutes: 8
+        run: python3 scripts/qualify_projects.py --expected-architecture amd64 --output artifacts/project-qualification
+      - name: Upload sanitised delivery evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: projects-amd64-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/project-qualification/
+          if-no-files-found: warn
           retention-days: 30

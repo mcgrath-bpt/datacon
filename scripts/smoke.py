@@ -17,7 +17,7 @@ def main():
     subprocess.run(["git", "--version"], check=True)
     subprocess.run(["python", "-m", "pip", "check"], check=True)
     env = os.environ.copy()
-    env["PGPASSWORD"] = Path("/run/secrets/developer_password").read_text().strip()
+    env["PGPASSWORD"] = env.get("PGPASSWORD") or Path("/run/secrets/developer_password").read_text().strip()
     table = "smoke_" + uuid.uuid4().hex
     sql = f"""
 BEGIN;
@@ -43,7 +43,7 @@ ROLLBACK;
     lines = result.stdout.splitlines()
     # The v1.1.1 image retains SQL extension version 1.1.0; see its
     # https://github.com/duckdb/pg_duckdb/blob/v1.1.1/pg_duckdb.control.
-    required = {"role=developer", "privileged=false", "extension=1.1.0", "postgres=7", "duckdb=7"}
+    required = {"role=" + env.get("PGUSER", "developer"), "privileged=false", "extension=1.1.0", "postgres=7", "duckdb=7"}
     if not required.issubset(lines) or not any("DuckDBScan" in line for line in lines):
         raise RuntimeError("Role/RLS/accelerated-plan assertions failed:\n" + result.stdout)
     print(json.dumps({"passed": True, "uid": os.getuid(), "extension_version": "1.1.0",

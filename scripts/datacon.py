@@ -11,6 +11,10 @@ import secrets
 import subprocess
 import sys
 
+# Also support host tests loading this file by absolute path.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import projects
+
 ROOT = Path(__file__).resolve().parents[1]
 INSTANCE_PATTERN = re.compile(r"[a-z][a-z0-9-]{0,39}\Z")
 
@@ -29,6 +33,16 @@ def state_path(instance, root=ROOT):
     return root / ".local" / "instances" / instance_name(instance)
 
 
+def write_instance_config(instance, state):
+    ids = json.loads((state / "workspace.json").read_text()) if (state / "workspace.json").exists() else {"uid": 1000, "gid": 1000}
+    projects.save_json(state / "instance.compose.json", {
+        "name": "datacon-" + instance,
+        "services": {"workspace": {"build": {"args": {"WORKSPACE_UID": str(ids['uid']), "WORKSPACE_GID": str(ids['gid'])}}}},
+        "secrets": {name: {"file": str(state / name).replace('$', '$$')} for name in ('postgres_password', 'developer_password')},
+    })
+    projects.compose_overlay(state, projects.read_registry(state))
+
+
 def initialise(instance, root=ROOT, fresh=False):
     state = state_path(instance, root)
     if fresh and state.exists():
@@ -39,6 +53,7 @@ def initialise(instance, root=ROOT, fresh=False):
             path = state / name
             if not path.is_file() or not path.read_text().strip():
                 raise DataconError("Instance credentials are incomplete. Restore them from your local backup or use a new instance name.")
+        write_instance_config(instance, state)
         return state
     state.mkdir(mode=0o700, parents=True, exist_ok=False)
     for name in ("postgres_password", "developer_password"):
@@ -48,13 +63,18 @@ def initialise(instance, root=ROOT, fresh=False):
             # users need read access. The containing host directory is 0700.
             os.chmod(path, 0o444)
             stream.write(secrets.token_urlsafe(32) + "\n")
+    ids = {"uid": os.getuid(), "gid": os.getgid()} if platform.system() == "Linux" and os.getuid() > 0 and os.getgid() > 0 else {"uid": 1000, "gid": 1000}
+    (state / "workspace.json").write_text(json.dumps(ids) + "\n")
+    write_instance_config(instance, state)
     return state
 
 
 def compose(instance, *arguments, root=ROOT):
     instance_name(instance)
+    overlays = [state_path(instance, root) / name for name in ("instance.compose.json", "projects.compose.json")]
     return ["docker", "compose", "--project-directory", str(root), "--project-name",
-            "datacon-" + instance, "--file", str(root / "compose.yaml"), *arguments]
+            "datacon-" + instance, "--file", str(root / "compose.yaml"),
+            *(part for overlay in overlays if overlay.exists() for part in ("--file", str(overlay))), *arguments]
 
 
 def environment(instance, root=ROOT):
@@ -63,6 +83,16 @@ def environment(instance, root=ROOT):
     env.pop("COMPOSE_PROFILES", None)
     env["DATACON_INSTANCE"] = instance_name(instance)
     env["DATACON_STATE_DIR"] = str(state_path(instance, root))
+    state = state_path(instance, root)
+    if (state / "workspace.json").exists():
+        ids = json.loads((state / "workspace.json").read_text())
+    elif state.exists():
+        ids = {"uid": 1000, "gid": 1000} # Retained instances keep their original ownership.
+    else:
+        ids = {"uid": os.getuid(), "gid": os.getgid()} if platform.system() == "Linux" and os.getuid() > 0 and os.getgid() > 0 else {"uid": 1000, "gid": 1000}
+    if any(type(ids.get(key)) is not int or not 0 < ids[key] < 2**31 for key in ("uid", "gid")):
+        raise DataconError("Invalid workspace UID/GID configuration; restore the recorded instance settings.")
+    env["DATACON_UID"], env["DATACON_GID"] = str(ids['uid']), str(ids['gid'])
     return env
 
 
@@ -174,10 +204,13 @@ def main(argv=None):
     commands.add_parser("smoke", help="Check non-root tools, database access, RLS and DuckDB execution")
     commands.add_parser("reference", help="Clone and test the pinned Opharma reference in a new checkout")
     commands.add_parser("check", help="Run host-side unit tests without Docker or network access")
+    projects.add_parser(commands)
     args = parser.parse_args(argv)
     try:
         instance = instance_name(args.name if args.action == "fresh" else args.instance)
         env = environment(instance)
+        if args.action == "project":
+            return projects.handle(args, instance, ROOT, compose, env)
         if args.action == "doctor":
             return doctor(instance, args.json)
         if args.action == "check":
@@ -214,7 +247,7 @@ def main(argv=None):
             flags = [] if sys.stdin.isatty() and args.action in ("shell", "exec") else ["-T"]
             run(compose(instance, "exec", *flags, "workspace", *command), env=env)
         return 0
-    except DataconError as error:
+    except (DataconError, projects.ProjectError) as error:
         print("datacon: " + str(error), file=sys.stderr)
         return 1
     except subprocess.CalledProcessError as error:
@@ -224,6 +257,9 @@ def main(argv=None):
         return error.returncode if 0 < error.returncode < 126 else 1
     except OSError as error:
         print("datacon: filesystem operation failed: " + str(error), file=sys.stderr)
+        return 1
+    except (ValueError, subprocess.TimeoutExpired) as error:
+        print("datacon: invalid configuration or timed-out operation; inspect the selected instance.", file=sys.stderr)
         return 1
 
 

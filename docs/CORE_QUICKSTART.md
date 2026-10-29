@@ -1,6 +1,6 @@
 # First core increment
 
-Updated: 2026-10-29. This core increment implements parts of DC-002/DC-003/DC-007 and completes DC-008's local reference acceptance. Host tests, Compose validation, ARM64 build/smoke, Opharma acceptance and retained/fresh lifecycle checks have passed. WSL and resource-envelope certification remain outstanding; native ARM64 and AMD64 core locks are now qualified in [the core lock report](evidence/2026-10-29-core-locks.md). It is not the complete v1 release: OpenMetadata, GX integration and native Snowflake execution remain on the backlog.
+Updated: 2026-10-30. This core increment implements parts of DC-002/DC-003/DC-007 and completes DC-008's local reference acceptance. Host tests, Compose validation, ARM64 build/smoke, Opharma acceptance and retained/fresh lifecycle checks have passed. WSL and resource-envelope certification remain outstanding; native ARM64 and AMD64 core locks are now qualified in [the core lock report](evidence/2026-10-29-core-locks.md). It is not the complete v1 release: OpenMetadata, GX integration and native Snowflake execution remain on the backlog.
 
 ## Prerequisites
 
@@ -36,13 +36,13 @@ Inside `./datacon shell`, clone/open your project in `/workspaces`. Configure yo
 
 The workspace contains Python, Git, SSH client, Make, `psql` and the pinned JSON Schema dependency set. Platform tools and guidance are available under `/opt/datacon`. Personal tools can be installed into user-owned environments. Reproducible delivery dependencies still require the platform/Tech Lead process.
 
-For SQL, use the configured `PGHOST`, `PGDATABASE` and `PGUSER`. Only the developer credential is mounted in the workspace. Supply it to an individual `psql` process when needed:
+For SQL, use the configured `PGHOST`, `PGDATABASE` and `PGUSER`. The default developer credential is mounted in the workspace; registered project credentials are mounted separately. Supply it to an individual `psql` process when needed:
 
 ```sh
 PGPASSWORD="$(cat /run/secrets/developer_password)" psql
 ```
 
-The warehouse exposes no host port. Each instance currently has one developer role and the `workspace` schema. Separate projects needing isolated database identities should use separate named instances in this increment; automated per-project database/role provisioning remains DC-003 work. Several Git repositories can coexist in the same workspace, each retaining its own Git history and remote.
+The warehouse exposes no host port. Use [the delivery workspace commands](DELIVERY_WORKSPACES.md) to register host-mounted or volume checkouts, provision a separate database/role for each project, and select its directory and credentials with `project exec` or `project shell`. The original instance-level developer role remains available. Each checkout retains its own Git history and remote.
 
 ## Retain work or start fresh
 
@@ -56,7 +56,7 @@ The warehouse exposes no host port. Each instance currently has one developer ro
 
 `down` removes only the selected instance's containers/network and preserves named volumes. `up` resumes those volumes and credentials. `fresh` requires an unused name and creates separate workspace, home and database volumes; it refuses existing state or Docker resources. It never deletes the retained instance. A new instance is not yet full clean acceptance of a released baseline: immutable platform releases and CI enforcement remain outstanding.
 
-Project checkouts live in the `workspaces` volume; personal home state lives in `developer-home`; database files live in `warehouse-data`. Names are scoped by the Compose project `datacon-<instance>`. No reset or prune command is supplied. Never use `docker compose down --volumes` for routine shutdown.
+Project checkouts live in the `workspaces` volume; personal home state lives in `developer-home`; database files live in `warehouse-data`. Names are scoped by the Compose project `datacon-<instance>`. The explicit `project reset-db` command resets only one managed project database; no checkout reset or volume prune command is supplied. Never use `docker compose down --volumes` for routine shutdown.
 
 Local passwords are generated under ignored `.local/instances/<instance>/`. Their parent directory is owner-only (`0700`); individual files are read-only (`0444`) so Compose bind-mounted secrets can be read by the non-root container users. Preserve this directory with the instance's volumes. Missing credentials are an error, not an automatic password rotation. If the local state has been lost while Docker volumes remain, restore credentials before resuming; do not recreate arbitrary passwords for an existing database.
 
@@ -70,7 +70,7 @@ This selects services to start; it does not stop an already-running warehouse. U
 
 ## Editor entry point
 
-Open Datacon in an editor supporting Dev Containers, then reopen using `.devcontainer/devcontainer.json`. The descriptor initialises local credentials and starts the default instance's workspace and warehouse, opening `/workspaces` as user `developer`. Leave `COMPOSE_PROJECT_NAME`, `DATACON_INSTANCE` and `DATACON_STATE_DIR` unset for this default editor route; named instances use the terminal or the editor's attach-to-running-container feature. The descriptor deliberately leaves services running when the editor closes; use `./datacon down` to stop them. The installed VS Code Dev Containers CLI successfully exercised the descriptor on 2026-10-29; graphical editor attachment/reopening remains untested.
+Open Datacon in an editor supporting Dev Containers, then reopen using `.devcontainer/devcontainer.json`. The descriptor initialises local credentials and starts the default instance's workspace and warehouse, opening `/workspaces` as user `developer`. Leave `COMPOSE_PROJECT_NAME`, `DATACON_INSTANCE` and `DATACON_STATE_DIR` unset for this default editor route. For a named instance and delivery, use `./datacon --instance <instance> project editor <project>` and open the printed folder; see [the editor procedure](DELIVERY_WORKSPACES.md#open-the-delivery-in-vs-code). The descriptor deliberately leaves services running when the editor closes; use `./datacon down` to stop them. The installed VS Code Dev Containers CLI exercised the default descriptor on 2026-10-29. Actual graphical attachment, the project terminal identity and saving/reopening a delivery file passed on the existing Mac on 2026-10-30; see [delivery evidence](evidence/2026-10-30-delivery-workspaces.md). Fresh-machine and Windows/WSL acceptance remain outstanding.
 
 ## Candidate versions and evidence boundary
 

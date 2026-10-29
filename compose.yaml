@@ -6,6 +6,9 @@ services:
     build:
       context: .
       dockerfile: .devcontainer/Dockerfile
+      args:
+        WORKSPACE_UID: ${DATACON_UID:-1000}
+        WORKSPACE_GID: ${DATACON_GID:-1000}
     init: true
     user: developer
     working_dir: /workspaces

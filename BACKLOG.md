@@ -48,6 +48,8 @@ Package a non-root Linux workspace, Git, Python and required SQL tools. Supply w
 
 Progress, 2026-10-29: Dockerfile, Compose services, Dev Container descriptor and `datacon` launcher implemented. Host tests, Compose validation, ARM64 build/readiness and SQL/RLS smoke pass. The installed Dev Containers CLI successfully runs the descriptor; graphical editor attachment and fresh-machine/other-host acceptance remain. See [runtime evidence](docs/evidence/2026-10-29-core-runtime.md) and [the core quick-start](docs/CORE_QUICKSTART.md).
 
+Progress, 2026-10-30: actual VS Code graphical attachment, project terminal/database selection and saving/reopening a delivery file passed on the existing Mac. The complete ARM64 core regression passed again with 41 host tests. Fresh-machine acceptance remains open. See [delivery/editor evidence](docs/evidence/2026-10-30-delivery-workspaces.md).
+
 **Done when:** a clean machine with documented prerequisites opens the workspace and runs a local smoke test; neither OpenMetadata, Airflow, a notebook server nor a model server starts by default.
 
 ### DC-003 — Attach independent delivery repositories safely
@@ -57,6 +59,8 @@ Progress, 2026-10-29: Dockerfile, Compose services, Dev Container descriptor and
 Support cloning/opening one or more independent delivery repositories from inside a Datacon workspace, with host-mounted checkouts also available. Keep compatibility metadata minimal: approved release/capabilities plus working directory and commands when needed. Namespace project services/data; optional task containers and delivery descriptors must use the approved baseline rather than define separate toolchains.
 
 Progress, 2026-10-29: actual `down`/`up` preserved an uncommitted Opharma file, its Git revision/status, home state, a database row and credentials. A fresh instance had separate workspace/home/database state, refused name reuse and left the original intact after shutdown. Separate per-project database identities within one instance, host-mounted checkout configuration and two independent delivery repositories in one instance remain outstanding. See [runtime evidence](docs/evidence/2026-10-29-core-runtime.md).
+
+Progress, 2026-10-30: `project` registration supports existing host and volume checkouts, separate database identities, scoped database reset and generated editor configuration. Native ARM64 acceptance used pinned Opharma plus an independent host Git fixture with spaces/dollar in its path. Reprovisioning, both cross-project access denials and resetting A while preserving B passed; recreation preserved dirty files and credentials. The existing-core workflow is complete; optional approved dependency environments and release/capability adoption await DC-001/DC-007/DC-032, so the broader item remains open. See [the guide](docs/DELIVERY_WORKSPACES.md) and [evidence](docs/evidence/2026-10-30-delivery-workspaces.md).
 
 **Done when:** two repositories work inside one Datacon instance and retain independent histories; approved dependencies can be isolated where required; container recreation preserves retained uncommitted files; project A's reset cannot affect B; Opharma keeps its existing layout. No checkout is copied into Datacon or silently modified.
 
