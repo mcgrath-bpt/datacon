@@ -4,11 +4,11 @@ Datacon is the Tech Lead-owned platform baseline. Read [the operating model](doc
 
 ## Initial repository bootstrap
 
-Verified: 2026-10-29. The user created local Git history with initial commit `601cee3` (`chore: establish Datacon platform plan and repository conventions`) on `main`. Continue this history; do not initialise a second repository. No remote is configured.
+Verified: 2026-10-29. The user created local Git history with initial commit `601cee3` (`chore: establish Datacon platform plan and repository conventions`) on `main`. The canonical public repository is [mcgrath-bpt/datacon](https://github.com/mcgrath-bpt/datacon), configured as `origin` at `https://github.com/mcgrath-bpt/datacon.git`. Continue this history; do not initialise a second repository.
 
 On resumption, approved Git writes created `feat/DC-002-core-runtime` while preserving the working tree. Docker and GitHub access also succeeded with approval. The default sandbox still protects Git metadata and the Docker socket; use the session approval mechanism when needed and recheck access in each new session. No repository ownership repair or permission change through `chmod` is indicated. [HANDOVER.md](HANDOVER.md) records the current state.
 
-Agree the GitHub owner, repository name and visibility, then configure `origin` and push. The earlier lookup of `mcgrath-bpt/datacon` returned 404, which does not establish whether it is absent or inaccessible. No remote is assumed. `.gitignore` excludes common local secrets, environments, outputs and delivery checkout directories; inspect staged files before committing.
+The user supplied this remote on 2026-10-29. Its initial commit `6b955ac` contains the MIT licence and was merged with the local design history, preserving both roots. `main` holds that bootstrap; `feat/DC-002-core-runtime` carries the implementation for PR review. Use ordinary pushes and preserve remote history. `.gitignore` excludes common local secrets, environments, outputs and delivery checkout directories; inspect staged files before committing.
 
 ## Normal change workflow
 

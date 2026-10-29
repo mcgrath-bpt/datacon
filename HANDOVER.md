@@ -23,7 +23,7 @@ Read [the runtime acceptance report](docs/evidence/2026-10-29-core-runtime.md) f
 
 Workspace: `/Users/mmcgrath/Documents/dev/00-base/datacon`.
 
-Branch: `feat/DC-002-core-runtime`, created from design commit `601cee36cf6e9c6970620bca34ea0046eb6ea90c`. Check `git log -3 --oneline` and `git status --short --branch` for the final implementation commit and any newer work. No remote is configured and nothing has been pushed. Agree owner/repository/visibility before configuring a remote.
+Branch: `feat/DC-002-core-runtime`, created from design commit `601cee36cf6e9c6970620bca34ea0046eb6ea90c`. The user supplied the canonical public remote [mcgrath-bpt/datacon](https://github.com/mcgrath-bpt/datacon), configured as `origin` at `https://github.com/mcgrath-bpt/datacon.git`. Its initial MIT licence commit `6b955ac` was joined with the local design history on `main` and included in the feature branch. Preserve both histories; use ordinary pushes. Check `git log --graph --oneline --all`, `git branch -vv` and `git status --short --branch` for current commits and upstream state. Core implementation goes through PR review into `main`.
 
 The default sandbox still denies Git metadata writes, Docker socket access and shell DNS/network access. Unlike the previous session, approval is available: approved Git branch creation, Docker commands and `git ls-remote` succeeded. Docker Desktop is healthy and reachable through approved commands. Do not change ownership, reinitialise Git or assume the old restrictions are permanent; recheck access on resumption.
 
@@ -57,7 +57,7 @@ The reference runner always creates a new checkout. The doctor reports prerequis
 2. Finish DC-007: reproducible OS package locks, wheel hashes and AMD64 build/runtime checks. Qualify GX/Snowflake dependencies before making them delivery prerequisites. An isolated platform-owned environment is allowed when agreed; do not silently downgrade the workspace.
 3. Finish DC-002/DC-003: graphical editor attachment, host-mounted checkout configuration, two independent deliveries in one instance and per-project database identities. Existing lifecycle checks prove instance separation, not the full per-project reset matrix.
 4. Measure DC-005 under an actual 4-GiB/two-vCPU allocation, including peak memory, VM overhead and cold start. Current cached startup observations and idle samples do not qualify the envelope. Schedule actual Windows/WSL 3.0.3 acceptance separately.
-5. Establish the agreed Git remote/review controls and immutable release identity under DC-001/DC-032. No qualified release or enforced remote review policy exists yet.
+5. Establish GitHub review controls and immutable release identity under DC-001/DC-032. The canonical remote is configured; no qualified release or enforced remote review policy exists yet.
 6. Start early Snowflake access/semantics work (DC-014–DC-016) alongside remaining local qualification. Native Snowflake, GX, OpenMetadata and broader RLS/concurrency acceptance have not run.
 
 For routine core checks:

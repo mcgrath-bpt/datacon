@@ -2,7 +2,7 @@
 
 Updated: 2026-10-29. Source: confirmed user requirements, [PLAN.md](PLAN.md), and [Opharma PR #1](https://github.com/mcgrath-bpt/opharma/pull/1) at `b43c6897f6bdda2adcf60fc468fe8aaff31f52eb`.
 
-This is the local backlog, initially committed in `601cee3`. No remote is configured and no GitHub issues have been created. IDs remain stable when items are split or promoted to an issue tracker. Owners below are responsibility types, not assignments sent to individuals.
+This backlog was initially committed in `601cee3`. The canonical remote is [mcgrath-bpt/datacon](https://github.com/mcgrath-bpt/datacon); no GitHub issues have been created. IDs remain stable when items are split or promoted to an issue tracker. Owners below are responsibility types, not assignments sent to individuals.
 
 ## Operating rules
 
@@ -36,7 +36,7 @@ OpenMetadata is a required Datacon v1 platform component. DC-018–DC-020 must p
 
 Create the platform Git repository/history, agree its remote, and commit the design/backlog/handbook with ignore rules, LF handling, contribution conventions and PR guidance. Define versioned image/tool releases and a project compatibility policy. Keep source and configuration templates in Git; credentials, runtime databases and personal checkout paths stay out.
 
-Progress, 2026-10-29: the user created initial commit `601cee3` on `main`, containing the design and repository conventions. On resumption, approved Git writes created `feat/DC-002-core-runtime` with all existing work preserved. Remote, protected reviews and release policy/locks remain outstanding, so this item stays open.
+Progress, 2026-10-29: the user created initial commit `601cee3` on `main`, containing the design and repository conventions. Approved Git writes created `feat/DC-002-core-runtime` with all existing work preserved. The user subsequently supplied the public GitHub repository, now configured as `origin`; its initial MIT licence commit `6b955ac` is preserved alongside the local history. Protected reviews and release policy/locks remain outstanding, so this item stays open.
 
 **Done when:** a fresh checkout identifies its approved platform version; release inputs are pinned; a delivery adopts releases under the Tech Lead's compatibility/upgrade policy without sharing platform source/history; initial history and remote location are recorded.
 
