@@ -1,0 +1,12 @@
+{
+  "odcs": "3.1.0",
+  "contracts": 5,
+  "objects": {
+    "source": 15,
+    "canonical": 13,
+    "pipeline": 7,
+    "consumption": 7,
+    "visualization": 1
+  },
+  "sha256": "27073c77045040ad84e10495e2a2a19995bfd7b94d1c9fdb0ca8b05ca8bf2cbe"
+}

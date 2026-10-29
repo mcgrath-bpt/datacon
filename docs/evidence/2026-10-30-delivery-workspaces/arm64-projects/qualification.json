@@ -1,0 +1,425 @@
+{
+  "instance": "projects-20261029230440-d2e0ed",
+  "started_at": "2026-10-29T23:04:40+00:00",
+  "passed": true,
+  "steps": [
+    {
+      "name": "revision",
+      "started_at": "2026-10-29T23:04:40+00:00",
+      "finished_at": "2026-10-29T23:04:40+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "doctor",
+      "started_at": "2026-10-29T23:04:40+00:00",
+      "finished_at": "2026-10-29T23:04:42+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "host-tests",
+      "started_at": "2026-10-29T23:04:42+00:00",
+      "finished_at": "2026-10-29T23:04:44+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "initialise",
+      "started_at": "2026-10-29T23:04:44+00:00",
+      "finished_at": "2026-10-29T23:04:44+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "sample-git-init",
+      "started_at": "2026-10-29T23:04:44+00:00",
+      "finished_at": "2026-10-29T23:04:44+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "sample-git-add",
+      "started_at": "2026-10-29T23:04:44+00:00",
+      "finished_at": "2026-10-29T23:04:44+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "sample-git-commit",
+      "started_at": "2026-10-29T23:04:44+00:00",
+      "finished_at": "2026-10-29T23:04:44+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "register-host",
+      "started_at": "2026-10-29T23:04:44+00:00",
+      "finished_at": "2026-10-29T23:04:44+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "start",
+      "started_at": "2026-10-29T23:04:44+00:00",
+      "finished_at": "2026-10-29T23:04:55+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "clone-opharma",
+      "started_at": "2026-10-29T23:04:55+00:00",
+      "finished_at": "2026-10-29T23:04:56+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "checkout-opharma",
+      "started_at": "2026-10-29T23:04:56+00:00",
+      "finished_at": "2026-10-29T23:04:57+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "register-volume",
+      "started_at": "2026-10-29T23:04:57+00:00",
+      "finished_at": "2026-10-29T23:04:58+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "attach-project-secrets",
+      "started_at": "2026-10-29T23:04:58+00:00",
+      "finished_at": "2026-10-29T23:05:09+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "provision-opharma",
+      "started_at": "2026-10-29T23:05:09+00:00",
+      "finished_at": "2026-10-29T23:05:09+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "provision-sample",
+      "started_at": "2026-10-29T23:05:09+00:00",
+      "finished_at": "2026-10-29T23:05:10+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "seed-opharma",
+      "started_at": "2026-10-29T23:05:10+00:00",
+      "finished_at": "2026-10-29T23:05:10+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "role-opharma",
+      "started_at": "2026-10-29T23:05:10+00:00",
+      "finished_at": "2026-10-29T23:05:11+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "smoke-opharma",
+      "started_at": "2026-10-29T23:05:11+00:00",
+      "finished_at": "2026-10-29T23:05:13+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "seed-sample",
+      "started_at": "2026-10-29T23:05:13+00:00",
+      "finished_at": "2026-10-29T23:05:13+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "role-sample",
+      "started_at": "2026-10-29T23:05:13+00:00",
+      "finished_at": "2026-10-29T23:05:13+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "smoke-sample",
+      "started_at": "2026-10-29T23:05:13+00:00",
+      "finished_at": "2026-10-29T23:05:14+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "deny-connect-opharma",
+      "started_at": "2026-10-29T23:05:14+00:00",
+      "finished_at": "2026-10-29T23:05:14+00:00",
+      "exit_code": 2
+    },
+    {
+      "name": "deny-set-role-opharma",
+      "started_at": "2026-10-29T23:05:14+00:00",
+      "finished_at": "2026-10-29T23:05:14+00:00",
+      "exit_code": 1
+    },
+    {
+      "name": "deny-drop-opharma",
+      "started_at": "2026-10-29T23:05:14+00:00",
+      "finished_at": "2026-10-29T23:05:14+00:00",
+      "exit_code": 1
+    },
+    {
+      "name": "deny-connect-sample",
+      "started_at": "2026-10-29T23:05:14+00:00",
+      "finished_at": "2026-10-29T23:05:15+00:00",
+      "exit_code": 2
+    },
+    {
+      "name": "deny-set-role-sample",
+      "started_at": "2026-10-29T23:05:15+00:00",
+      "finished_at": "2026-10-29T23:05:15+00:00",
+      "exit_code": 1
+    },
+    {
+      "name": "deny-drop-sample",
+      "started_at": "2026-10-29T23:05:15+00:00",
+      "finished_at": "2026-10-29T23:05:15+00:00",
+      "exit_code": 1
+    },
+    {
+      "name": "deny-role-creation",
+      "started_at": "2026-10-29T23:05:15+00:00",
+      "finished_at": "2026-10-29T23:05:15+00:00",
+      "exit_code": 1
+    },
+    {
+      "name": "reject-wrong-reset",
+      "started_at": "2026-10-29T23:05:15+00:00",
+      "finished_at": "2026-10-29T23:05:15+00:00",
+      "exit_code": 1
+    },
+    {
+      "name": "sample-tests",
+      "started_at": "2026-10-29T23:05:15+00:00",
+      "finished_at": "2026-10-29T23:05:16+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "opharma-tests",
+      "started_at": "2026-10-29T23:05:16+00:00",
+      "finished_at": "2026-10-29T23:05:31+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "opharma-contracts",
+      "started_at": "2026-10-29T23:05:31+00:00",
+      "finished_at": "2026-10-29T23:05:31+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "dirty-opharma",
+      "started_at": "2026-10-29T23:05:31+00:00",
+      "finished_at": "2026-10-29T23:05:31+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "write-through-bind",
+      "started_at": "2026-10-29T23:05:31+00:00",
+      "finished_at": "2026-10-29T23:05:32+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "read-through-bind",
+      "started_at": "2026-10-29T23:05:32+00:00",
+      "finished_at": "2026-10-29T23:05:32+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "before-opharma",
+      "started_at": "2026-10-29T23:05:32+00:00",
+      "finished_at": "2026-10-29T23:05:32+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "before-sample",
+      "started_at": "2026-10-29T23:05:32+00:00",
+      "finished_at": "2026-10-29T23:05:32+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "reprovision-opharma",
+      "started_at": "2026-10-29T23:05:32+00:00",
+      "finished_at": "2026-10-29T23:05:33+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "reprovision-preserves-opharma",
+      "started_at": "2026-10-29T23:05:33+00:00",
+      "finished_at": "2026-10-29T23:05:33+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "reprovision-sample",
+      "started_at": "2026-10-29T23:05:33+00:00",
+      "finished_at": "2026-10-29T23:05:33+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "reprovision-preserves-sample",
+      "started_at": "2026-10-29T23:05:33+00:00",
+      "finished_at": "2026-10-29T23:05:34+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "reset-opharma-only",
+      "started_at": "2026-10-29T23:05:34+00:00",
+      "finished_at": "2026-10-29T23:05:34+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "reset-cleared-opharma",
+      "started_at": "2026-10-29T23:05:34+00:00",
+      "finished_at": "2026-10-29T23:05:34+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "reset-preserved-sample",
+      "started_at": "2026-10-29T23:05:34+00:00",
+      "finished_at": "2026-10-29T23:05:35+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "recreate-stop",
+      "started_at": "2026-10-29T23:05:35+00:00",
+      "finished_at": "2026-10-29T23:05:35+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "recreate-start",
+      "started_at": "2026-10-29T23:05:35+00:00",
+      "finished_at": "2026-10-29T23:05:47+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "after-opharma",
+      "started_at": "2026-10-29T23:05:47+00:00",
+      "finished_at": "2026-10-29T23:05:47+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "after-sample",
+      "started_at": "2026-10-29T23:05:47+00:00",
+      "finished_at": "2026-10-29T23:05:47+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "recreate-preserved-sample",
+      "started_at": "2026-10-29T23:05:47+00:00",
+      "finished_at": "2026-10-29T23:05:48+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "editor-descriptor",
+      "started_at": "2026-10-29T23:05:48+00:00",
+      "finished_at": "2026-10-29T23:05:48+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-os-check",
+      "started_at": "2026-10-29T23:05:48+00:00",
+      "finished_at": "2026-10-29T23:05:48+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-workspace-os",
+      "started_at": "2026-10-29T23:05:48+00:00",
+      "finished_at": "2026-10-29T23:05:48+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-python-packages",
+      "started_at": "2026-10-29T23:05:48+00:00",
+      "finished_at": "2026-10-29T23:05:48+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-versions",
+      "started_at": "2026-10-29T23:05:48+00:00",
+      "finished_at": "2026-10-29T23:05:49+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-warehouse-os",
+      "started_at": "2026-10-29T23:05:49+00:00",
+      "finished_at": "2026-10-29T23:05:49+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-database-version",
+      "started_at": "2026-10-29T23:05:49+00:00",
+      "finished_at": "2026-10-29T23:05:50+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-workspace-id",
+      "started_at": "2026-10-29T23:05:50+00:00",
+      "finished_at": "2026-10-29T23:05:50+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-workspace-identity",
+      "started_at": "2026-10-29T23:05:50+00:00",
+      "finished_at": "2026-10-29T23:05:50+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-workspace-image",
+      "started_at": "2026-10-29T23:05:50+00:00",
+      "finished_at": "2026-10-29T23:05:50+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-warehouse-id",
+      "started_at": "2026-10-29T23:05:50+00:00",
+      "finished_at": "2026-10-29T23:05:50+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-warehouse-identity",
+      "started_at": "2026-10-29T23:05:50+00:00",
+      "finished_at": "2026-10-29T23:05:50+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-warehouse-image",
+      "started_at": "2026-10-29T23:05:50+00:00",
+      "finished_at": "2026-10-29T23:05:50+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "stop-qualification",
+      "started_at": "2026-10-29T23:05:50+00:00",
+      "finished_at": "2026-10-29T23:05:51+00:00",
+      "exit_code": 0
+    }
+  ],
+  "scope": "DC-002/DC-003 two independent repositories, mounts, identities and scoped reset",
+  "platform_commit": "62d7582b00779d0acf8c409f9fef69b40101f758",
+  "input_sha256": {
+    "scripts/check_docs.py": "4c10903193422d52ddb5bc2f9226f023a0e5eef8a041f0afc9ffdcf9c6604c19",
+    "scripts/datacon.py": "7747c4031210d41f0612221ea2643a63cb3359b792eee8631a650b63e0041b80",
+    "scripts/project_exec.py": "f0f0b929bd4b8b9cdb437d6eb2457d11371692d3fc573729464c6763d5be2d04",
+    "scripts/projects.py": "3e184fd1d97359499854dbd76b923803531ecf2a6fb47fa1dabcda7471395dd7",
+    "scripts/qualify.py": "15c985ddf0258ed85c3e4168e16ee6827c093a6887f76625ac3d1bb99396d2b8",
+    "scripts/qualify_projects.py": "78ca1e748156b2e589fb58a8cfe265c6ee48998a6b15beb2b01a01f046af96fd",
+    "scripts/reference.py": "0e0d259e674481c4e9ec8eb2ec32fc92034ba08ed70886af1904525505eeb701",
+    "scripts/smoke.py": "8d657210463d94ee65ecdb91305ce4f7e5086e7770c7cfe3b397bfb3225746d3",
+    "scripts/verify_os.py": "97ff61f1eccbcbf40964628c7211f1a60bf47fbfec6046ed60f124dc4d891c37",
+    "compose.yaml": "eac0376e44a40aa26ba034f2dec3434f143b2e6753847cbf7181b7c47a3901c1",
+    ".devcontainer/Dockerfile": "6d75ad09b636d9d96aed6a64cf2f79a548ba05e6fe64ef8563792a26ddde257d"
+  },
+  "native": true,
+  "architecture": "arm64",
+  "repositories": {
+    "opharma": {
+      "revision": "f1d68d01e6659ba3b279b98afbb9538cbece7473",
+      "status": "?? unfinished.txt\n",
+      "probe_sha256": "15c275a713b428cf37e2f25c0d7a1a0e28de9b73b16f8620d3075dd2d2d53a8c"
+    },
+    "sample": {
+      "revision": "30cfe712e4c453a0e77615cc97fe0545cd8a4dd7",
+      "status": "?? __pycache__/\n?? from-container.txt\n?? from-host.txt\n?? unfinished.txt\n",
+      "probe_sha256": "769ee1075f356e15018a3868441d7e44bb564ec3d2574fcf134ff83446e0c57e"
+    }
+  },
+  "separate_database_roles": true,
+  "cross_project_access_denied": true,
+  "scoped_reset_preserved_other_project": true,
+  "recreation_preserved_dirty_checkouts": true,
+  "credentials_preserved": true,
+  "bidirectional_host_mount": true,
+  "host_path_contains_spaces_and_dollar": true,
+  "editor_folder": "/Users/mmcgrath/Documents/dev/00-base/datacon/.local/instances/projects-20261029230440-d2e0ed/editors/opharma",
+  "graphical_editor": "NOT_EXECUTED",
+  "containers_removed_volumes_retained": true,
+  "finished_at": "2026-10-29T23:05:51+00:00"
+}

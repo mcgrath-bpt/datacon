@@ -189,7 +189,7 @@ with tempfile.TemporaryDirectory() as directory:
                 raise ValueError("Qualification refuses existing local state")
             self.cli("initialise", "init")
             owned = True
-            self.secrets = [p.read_text().strip() for p in datacon.state_path(self.instance).iterdir() if p.is_file()]
+            self.secrets = [p.read_text().strip() for p in datacon.state_path(self.instance).glob('*_password')]
             inventories = []
             for iteration in (1, 2):
                 prefix = "build-" + str(iteration)

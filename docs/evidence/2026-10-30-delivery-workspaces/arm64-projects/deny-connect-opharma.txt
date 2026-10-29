@@ -1,0 +1,2 @@
+psql: error: connection to server at "warehouse" (172.20.0.2), port 5432 failed: FATAL:  permission denied for database "dc_sample"
+DETAIL:  User does not have CONNECT privilege.

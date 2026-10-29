@@ -1,0 +1,1 @@
+Registered opharma. Run up to attach mounts/credentials, then project provision opharma.

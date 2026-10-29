@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-30",
+  "host": "macOS ARM64",
+  "instance": "projects-20261029230140-2e22c5",
+  "vscode_version": "1.144.0",
+  "vscode_commit": "2c33b50b16c472efe58357d1d2a8a5414bc23fbf",
+  "dev_containers_extension": "0.469.0",
+  "dev_containers_cli": "0.89.0",
+  "method": "Actual VS Code graphical Dev Containers: Reopen in Container; generated per-project folder; observed title, explorer, terminal output and saved/reopened file.",
+  "terminal": {
+    "uid": 1000,
+    "cwd": "/workspaces/opharma/pharma-commercial-lab",
+    "python": "3.15.2",
+    "database": "dc_opharma:dc_opharma"
+  },
+  "file": {
+    "path": "/workspaces/opharma/pharma-commercial-lab/editor-acceptance.txt",
+    "content": "Datacon graphical editor acceptance \u2014 2026-10-30\n",
+    "sha256": "4d85f80524a2ab4f2f6f863b1507878ced1c655378a45195010606ca79dac7c4"
+  },
+  "saved_closed_and_reopened": true,
+  "graphical_attachment_passed": true,
+  "credential_visible_in_terminal": false,
+  "test_window_closed": true,
+  "test_containers_removed_volumes_retained": true,
+  "limitations": [
+    "Existing Mac installation; not a fresh-machine onboarding run",
+    "No Windows/WSL graphical acceptance",
+    "No screenshot file archived; UI observations and terminal-produced JSON were verified directly"
+  ]
+}

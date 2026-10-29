@@ -1,0 +1,1 @@
+{"image":"sha256:c624136bd728eafd9b0baca834a86d56dac52d771f88e4db3ff7c30860b76638","restart":"unless-stopped","status":"running"}

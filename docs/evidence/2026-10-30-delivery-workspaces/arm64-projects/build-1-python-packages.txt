@@ -1,0 +1,1 @@
+[{"name": "attrs", "version": "25.4.0"}, {"name": "jsonschema", "version": "4.26.0"}, {"name": "jsonschema-specifications", "version": "2025.9.1"}, {"name": "pip", "version": "26.2.2"}, {"name": "referencing", "version": "0.37.0"}, {"name": "rpds-py", "version": "2026.9.1"}, {"name": "typing_extensions", "version": "4.15.0"}]

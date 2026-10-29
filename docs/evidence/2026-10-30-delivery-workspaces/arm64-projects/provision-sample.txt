@@ -1,0 +1,1 @@
+Project database ready: dc_sample. Checkout and other projects preserved.
