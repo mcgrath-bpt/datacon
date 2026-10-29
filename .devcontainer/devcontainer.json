@@ -1,0 +1,19 @@
+{
+  "name": "Datacon core (development candidate)",
+  "dockerComposeFile": "../compose.yaml",
+  "service": "workspace",
+  "runServices": ["workspace", "warehouse"],
+  "workspaceFolder": "/workspaces",
+  "remoteUser": "developer",
+  "updateRemoteUserUID": false,
+  "overrideCommand": false,
+  "shutdownAction": "none",
+  "initializeCommand": ["sh", "datacon", "init"],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/datacon/venv/bin/python"
+      }
+    }
+  }
+}

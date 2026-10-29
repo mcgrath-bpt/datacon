@@ -1,0 +1,93 @@
+name: datacon-${DATACON_INSTANCE:-default}
+
+services:
+  workspace:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    init: true
+    user: developer
+    working_dir: /workspaces
+    command: ["sleep", "infinity"]
+    mem_limit: 768m
+    cpus: 1.0
+    environment:
+      PGHOST: warehouse
+      PGPORT: "5432"
+      PGDATABASE: datacon
+      PGUSER: developer
+      PGCONNECT_TIMEOUT: "10"
+      PYTHONNOUSERSITE: "1"
+    secrets:
+      - developer_password
+    volumes:
+      - workspaces:/workspaces
+      - developer-home:/home/developer
+    healthcheck:
+      test: ["CMD", "python", "-c", "import jsonschema; from pathlib import Path; assert Path('/workspaces').is_dir()"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+  warehouse:
+    image: pgduckdb/pgduckdb:17-v1.1.1@sha256:302d06d005b6b26512ed68f3d752842641c3c36504d18e8a76e60e3354e00d22
+    profiles: ["core"]
+    mem_limit: 1536m
+    cpus: 1.0
+    shm_size: 256m
+    environment:
+      POSTGRES_DB: datacon
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+    command:
+      - postgres
+      - -c
+      - shared_preload_libraries=pg_duckdb
+      - -c
+      - max_connections=12
+      - -c
+      - shared_buffers=128MB
+      - -c
+      - work_mem=8MB
+      - -c
+      - statement_timeout=30000
+      - -c
+      - duckdb.postgres_role=datacon_duckdb
+      - -c
+      - duckdb.max_memory=128
+      - -c
+      - duckdb.threads=1
+      - -c
+      - duckdb.max_workers_per_postgres_scan=1
+      - -c
+      - duckdb.threads_for_postgres_scan=1
+      - -c
+      - duckdb.disabled_filesystems=LocalFileSystem
+      - -c
+      - duckdb.autoinstall_known_extensions=false
+      - -c
+      - duckdb.max_temp_directory_size=512MB
+    secrets:
+      - postgres_password
+      - developer_password
+    volumes:
+      - warehouse-data:/var/lib/postgresql/data
+      - ./containers/postgres/20-datacon.sh:/docker-entrypoint-initdb.d/20-datacon.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d datacon"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+
+secrets:
+  postgres_password:
+    file: ${DATACON_STATE_DIR:-./.local/instances/default}/postgres_password
+  developer_password:
+    file: ${DATACON_STATE_DIR:-./.local/instances/default}/developer_password
+
+volumes:
+  workspaces:
+  developer-home:
+  warehouse-data:

@@ -1,6 +1,6 @@
 # Datacon implementation plan
 
-Updated: 2026-10-29. Status: design and backlog; runtime implementation and compatibility testing have not started. This revision incorporates the confirmed requirements and the review of [Opharma PR #1](https://github.com/mcgrath-bpt/opharma/pull/1).
+Updated: 2026-10-29. Status: ARM64 core build, smoke, Opharma reference and retained/fresh lifecycle acceptance passed. Cross-platform, resource-envelope and native cloud/catalogue qualification remain outstanding. This revision incorporates the confirmed requirements and the review of [Opharma PR #1](https://github.com/mcgrath-bpt/opharma/pull/1). See [the core quick-start](docs/CORE_QUICKSTART.md) and [runtime evidence](docs/evidence/2026-10-29-core-runtime.md) for current commands and limits.
 
 Datacon is a versioned development environment and engineering handbook. Developers obtain the platform repository, learn the working conventions, and use its container to deliver pipelines in independent Git repositories. Local development is the default; native Snowflake validation arrives in the first two implementation iterations, before the full catalogue integration.
 
@@ -180,4 +180,4 @@ The first core milestone is an implementation increment. Datacon v1 must include
 - Semantic tests cover joins, aggregation grain, NULL/zero, time and non-additive measures; native targets have separate acceptance.
 - Agent evaluation uses a separate evaluator and records failed as well as successful attempts.
 
-All implementation items are currently open or awaiting an external test environment. These documents record the design; they do not assert that a container, cloud deployment or automated agent has been delivered.
+DC-008's local reference acceptance is complete. Other implementation items remain open or await an external test environment. The core containers have runtime evidence; a complete v1 release, cloud deployment and automated agent workflow remain undelivered.

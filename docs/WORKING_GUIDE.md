@@ -1,6 +1,6 @@
 # Working with Datacon
 
-Status: proposed team conventions and onboarding route. The implementation backlog must turn this into an exercised guide before claiming that onboarding works.
+Status: proposed team conventions and onboarding route. The [core implementation](CORE_QUICKSTART.md) has ARM64 runtime/reference/persistence evidence; independent new-joiner acceptance remains to be exercised.
 
 ## What belongs where
 
@@ -27,7 +27,7 @@ The target onboarding exercise is:
 7. Make a small requested delivery change, run affected checks, and prepare a PR that links the requirement, contract and evidence.
 8. Run native Snowflake checks when configured; otherwise report their unverified status. The full catalogue is not an onboarding prerequisite.
 
-DC-006 requires this exercise to be performed by someone new to the project. Until commands are implemented and exercised, the steps describe the intended experience rather than an executable quick-start.
+DC-006 requires this exercise to be performed by someone new to the project. The core quick-start documents the first implemented commands and their verification limits; the complete team exercise remains an acceptance target.
 
 ## Daily delivery method
 

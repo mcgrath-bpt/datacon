@@ -1,6 +1,6 @@
 # Datacon v1 service inventory
 
-Recorded: 2026-10-29. Status: agreed scope and proposed packaging; services have not yet been implemented or tested.
+Recorded: 2026-10-29. Status: agreed scope; workspace/warehouse build, smoke and reference acceptance passed on ARM64, while the catalogue group remains planned. See [the core quick-start](CORE_QUICKSTART.md) and [runtime evidence](evidence/2026-10-29-core-runtime.md).
 
 OpenMetadata is a required part of the Datacon v1 platform. The Tech Lead owns its supported versions, configuration, lifecycle commands, ingestion tooling and integration tests in the platform repository. Delivery repositories supply their own contracts, ownership declarations, semantic definitions, transformation dependencies and quality rules/results. They do not provision a competing catalogue stack.
 
@@ -51,4 +51,4 @@ OpenMetadata packaging, populated project metadata and GX result publication are
 
 Acceptance must demonstrate startup/readiness, migration failure handling, persistence across recreation, a project reset that preserves catalogue records, repeatable ingestion, retained evidence and successful publication retry, matching SDK/server versions, and full/core start-stop behaviour. Record actual host/architecture and resource measurements. Platform-managed volumes and lifecycle commands must preserve both catalogue data and retained project checkouts unless an explicit scoped reset is requested.
 
-This inventory describes planned runtime behaviour. No container startup, memory benchmark or native integration has yet been demonstrated in this workspace.
+Core startup, smoke, reference replay and instance persistence have been demonstrated on macOS ARM64. The complete service inventory, resource envelope and native integrations remain unqualified.

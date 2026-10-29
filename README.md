@@ -2,7 +2,11 @@
 
 A versioned development environment and working method for building governed data pipelines in independent delivery repositories.
 
-**Current state:** planning documents and repository conventions are prepared. The Dev Container, task commands and runtime have not been implemented. Git initialisation was attempted but this session cannot write `.git`; no commit or remote has been created. See [the bootstrap commands](CONTRIBUTING.md#initial-repository-bootstrap). Repository bootstrap remains tracked in DC-001.
+**Current state:** the core increment builds and runs on macOS ARM64 with Python 3.15.2. Host tests, database smoke, the pinned Opharma reference and retained/fresh instance checks pass. [Runtime evidence](docs/evidence/2026-10-29-core-runtime.md) records the results and remaining qualification. Work is on `feat/DC-002-core-runtime`, based on design commit `601cee3`; no remote is configured. This is not a released v1 platform.
+
+Use the [core quick-start](docs/CORE_QUICKSTART.md) for commands, persistence behaviour and the current evidence boundary. Start with `./datacon check`, `./datacon config` and `./datacon doctor`.
+
+For the next session, read [HANDOVER.md](HANDOVER.md) first. The workspace targets Python 3.15.2; host commands require stable Python 3.12 or later. Git, Docker and GitHub access succeeded with session approval; recheck access when resuming.
 
 ## Start here
 
@@ -23,9 +27,9 @@ Snowflake Semantic Views and the existing Opharma Power BI TMDL model are distin
 
 ## Next implementation batch
 
-1. **DC-001: record the starting point.** Initialise Git, review and commit these documents and conventions, then establish the remote and review controls.
-2. **DC-007/DC-008: establish evidence and pins.** Reproduce the pinned Opharma reference in an approved isolated environment and record actual results while qualifying the initial toolchain.
-3. **DC-002/DC-003: deliver the first working increment.** Start a non-root workspace and PostgreSQL/pg_duckdb, open an independent delivery checkout, run meaningful checks and preserve uncommitted work across recreation.
+1. **DC-001: finish repository/release setup.** Establish the agreed remote, review controls and immutable release conventions.
+2. **DC-007: finish toolchain qualification.** Image digests are pinned and ARM64 reference acceptance passed. Complete OS/wheel locks, AMD64 checks and clean release CI; DC-008's local reference is complete.
+3. **DC-002/DC-003: extend the first increment.** Finish graphical editor/host acceptance, host-mounted checkouts and per-project identities. Retained/fresh instance checks now have runtime evidence.
 4. **DC-014–DC-016: prove the target early.** Prepare Snowflake access alongside local work, then demonstrate S2/S4 and one native Semantic View. Full OpenMetadata integration follows and remains required for v1.
 
 Every completed backlog item must point to observed evidence. Generated artefacts and static checks do not establish native deployment success.

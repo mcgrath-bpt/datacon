@@ -2,7 +2,7 @@
 
 Updated: 2026-10-29. Source: confirmed user requirements, [PLAN.md](PLAN.md), and [Opharma PR #1](https://github.com/mcgrath-bpt/opharma/pull/1) at `b43c6897f6bdda2adcf60fc468fe8aaff31f52eb`.
 
-This is the local, repository-ready backlog. No GitHub issues have been created. IDs remain stable when items are split or promoted to an issue tracker. Owners below are responsibility types, not assignments sent to individuals. The current directory has no Git repository yet; DC-001 includes establishing the history and initial commit.
+This is the local backlog, initially committed in `601cee3`. No remote is configured and no GitHub issues have been created. IDs remain stable when items are split or promoted to an issue tracker. Owners below are responsibility types, not assignments sent to individuals.
 
 ## Operating rules
 
@@ -36,7 +36,7 @@ OpenMetadata is a required Datacon v1 platform component. DC-018–DC-020 must p
 
 Create the platform Git repository/history, agree its remote, and commit the design/backlog/handbook with ignore rules, LF handling, contribution conventions and PR guidance. Define versioned image/tool releases and a project compatibility policy. Keep source and configuration templates in Git; credentials, runtime databases and personal checkout paths stay out.
 
-Progress, 2026-10-29: ignore rules, LF/editor settings, repository agent instructions, contribution guidance and a PR template are prepared. `git init -b main` was rejected because this session cannot write `.git` (`Operation not permitted`); history and remote remain outstanding. [CONTRIBUTING.md](CONTRIBUTING.md#initial-repository-bootstrap) contains the initial commit procedure. The connected GitHub lookup of `mcgrath-bpt/datacon` returned 404, so the destination has not been established. This item remains open.
+Progress, 2026-10-29: the user created initial commit `601cee3` on `main`, containing the design and repository conventions. On resumption, approved Git writes created `feat/DC-002-core-runtime` with all existing work preserved. Remote, protected reviews and release policy/locks remain outstanding, so this item stays open.
 
 **Done when:** a fresh checkout identifies its approved platform version; release inputs are pinned; a delivery adopts releases under the Tech Lead's compatibility/upgrade policy without sharing platform source/history; initial history and remote location are recorded.
 
@@ -46,6 +46,8 @@ Progress, 2026-10-29: ignore rules, LF/editor settings, repository agent instruc
 
 Package a non-root Linux workspace, Git, Python and required SQL tools. Supply workspace-only and core modes; core adds PostgreSQL/pg_duckdb, while quality/generation execute as jobs. Provide terminal and editor entry points, readiness checks and useful logs.
 
+Progress, 2026-10-29: Dockerfile, Compose services, Dev Container descriptor and `datacon` launcher implemented. Host tests, Compose validation, ARM64 build/readiness and SQL/RLS smoke pass. The installed Dev Containers CLI successfully runs the descriptor; graphical editor attachment and fresh-machine/other-host acceptance remain. See [runtime evidence](docs/evidence/2026-10-29-core-runtime.md) and [the core quick-start](docs/CORE_QUICKSTART.md).
+
 **Done when:** a clean machine with documented prerequisites opens the workspace and runs a local smoke test; neither OpenMetadata, Airflow, a notebook server nor a model server starts by default.
 
 ### DC-003 — Attach independent delivery repositories safely
@@ -53,6 +55,8 @@ Package a non-root Linux workspace, Git, Python and required SQL tools. Supply w
 **P0 · M1 · OPEN · Owner: platform maintainer · Dependencies: DC-001, DC-002**
 
 Support cloning/opening one or more independent delivery repositories from inside a Datacon workspace, with host-mounted checkouts also available. Keep compatibility metadata minimal: approved release/capabilities plus working directory and commands when needed. Namespace project services/data; optional task containers and delivery descriptors must use the approved baseline rather than define separate toolchains.
+
+Progress, 2026-10-29: actual `down`/`up` preserved an uncommitted Opharma file, its Git revision/status, home state, a database row and credentials. A fresh instance had separate workspace/home/database state, refused name reuse and left the original intact after shutdown. Separate per-project database identities within one instance, host-mounted checkout configuration and two independent delivery repositories in one instance remain outstanding. See [runtime evidence](docs/evidence/2026-10-29-core-runtime.md).
 
 **Done when:** two repositories work inside one Datacon instance and retain independent histories; approved dependencies can be isolated where required; container recreation preserves retained uncommitted files; project A's reset cannot affect B; Opharma keeps its existing layout. No checkout is copied into Datacon or silently modified.
 
@@ -86,15 +90,21 @@ Turn [the working guide](docs/WORKING_GUIDE.md) into a verified onboarding path:
 
 Qualify Python, GX Core, SQLAlchemy/drivers, ODCS tooling, PostgreSQL/pg_duckdb and base images. Define any required isolated environments or optional capabilities in the Tech Lead-owned platform repository. Add a doctor command for approved baseline identity, architecture, Docker/Compose, readiness, paths and resources. Pin schemas for offline validation.
 
+Progress, 2026-10-29: the ARM64 workspace built with Python 3.15.2 and all pinned JSON Schema dependencies installed as binary wheels; `pip check`, smoke and the reference passed. Both input images now use verified multi-platform digests. Docker/GitHub access succeeded with approval. OS package locks, wheel hashes, AMD64 execution, GX and additional adapters remain to be qualified. See [runtime evidence](docs/evidence/2026-10-29-core-runtime.md).
+
+Handover update, 2026-10-29: user requests the latest stable Python, with 3.12 as the minimum. The workspace candidate is now `python:3.15.2-slim-bookworm`, `.python-version` records 3.15.2, and `rpds-py==2026.9.1` supplies published CPython 3.15 wheel candidates. The host launcher enforces stable Python >=3.12 and selects installed 3.14.8 on this Mac. Docker diagnostics now distinguish `access_denied`. See [HANDOVER.md](HANDOVER.md) for measured checks and remaining qualification.
+
 **Done when:** locked installs work on ARM64 and AMD64; required tools do not use floating latest versions; diagnostics explain missing prerequisites without exposing secrets. Catalogue dependencies may be locked later in DC-018.
 
 ## Reference delivery, contracts and execution
 
 ### DC-008 — Reproduce the pinned Opharma baseline
 
-**P0 · M0/M1 · OPEN · Owner: delivery maintainer · Dependencies: DC-007**
+**P0 · M0/M1 · DONE · Owner: delivery maintainer · Dependencies: DC-007**
 
 Fetch PR #1's inspected commit into an independent delivery checkout and run its existing contract, operations and test entry points. Keep SQLite as the initial reference. Capture actual results against the PR's recorded 14-checkpoint baseline; investigate differences and skips instead of copying prior success claims.
+
+Completed, 2026-10-29: a newly built ARM64 container checked out `b43c6897f6bdda2adcf60fc468fe8aaff31f52eb` independently, validated five ODCS bundles, ran 35 tests (34 passed, one expected skip), hydrated/reconciled 14 checkpoints and repeated all 14 with `IDENTICAL_REPLAY`. Every stored table's row multiset was unchanged. [Runtime evidence](docs/evidence/2026-10-29-core-runtime.md) includes source, contract and fixture hashes plus both reports. This completes the local reference scope; DC-007's broader locks and platform qualification remain open.
 
 **Done when:** a fresh container rebuilds the runtime database, performs identical replay and records new test/reconciliation evidence; source/fixture/contract hashes are attached. Only the agreed public fixture is exposed to builders in later benchmarks.
 
@@ -111,6 +121,8 @@ Accept ODCS JSON/YAML and explicit 3.1/3.2 versions. Preserve Opharma's five bun
 **P0 · M1 · OPEN · Owner: execution maintainer · Dependencies: DC-002**
 
 Create a small governed fixture and explicit grants/RLS. Test restricted roles against native and accelerated queries, joins, views and prepared statements; inspect plans. Add bounded concurrency/cancellation coverage and limited external-file access. Keep resource limits explicit.
+
+Progress, 2026-10-29: non-superuser forced-RLS smoke passed on PostgreSQL 17.7 and the pinned pg_duckdb v1.1.1 image, with `DuckDBScan` observed. The image's SQL extension version is 1.1.0, verified against upstream metadata. The full access/concurrency/cancellation matrix remains open; see [runtime evidence](docs/evidence/2026-10-29-core-runtime.md).
 
 **Done when:** permitted results agree, forbidden rows remain inaccessible, acceleration is actually exercised, and the selected build finishes the supported workload without unexplained hangs/crashes. Record unsupported query paths and use native PostgreSQL for them.
 
