@@ -1,0 +1,14 @@
+# Normalise text for Linux containers, macOS and WSL.
+* text=auto eol=lf
+
+# Preserve binary artefacts when deliberately committed.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.xlsx binary
+*.parquet binary

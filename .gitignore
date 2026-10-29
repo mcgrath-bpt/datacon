@@ -1,0 +1,42 @@
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Local credentials and environment settings; commit sanitised examples only
+.env
+.env.*
+!.env.example
+!.env.*.example
+/.secrets/
+/.aws/
+
+# Personal state, independent delivery checkouts and runtime output
+/.local/
+/.datacon/local/
+/workspaces/
+/projects/
+/runtime/
+/docker-volume/
+/artifacts/
+/reports/
+/logs/
+*.log
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.egg-info/
+
+# Optional application dependencies and build output; retain manifests/lockfiles
+node_modules/
+/build/
+/dist/
