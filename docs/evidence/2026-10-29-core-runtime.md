@@ -61,3 +61,9 @@ Each `reference` invocation uses a new checkout and fixture. To exercise the des
 Cached-image `down`/`up` readiness took 11.843 seconds; starting the fresh instance with cached layers took 11.425 seconds. These are single observations, not cold-build benchmarks. At 2026-10-29 17:43:20 UTC, an idle sample showed 2.68 MiB workspace and 25.66 MiB warehouse memory; peak memory and VM overhead were not measured. Both containers reported no OOM kill. The larger VM allocation means the 4-GiB/two-vCPU envelope remains unqualified.
 
 AMD64, actual Windows/WSL 3.0.3, graphical editor attachment, two independent delivery repositories in one instance, host-mounted checkouts, project database identities, full RLS/concurrency/cancellation coverage, immutable OS/wheel locks, clean release CI, native Snowflake, GX and OpenMetadata remain outstanding. DC-008's pinned local reference acceptance is complete; the broader foundation and release items remain open.
+
+## Restart policy follow-up — 2026-10-29
+
+At the user's request, both Compose services now declare `restart: unless-stopped`. Repository guidance carries this policy forward to future long-running services. The rendered Compose configuration reports `unless-stopped` for both `workspace` and `warehouse`.
+
+Applied `docker update --restart=unless-stopped datacon-default-workspace-1 datacon-default-warehouse-1` to the existing containers. Inspection confirmed both policies are `unless-stopped` and both containers remain running and healthy. `./datacon config`, `./datacon smoke` and `git diff --check` passed. This verifies configuration and its live application; no Docker daemon restart or simulated crash was performed.

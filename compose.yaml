@@ -2,6 +2,7 @@ name: datacon-${DATACON_INSTANCE:-default}
 
 services:
   workspace:
+    restart: unless-stopped
     build:
       context: .
       dockerfile: .devcontainer/Dockerfile
@@ -30,6 +31,7 @@ services:
       retries: 6
 
   warehouse:
+    restart: unless-stopped
     image: pgduckdb/pgduckdb:17-v1.1.1@sha256:302d06d005b6b26512ed68f3d752842641c3c36504d18e8a76e60e3354e00d22
     profiles: ["core"]
     mem_limit: 1536m

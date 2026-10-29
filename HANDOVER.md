@@ -12,6 +12,7 @@ Read [the runtime acceptance report](docs/evidence/2026-10-29-core-runtime.md) f
 
 - Datacon is the Tech Lead-owned platform/tooling/standards repository. Pipeline projects, starting with Opharma, retain independent Git histories/releases in a persistent development workspace.
 - Developers may experiment locally. Delivery dependencies require Tech Lead agreement and reproducible provision through Datacon. Fresh instances must not erase retained work.
+- Long-running Docker services use `restart: unless-stopped` (equivalent to `--restart=unless-stopped`). Preserve this for future platform services. Explicitly stopped containers stay stopped; `down` removes them until a later `up`. One-off jobs remain finite.
 - OpenMetadata is required in v1. The full inventory is workspace, PostgreSQL/pg_duckdb warehouse, OpenMetadata server, separate metadata PostgreSQL and Elasticsearch. Ingestion/validation are jobs. This increment implements only workspace and warehouse.
 - Prefer GX Core, ODCS contracts and versioned semantics. Early Snowflake S2/S4 and a Semantic View precede completion of catalogue integration. Do not silently introduce project-owned toolchains.
 - Aim for a measured 4-GiB/two-vCPU core. This target remains unqualified. Test macOS ARM64, Linux AMD64 and an actual Windows host with WSL package 3.0.3 and a WSL 2 distribution.

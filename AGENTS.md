@@ -10,4 +10,5 @@
 - Keep Datacon platform changes here and pipeline business logic in its independent delivery repository.
 - Delivery dependency changes require Tech Lead agreement and reproducible provision through this platform repository.
 - Preserve retained checkouts and uncommitted work. Reset operations must be explicit and scoped.
+- Use `restart: unless-stopped` for long-running Docker Compose services, equivalent to `docker run --restart=unless-stopped`. Apply this to future platform services too; one-off ingestion/validation jobs must still terminate when complete.
 - Never commit credentials or runtime databases. Record real validation evidence; generated files and static checks do not establish native runtime success.
