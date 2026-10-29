@@ -1,0 +1,87 @@
+{
+  "recorded_at": "2026-10-29T17:43:20.964Z",
+  "qualification": "ARM64 core acceptance; not a complete v1 release or resource qualification",
+  "docker": {
+    "server": "29.9.2",
+    "architecture": "aarch64",
+    "cpus": 4,
+    "memory_bytes": 14636896256
+  },
+  "images": [
+    {
+      "id": "sha256:9dbfb558c35f2859e8c1a759e10ef08c353df41a08dc976838f9fd742e306a0e",
+      "tags": [
+        "datacon-default-workspace:latest"
+      ],
+      "digests": [],
+      "architecture": "arm64",
+      "size_bytes": 271879534
+    },
+    {
+      "id": "sha256:c624136bd728eafd9b0baca834a86d56dac52d771f88e4db3ff7c30860b76638",
+      "tags": [
+        "pgduckdb/pgduckdb:17-v1.1.1"
+      ],
+      "digests": [
+        "pgduckdb/pgduckdb@sha256:302d06d005b6b26512ed68f3d752842641c3c36504d18e8a76e60e3354e00d22"
+      ],
+      "architecture": "arm64",
+      "size_bytes": 604018986
+    }
+  ],
+  "containers": [
+    {
+      "name": "/datacon-default-workspace-1",
+      "image": "sha256:9dbfb558c35f2859e8c1a759e10ef08c353df41a08dc976838f9fd742e306a0e",
+      "health": "healthy",
+      "oom_killed": false,
+      "memory_limit_bytes": 805306368,
+      "nano_cpus": 1000000000
+    },
+    {
+      "name": "/datacon-default-warehouse-1",
+      "image": "sha256:c624136bd728eafd9b0baca834a86d56dac52d771f88e4db3ff7c30860b76638",
+      "health": "healthy",
+      "oom_killed": false,
+      "memory_limit_bytes": 1610612736,
+      "nano_cpus": 1000000000
+    }
+  ],
+  "resource_sample": [
+    {
+      "BlockIO": "0B / 24.6kB",
+      "CPUPerc": "0.00%",
+      "Container": "datacon-default-workspace-1",
+      "ID": "1a5fb763d372",
+      "MemPerc": "0.35%",
+      "MemUsage": "2.68MiB / 768MiB",
+      "Name": "datacon-default-workspace-1",
+      "NetIO": "10.2kB / 6.38kB",
+      "PIDs": "2"
+    },
+    {
+      "BlockIO": "0B / 606kB",
+      "CPUPerc": "0.00%",
+      "Container": "datacon-default-warehouse-1",
+      "ID": "2a7391693eed",
+      "MemPerc": "1.67%",
+      "MemUsage": "25.66MiB / 1.5GiB",
+      "Name": "datacon-default-warehouse-1",
+      "NetIO": "7.96kB / 8.45kB",
+      "PIDs": "6"
+    }
+  ],
+  "workspace": {
+    "python": "3.15.2 (main, Oct 28 2026, 02:09:06) [GCC 12.2.0]",
+    "architecture": "aarch64",
+    "packages": {
+      "attrs": "25.4.0",
+      "jsonschema": "4.26.0",
+      "jsonschema-specifications": "2025.9.1",
+      "referencing": "0.37.0",
+      "rpds-py": "2026.9.1",
+      "typing-extensions": "4.15.0",
+      "pip": "26.2.2"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+# Initial Opharma-compatible candidate set. Build runs pip check.
+# DC-007 still requires wheel hashes, clean installs and host qualification.
+attrs==25.4.0
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+referencing==0.37.0
+# This release provides CPython 3.15 wheels for Linux ARM64 and AMD64.
+rpds-py==2026.9.1
+typing-extensions==4.15.0

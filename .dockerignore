@@ -1,0 +1,19 @@
+# Explicit build context excludes local secrets, Git history and project checkouts.
+**
+!.devcontainer/
+!.devcontainer/Dockerfile
+!requirements/
+!requirements/workspace.txt
+!scripts/
+!scripts/*.py
+!platform/
+!platform/*.json
+!docs/
+!docs/**
+!AGENTS.md
+!README.md
+!PLAN.md
+!BACKLOG.md
+!CONTRIBUTING.md
+!.python-version
+!HANDOVER.md

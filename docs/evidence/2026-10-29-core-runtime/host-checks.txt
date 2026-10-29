@@ -1,0 +1,56 @@
+test_ambient_compose_profiles_do_not_start_extra_services (test_datacon.CommandTests.test_ambient_compose_profiles_do_not_start_extra_services) ... ok
+test_command_failure_reaches_caller (test_datacon.CommandTests.test_command_failure_reaches_caller) ... ok
+test_denied_docker_access_does_not_advise_restarting_the_daemon (test_datacon.CommandTests.test_denied_docker_access_does_not_advise_restarting_the_daemon) ... ok
+test_docker_error_classification_does_not_leak_credentials (test_datacon.CommandTests.test_docker_error_classification_does_not_leak_credentials) ... ok
+test_doctor_does_not_expose_raw_docker_errors (test_datacon.CommandTests.test_doctor_does_not_expose_raw_docker_errors) ... ok
+test_down_never_requests_volume_deletion (test_datacon.CommandTests.test_down_never_requests_volume_deletion) ... ok
+test_exec_preserves_spaces_and_shell_characters_as_arguments (test_datacon.CommandTests.test_exec_preserves_spaces_and_shell_characters_as_arguments) ... ok
+test_missing_daemon_is_a_failure_not_a_green_doctor (test_datacon.CommandTests.test_missing_daemon_is_a_failure_not_a_green_doctor) ... ok
+test_old_host_python_is_rejected_even_when_launcher_is_bypassed (test_datacon.CommandTests.test_old_host_python_is_rejected_even_when_launcher_is_bypassed) ... ok
+test_fresh_refuses_existing_state_and_keeps_it (test_datacon.InstanceTests.test_fresh_refuses_existing_state_and_keeps_it) ... ok
+test_initialise_entrypoint_refuses_existing_docker_data_before_writing (test_datacon.InstanceTests.test_initialise_entrypoint_refuses_existing_docker_data_before_writing) ... ok
+test_instances_have_separate_credentials_and_namespaces (test_datacon.InstanceTests.test_instances_have_separate_credentials_and_namespaces) ... ok
+test_invalid_names_cannot_escape_instance_directory (test_datacon.InstanceTests.test_invalid_names_cannot_escape_instance_directory) ... ok
+test_missing_credentials_are_not_rotated_on_resume (test_datacon.InstanceTests.test_missing_credentials_are_not_rotated_on_resume) ... ok
+test_resume_preserves_credentials_and_dirty_work (test_datacon.InstanceTests.test_resume_preserves_credentials_and_dirty_work) ... ok
+test_retained_docker_volume_prevents_fresh_reuse (test_datacon.InstanceTests.test_retained_docker_volume_prevents_fresh_reuse) ... ok
+test_unlabelled_volume_prevents_reusing_lost_instance_state (test_datacon.InstanceTests.test_unlabelled_volume_prevents_reusing_lost_instance_state) ... ok
+test_explicit_override_with_spaces_is_preserved (test_launcher.LauncherTests.test_explicit_override_with_spaces_is_preserved) ... ok
+test_invalid_override_fails_without_silent_fallback (test_launcher.LauncherTests.test_invalid_override_fails_without_silent_fallback) ... ok
+test_prefers_newest_supported_named_interpreter (test_launcher.LauncherTests.test_prefers_newest_supported_named_interpreter) ... ok
+test_refuses_to_fall_back_below_the_minimum (test_launcher.LauncherTests.test_refuses_to_fall_back_below_the_minimum) ... ok
+test_skips_unsupported_interpreters (test_launcher.LauncherTests.test_skips_unsupported_interpreters) ... ok
+test_snapshot_ignores_order_but_detects_duplicates_and_changed_values (test_reference.ReplayEvidenceTests.test_snapshot_ignores_order_but_detects_duplicates_and_changed_values) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.772s
+
+OK
+test_ambient_compose_profiles_do_not_start_extra_services (test_datacon.CommandTests.test_ambient_compose_profiles_do_not_start_extra_services) ... ok
+test_command_failure_reaches_caller (test_datacon.CommandTests.test_command_failure_reaches_caller) ... ok
+test_denied_docker_access_does_not_advise_restarting_the_daemon (test_datacon.CommandTests.test_denied_docker_access_does_not_advise_restarting_the_daemon) ... ok
+test_docker_error_classification_does_not_leak_credentials (test_datacon.CommandTests.test_docker_error_classification_does_not_leak_credentials) ... ok
+test_doctor_does_not_expose_raw_docker_errors (test_datacon.CommandTests.test_doctor_does_not_expose_raw_docker_errors) ... ok
+test_down_never_requests_volume_deletion (test_datacon.CommandTests.test_down_never_requests_volume_deletion) ... ok
+test_exec_preserves_spaces_and_shell_characters_as_arguments (test_datacon.CommandTests.test_exec_preserves_spaces_and_shell_characters_as_arguments) ... ok
+test_missing_daemon_is_a_failure_not_a_green_doctor (test_datacon.CommandTests.test_missing_daemon_is_a_failure_not_a_green_doctor) ... ok
+test_old_host_python_is_rejected_even_when_launcher_is_bypassed (test_datacon.CommandTests.test_old_host_python_is_rejected_even_when_launcher_is_bypassed) ... ok
+test_fresh_refuses_existing_state_and_keeps_it (test_datacon.InstanceTests.test_fresh_refuses_existing_state_and_keeps_it) ... ok
+test_initialise_entrypoint_refuses_existing_docker_data_before_writing (test_datacon.InstanceTests.test_initialise_entrypoint_refuses_existing_docker_data_before_writing) ... ok
+test_instances_have_separate_credentials_and_namespaces (test_datacon.InstanceTests.test_instances_have_separate_credentials_and_namespaces) ... ok
+test_invalid_names_cannot_escape_instance_directory (test_datacon.InstanceTests.test_invalid_names_cannot_escape_instance_directory) ... ok
+test_missing_credentials_are_not_rotated_on_resume (test_datacon.InstanceTests.test_missing_credentials_are_not_rotated_on_resume) ... ok
+test_resume_preserves_credentials_and_dirty_work (test_datacon.InstanceTests.test_resume_preserves_credentials_and_dirty_work) ... ok
+test_retained_docker_volume_prevents_fresh_reuse (test_datacon.InstanceTests.test_retained_docker_volume_prevents_fresh_reuse) ... ok
+test_unlabelled_volume_prevents_reusing_lost_instance_state (test_datacon.InstanceTests.test_unlabelled_volume_prevents_reusing_lost_instance_state) ... ok
+test_explicit_override_with_spaces_is_preserved (test_launcher.LauncherTests.test_explicit_override_with_spaces_is_preserved) ... ok
+test_invalid_override_fails_without_silent_fallback (test_launcher.LauncherTests.test_invalid_override_fails_without_silent_fallback) ... ok
+test_prefers_newest_supported_named_interpreter (test_launcher.LauncherTests.test_prefers_newest_supported_named_interpreter) ... ok
+test_refuses_to_fall_back_below_the_minimum (test_launcher.LauncherTests.test_refuses_to_fall_back_below_the_minimum) ... ok
+test_skips_unsupported_interpreters (test_launcher.LauncherTests.test_skips_unsupported_interpreters) ... ok
+test_snapshot_ignores_order_but_detects_duplicates_and_changed_values (test_reference.ReplayEvidenceTests.test_snapshot_ignores_order_but_detects_duplicates_and_changed_values) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.736s
+
+OK

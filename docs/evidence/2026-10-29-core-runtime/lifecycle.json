@@ -1,0 +1,183 @@
+{
+  "recorded_at": "2026-10-29T17:39:52+00:00",
+  "retained_instance": "default",
+  "fresh_instance": "acceptance-20261029-core",
+  "steps": [
+    {
+      "command": [
+        "./datacon",
+        "--instance",
+        "default",
+        "exec",
+        "--",
+        "python",
+        "-"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.325
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "ps",
+        "-q",
+        "workspace"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.055
+    },
+    {
+      "command": [
+        "./datacon",
+        "down"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.318
+    },
+    {
+      "command": [
+        "./datacon",
+        "up"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 11.843
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "ps",
+        "-q",
+        "workspace"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.086
+    },
+    {
+      "command": [
+        "./datacon",
+        "--instance",
+        "default",
+        "exec",
+        "--",
+        "python",
+        "-"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.249
+    },
+    {
+      "command": [
+        "./datacon",
+        "smoke"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.319
+    },
+    {
+      "command": [
+        "./datacon",
+        "fresh",
+        "acceptance-20261029-core"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 11.425
+    },
+    {
+      "command": [
+        "./datacon",
+        "--instance",
+        "acceptance-20261029-core",
+        "exec",
+        "--",
+        "python",
+        "-"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.228
+    },
+    {
+      "command": [
+        "./datacon",
+        "--instance",
+        "acceptance-20261029-core",
+        "smoke"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.34
+    },
+    {
+      "command": [
+        "./datacon",
+        "fresh",
+        "acceptance-20261029-core"
+      ],
+      "returncode": 1,
+      "elapsed_seconds": 0.107
+    },
+    {
+      "command": [
+        "./datacon",
+        "--instance",
+        "default",
+        "exec",
+        "--",
+        "python",
+        "-"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.194
+    },
+    {
+      "command": [
+        "./datacon",
+        "--instance",
+        "acceptance-20261029-core",
+        "down"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.316
+    },
+    {
+      "command": [
+        "./datacon",
+        "--instance",
+        "default",
+        "exec",
+        "--",
+        "python",
+        "-"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.181
+    }
+  ],
+  "container_recreated": true,
+  "after_recreation": {
+    "retained_file_sha256": "b897e681727fed10ba1c92023da5c80854f7153129aec60e2b254b352c4c9c75",
+    "uncommitted_file_preserved": true,
+    "home_preserved": true,
+    "database_preserved": true,
+    "project_revision_preserved": true
+  },
+  "credentials_preserved": true,
+  "fresh_reuse_refused": true,
+  "fresh_isolated": true,
+  "after_fresh": {
+    "retained_file_sha256": "b897e681727fed10ba1c92023da5c80854f7153129aec60e2b254b352c4c9c75",
+    "uncommitted_file_preserved": true,
+    "home_preserved": true,
+    "database_preserved": true,
+    "project_revision_preserved": true
+  },
+  "after_fresh_shutdown": {
+    "retained_file_sha256": "b897e681727fed10ba1c92023da5c80854f7153129aec60e2b254b352c4c9c75",
+    "uncommitted_file_preserved": true,
+    "home_preserved": true,
+    "database_preserved": true,
+    "project_revision_preserved": true
+  },
+  "passed": true,
+  "finished_at": "2026-10-29T17:40:18+00:00"
+}

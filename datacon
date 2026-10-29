@@ -1,0 +1,22 @@
+#!/bin/sh
+set -eu
+root=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+supported_python() {
+    "$1" -c 'import sys; sys.exit(0 if sys.version_info >= (3, 12) and sys.version_info.releaselevel == "final" else 1)' >/dev/null 2>&1
+}
+
+if [ -n "${DATACON_PYTHON:-}" ]; then
+    if supported_python "$DATACON_PYTHON"; then
+        exec "$DATACON_PYTHON" "$root/scripts/datacon.py" "$@"
+    fi
+    printf '%s\n' 'datacon: DATACON_PYTHON must name an installed stable Python 3.12 or later.' >&2
+    exit 1
+fi
+
+for candidate in python3.15 python3.14 python3.13 python3.12 python3; do
+    if command -v "$candidate" >/dev/null 2>&1 && supported_python "$candidate"; then
+        exec "$candidate" "$root/scripts/datacon.py" "$@"
+    fi
+done
+printf '%s\n' 'datacon: install stable Python 3.12 or later, or set DATACON_PYTHON to its executable path.' >&2
+exit 1
