@@ -1,0 +1,10 @@
+git version 2.39.5
+No broken requirements found.
+{
+  "passed": true,
+  "uid": 1001,
+  "extension_version": "1.1.0",
+  "rls": "forced, both execution paths",
+  "duckdb_plan_observed": true,
+  "scope": "basic smoke only; full DC-010 qualification remains"
+}

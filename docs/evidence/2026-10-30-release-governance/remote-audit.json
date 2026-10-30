@@ -1,0 +1,19 @@
+{
+  "repository": "mcgrath-bpt/datacon",
+  "rulesets": [
+    {
+      "name": "Datacon required checks",
+      "matches": true,
+      "id": 26234271,
+      "url": "https://github.com/mcgrath-bpt/datacon/rules/26234271"
+    },
+    {
+      "name": "Datacon Tech Lead review",
+      "matches": false,
+      "id": null,
+      "url": null
+    }
+  ],
+  "immutable_releases": true,
+  "review_enforced": false
+}

@@ -40,6 +40,8 @@ Progress, 2026-10-29: the user created initial commit `601cee3` on `main`, conta
 
 Progress, 2026-10-30: [release policy and tooling](docs/RELEASES.md) prepare deterministic content-bound manifests and verify independent delivery pins, immutable publication, signed asset attestations and tag commits. The capability catalogue records qualified targets and exclusions; v1 preparation is rejected while scope remains a core preview. Required-check rules and a separate owner-review configuration are reproducible. The user deferred creating the second reviewer account. No approved release has been published; this item remains open.
 
+Validation, 2026-10-30: required PR/CI checks and future-release immutability are active and read-back verified. All 59 host tests passed under both supported host interpreters tested; native ARM64/AMD64 core and optional-toolchain regressions passed, including full AMD64 delivery checks. Fresh independent checkout/pin and adverse adoption tests passed. [Evidence](docs/evidence/2026-10-30-release-governance.md) records exact commits, artefact hashes and the deferred review/publication gates.
+
 **Done when:** a fresh checkout identifies its approved platform version; release inputs are pinned; a delivery adopts releases under the Tech Lead's compatibility/upgrade policy without sharing platform source/history; initial history and remote location are recorded.
 
 ### DC-002 — Build the minimal Dev Container and core runtime
