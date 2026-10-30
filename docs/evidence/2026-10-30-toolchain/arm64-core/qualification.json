@@ -1,293 +1,293 @@
 {
-  "instance": "qual-20261030074241-4cbb320c",
-  "started_at": "2026-10-30T07:42:41+00:00",
+  "instance": "qual-20261030080108-1c03da2f",
+  "started_at": "2026-10-30T08:01:08+00:00",
   "passed": true,
   "steps": [
     {
       "name": "revision",
-      "started_at": "2026-10-30T07:42:41+00:00",
-      "finished_at": "2026-10-30T07:42:41+00:00",
+      "started_at": "2026-10-30T08:01:08+00:00",
+      "finished_at": "2026-10-30T08:01:08+00:00",
       "exit_code": 0
     },
     {
       "name": "working-tree",
-      "started_at": "2026-10-30T07:42:41+00:00",
-      "finished_at": "2026-10-30T07:42:41+00:00",
+      "started_at": "2026-10-30T08:01:08+00:00",
+      "finished_at": "2026-10-30T08:01:08+00:00",
       "exit_code": 0
     },
     {
       "name": "doctor",
-      "started_at": "2026-10-30T07:42:41+00:00",
-      "finished_at": "2026-10-30T07:42:42+00:00",
+      "started_at": "2026-10-30T08:01:08+00:00",
+      "finished_at": "2026-10-30T08:01:09+00:00",
       "exit_code": 0
     },
     {
       "name": "host-tests",
-      "started_at": "2026-10-30T07:42:42+00:00",
-      "finished_at": "2026-10-30T07:42:43+00:00",
+      "started_at": "2026-10-30T08:01:09+00:00",
+      "finished_at": "2026-10-30T08:01:11+00:00",
       "exit_code": 0
     },
     {
       "name": "compose-validation",
-      "started_at": "2026-10-30T07:42:43+00:00",
-      "finished_at": "2026-10-30T07:42:43+00:00",
+      "started_at": "2026-10-30T08:01:11+00:00",
+      "finished_at": "2026-10-30T08:01:11+00:00",
       "exit_code": 0
     },
     {
       "name": "documentation",
-      "started_at": "2026-10-30T07:42:43+00:00",
-      "finished_at": "2026-10-30T07:42:43+00:00",
+      "started_at": "2026-10-30T08:01:11+00:00",
+      "finished_at": "2026-10-30T08:01:11+00:00",
       "exit_code": 0
     },
     {
       "name": "whitespace",
-      "started_at": "2026-10-30T07:42:43+00:00",
-      "finished_at": "2026-10-30T07:42:43+00:00",
+      "started_at": "2026-10-30T08:01:11+00:00",
+      "finished_at": "2026-10-30T08:01:11+00:00",
       "exit_code": 0
     },
     {
       "name": "initialise",
-      "started_at": "2026-10-30T07:42:43+00:00",
-      "finished_at": "2026-10-30T07:42:44+00:00",
+      "started_at": "2026-10-30T08:01:11+00:00",
+      "finished_at": "2026-10-30T08:01:11+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1",
-      "started_at": "2026-10-30T07:42:44+00:00",
-      "finished_at": "2026-10-30T07:42:53+00:00",
+      "started_at": "2026-10-30T08:01:11+00:00",
+      "finished_at": "2026-10-30T08:01:20+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-start",
-      "started_at": "2026-10-30T07:42:53+00:00",
-      "finished_at": "2026-10-30T07:43:04+00:00",
+      "started_at": "2026-10-30T08:01:20+00:00",
+      "finished_at": "2026-10-30T08:01:31+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-ready",
-      "started_at": "2026-10-30T07:43:04+00:00",
-      "finished_at": "2026-10-30T07:43:05+00:00",
+      "started_at": "2026-10-30T08:01:31+00:00",
+      "finished_at": "2026-10-30T08:01:32+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-os-check",
-      "started_at": "2026-10-30T07:43:05+00:00",
-      "finished_at": "2026-10-30T07:43:05+00:00",
+      "started_at": "2026-10-30T08:01:32+00:00",
+      "finished_at": "2026-10-30T08:01:33+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-workspace-os",
-      "started_at": "2026-10-30T07:43:05+00:00",
-      "finished_at": "2026-10-30T07:43:05+00:00",
+      "started_at": "2026-10-30T08:01:33+00:00",
+      "finished_at": "2026-10-30T08:01:33+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-python-packages",
-      "started_at": "2026-10-30T07:43:05+00:00",
-      "finished_at": "2026-10-30T07:43:05+00:00",
+      "started_at": "2026-10-30T08:01:33+00:00",
+      "finished_at": "2026-10-30T08:01:33+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-versions",
-      "started_at": "2026-10-30T07:43:05+00:00",
-      "finished_at": "2026-10-30T07:43:06+00:00",
+      "started_at": "2026-10-30T08:01:33+00:00",
+      "finished_at": "2026-10-30T08:01:34+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-warehouse-os",
-      "started_at": "2026-10-30T07:43:06+00:00",
-      "finished_at": "2026-10-30T07:43:06+00:00",
+      "started_at": "2026-10-30T08:01:34+00:00",
+      "finished_at": "2026-10-30T08:01:34+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-database-version",
-      "started_at": "2026-10-30T07:43:06+00:00",
-      "finished_at": "2026-10-30T07:43:06+00:00",
+      "started_at": "2026-10-30T08:01:34+00:00",
+      "finished_at": "2026-10-30T08:01:34+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-workspace-id",
-      "started_at": "2026-10-30T07:43:06+00:00",
-      "finished_at": "2026-10-30T07:43:06+00:00",
+      "started_at": "2026-10-30T08:01:34+00:00",
+      "finished_at": "2026-10-30T08:01:34+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-workspace-identity",
-      "started_at": "2026-10-30T07:43:06+00:00",
-      "finished_at": "2026-10-30T07:43:06+00:00",
+      "started_at": "2026-10-30T08:01:34+00:00",
+      "finished_at": "2026-10-30T08:01:34+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-workspace-image",
-      "started_at": "2026-10-30T07:43:06+00:00",
-      "finished_at": "2026-10-30T07:43:06+00:00",
+      "started_at": "2026-10-30T08:01:34+00:00",
+      "finished_at": "2026-10-30T08:01:34+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-warehouse-id",
-      "started_at": "2026-10-30T07:43:06+00:00",
-      "finished_at": "2026-10-30T07:43:06+00:00",
+      "started_at": "2026-10-30T08:01:34+00:00",
+      "finished_at": "2026-10-30T08:01:34+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-warehouse-identity",
-      "started_at": "2026-10-30T07:43:06+00:00",
-      "finished_at": "2026-10-30T07:43:06+00:00",
+      "started_at": "2026-10-30T08:01:34+00:00",
+      "finished_at": "2026-10-30T08:01:34+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-warehouse-image",
-      "started_at": "2026-10-30T07:43:06+00:00",
-      "finished_at": "2026-10-30T07:43:06+00:00",
+      "started_at": "2026-10-30T08:01:34+00:00",
+      "finished_at": "2026-10-30T08:01:34+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-smoke",
-      "started_at": "2026-10-30T07:43:06+00:00",
-      "finished_at": "2026-10-30T07:43:06+00:00",
+      "started_at": "2026-10-30T08:01:34+00:00",
+      "finished_at": "2026-10-30T08:01:35+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-reference",
-      "started_at": "2026-10-30T07:43:06+00:00",
-      "finished_at": "2026-10-30T07:43:30+00:00",
+      "started_at": "2026-10-30T08:01:35+00:00",
+      "finished_at": "2026-10-30T08:02:02+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-reference-reports",
-      "started_at": "2026-10-30T07:43:30+00:00",
-      "finished_at": "2026-10-30T07:43:31+00:00",
+      "started_at": "2026-10-30T08:02:02+00:00",
+      "finished_at": "2026-10-30T08:02:02+00:00",
       "exit_code": 0
     },
     {
       "name": "reject-os-inventory",
-      "started_at": "2026-10-30T07:43:31+00:00",
-      "finished_at": "2026-10-30T07:43:31+00:00",
+      "started_at": "2026-10-30T08:02:02+00:00",
+      "finished_at": "2026-10-30T08:02:03+00:00",
       "exit_code": 1
     },
     {
       "name": "reject-wheel-hash",
-      "started_at": "2026-10-30T07:43:31+00:00",
-      "finished_at": "2026-10-30T07:43:32+00:00",
+      "started_at": "2026-10-30T08:02:03+00:00",
+      "finished_at": "2026-10-30T08:02:04+00:00",
       "exit_code": 1
     },
     {
       "name": "build-2",
-      "started_at": "2026-10-30T07:43:32+00:00",
-      "finished_at": "2026-10-30T07:43:39+00:00",
+      "started_at": "2026-10-30T08:02:04+00:00",
+      "finished_at": "2026-10-30T08:02:13+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-start",
-      "started_at": "2026-10-30T07:43:39+00:00",
-      "finished_at": "2026-10-30T07:43:50+00:00",
+      "started_at": "2026-10-30T08:02:13+00:00",
+      "finished_at": "2026-10-30T08:02:25+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-ready",
-      "started_at": "2026-10-30T07:43:50+00:00",
-      "finished_at": "2026-10-30T07:43:51+00:00",
+      "started_at": "2026-10-30T08:02:25+00:00",
+      "finished_at": "2026-10-30T08:02:27+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-os-check",
-      "started_at": "2026-10-30T07:43:51+00:00",
-      "finished_at": "2026-10-30T07:43:52+00:00",
+      "started_at": "2026-10-30T08:02:27+00:00",
+      "finished_at": "2026-10-30T08:02:27+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-workspace-os",
-      "started_at": "2026-10-30T07:43:52+00:00",
-      "finished_at": "2026-10-30T07:43:52+00:00",
+      "started_at": "2026-10-30T08:02:27+00:00",
+      "finished_at": "2026-10-30T08:02:27+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-python-packages",
-      "started_at": "2026-10-30T07:43:52+00:00",
-      "finished_at": "2026-10-30T07:43:52+00:00",
+      "started_at": "2026-10-30T08:02:27+00:00",
+      "finished_at": "2026-10-30T08:02:28+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-versions",
-      "started_at": "2026-10-30T07:43:52+00:00",
-      "finished_at": "2026-10-30T07:43:52+00:00",
+      "started_at": "2026-10-30T08:02:28+00:00",
+      "finished_at": "2026-10-30T08:02:28+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-warehouse-os",
-      "started_at": "2026-10-30T07:43:52+00:00",
-      "finished_at": "2026-10-30T07:43:52+00:00",
+      "started_at": "2026-10-30T08:02:28+00:00",
+      "finished_at": "2026-10-30T08:02:28+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-database-version",
-      "started_at": "2026-10-30T07:43:52+00:00",
-      "finished_at": "2026-10-30T07:43:52+00:00",
+      "started_at": "2026-10-30T08:02:28+00:00",
+      "finished_at": "2026-10-30T08:02:28+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-workspace-id",
-      "started_at": "2026-10-30T07:43:52+00:00",
-      "finished_at": "2026-10-30T07:43:52+00:00",
+      "started_at": "2026-10-30T08:02:28+00:00",
+      "finished_at": "2026-10-30T08:02:28+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-workspace-identity",
-      "started_at": "2026-10-30T07:43:52+00:00",
-      "finished_at": "2026-10-30T07:43:52+00:00",
+      "started_at": "2026-10-30T08:02:28+00:00",
+      "finished_at": "2026-10-30T08:02:28+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-workspace-image",
-      "started_at": "2026-10-30T07:43:52+00:00",
-      "finished_at": "2026-10-30T07:43:52+00:00",
+      "started_at": "2026-10-30T08:02:28+00:00",
+      "finished_at": "2026-10-30T08:02:28+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-warehouse-id",
-      "started_at": "2026-10-30T07:43:52+00:00",
-      "finished_at": "2026-10-30T07:43:52+00:00",
+      "started_at": "2026-10-30T08:02:28+00:00",
+      "finished_at": "2026-10-30T08:02:28+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-warehouse-identity",
-      "started_at": "2026-10-30T07:43:52+00:00",
-      "finished_at": "2026-10-30T07:43:52+00:00",
+      "started_at": "2026-10-30T08:02:28+00:00",
+      "finished_at": "2026-10-30T08:02:28+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-warehouse-image",
-      "started_at": "2026-10-30T07:43:52+00:00",
-      "finished_at": "2026-10-30T07:43:52+00:00",
+      "started_at": "2026-10-30T08:02:28+00:00",
+      "finished_at": "2026-10-30T08:02:28+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-smoke",
-      "started_at": "2026-10-30T07:43:52+00:00",
-      "finished_at": "2026-10-30T07:43:53+00:00",
+      "started_at": "2026-10-30T08:02:28+00:00",
+      "finished_at": "2026-10-30T08:02:29+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-reference",
-      "started_at": "2026-10-30T07:43:53+00:00",
-      "finished_at": "2026-10-30T07:44:17+00:00",
+      "started_at": "2026-10-30T08:02:29+00:00",
+      "finished_at": "2026-10-30T08:02:51+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-reference-reports",
-      "started_at": "2026-10-30T07:44:17+00:00",
-      "finished_at": "2026-10-30T07:44:17+00:00",
+      "started_at": "2026-10-30T08:02:51+00:00",
+      "finished_at": "2026-10-30T08:02:52+00:00",
       "exit_code": 0
     },
     {
       "name": "stop-qualification",
-      "started_at": "2026-10-30T07:44:17+00:00",
-      "finished_at": "2026-10-30T07:44:17+00:00",
+      "started_at": "2026-10-30T08:02:52+00:00",
+      "finished_at": "2026-10-30T08:02:52+00:00",
       "exit_code": 0
     }
   ],
-  "platform_commit": "dbc609095ac25b260c8b7a3cb7833bd4926b4809",
-  "working_tree": " M .devcontainer/Dockerfile\n M .dockerignore\n M .github/workflows/core-qualification.yml\n M compose.yaml\n M scripts/datacon.py\n M scripts/projects.py\n M scripts/qualify.py\n?? containers/toolchain/\n?? platform/schemas.json\n?? platform/schemas/\n?? requirements/toolchain-wheels.json\n?? requirements/toolchain.in\n?? requirements/toolchain.txt\n?? scripts/baseline.py\n?? scripts/contracts.py\n?? scripts/diagnostics.py\n?? scripts/lock_toolchain.py\n?? scripts/qualify_toolchain.py\n?? scripts/toolchain_smoke.py\n?? tests/test_toolchain.py\n",
+  "platform_commit": "b5b1bef7d1c1b816f9cc44f44a0f1b355755f958",
+  "working_tree": "",
   "input_sha256": {
     ".devcontainer/Dockerfile": "96a70b60cf1cb2bf89db18e1735cb567a76173d414a438f107e145cef07d6980",
     "compose.yaml": "0e6aba37e0e42abd8b6e03a8fd863c484378c2b2c1198fa2d4e189af17f89db5",
@@ -303,13 +303,13 @@
     "scripts/baseline.py": "7e69b0b07bea53b5308ec5a67d31d1f866cd44c12aca53c73d04df3bf55120ea",
     "scripts/check_docs.py": "4c10903193422d52ddb5bc2f9226f023a0e5eef8a041f0afc9ffdcf9c6604c19",
     "scripts/contracts.py": "7d5b10264248d2a731bb7e83d13d1dbd57f5501823ecf4965847520441d62d4f",
-    "scripts/datacon.py": "269fbf9c2fc311e07d65d8db2ffc2ed238003643f3475143d228d6a089ecb690",
+    "scripts/datacon.py": "61a7a23023d10fba1683ffdcdbea69f0d5fd97ad233654a177e06aaf6e003553",
     "scripts/diagnostics.py": "0bb022464c5f92b0367a1319ce6b51179278cedc52d990ecb69b0b57cb12952a",
     "scripts/lock_toolchain.py": "f9a40367a56e6b26c7d7d88cd75f3744b806ab285362321ccd20edca1c816657",
     "scripts/project_exec.py": "f0f0b929bd4b8b9cdb437d6eb2457d11371692d3fc573729464c6763d5be2d04",
     "scripts/projects.py": "92f6d80119a9dada6afd3a7546708fd34e1def6b76295b2eb5e28f8ca88ae119",
     "scripts/qualify.py": "6e73b0ea32e4adc6377848aefee1f04919b0dd196eae8e4c09ed1fa1d275c298",
-    "scripts/qualify_projects.py": "78ca1e748156b2e589fb58a8cfe265c6ee48998a6b15beb2b01a01f046af96fd",
+    "scripts/qualify_projects.py": "0d0dc3a337bbe513947c4122c7b12af54c39942b00bc347a59ec2d179b0826ab",
     "scripts/qualify_toolchain.py": "a39aa9e192257eb55d29327e1390979b2916f6ca92dc24d0c9a407562dc4ce42",
     "scripts/reference.py": "0e0d259e674481c4e9ec8eb2ec32fc92034ba08ed70886af1904525505eeb701",
     "scripts/smoke.py": "8d657210463d94ee65ecdb91305ce4f7e5086e7770c7cfe3b397bfb3225746d3",
@@ -323,5 +323,5 @@
   "negative_checks_passed": true,
   "repeated_inventories_identical": true,
   "containers_removed_volumes_retained": true,
-  "finished_at": "2026-10-30T07:44:17+00:00"
+  "finished_at": "2026-10-30T08:02:52+00:00"
 }

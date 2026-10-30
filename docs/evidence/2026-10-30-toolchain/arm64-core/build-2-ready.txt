@@ -1,11 +1,12 @@
 {
-  "instance": "qual-20261030074241-4cbb320c",
+  "instance": "qual-20261030080108-1c03da2f",
   "host": "Darwin",
   "architecture": "arm64",
   "host_python": "3.14.8",
   "host_python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
   "workspace_python_target": "3.15.2",
-  "platform_commit": "dbc609095ac25b260c8b7a3cb7833bd4926b4809",
+  "platform_commit": "b5b1bef7d1c1b816f9cc44f44a0f1b355755f958",
+  "git_client": "git version 2.56.0",
   "docker_client": "Docker version 29.9.2, build a82e528",
   "compose": "5.6.1",
   "daemon_available": true,
@@ -16,7 +17,7 @@
   "cpus": 4,
   "memory_bytes": 14636896256,
   "baseline": {
-    "runtime_inputs_sha256": "3fcbe27239e78e4573b31e126db687218cf518014fb1b69c0faa3dc787123820",
+    "runtime_inputs_sha256": "4df59c2375359f8189cdda533725cbb0115b68e00b15e56393ab8656442920cb",
     "inputs": {
       ".devcontainer/Dockerfile": "96a70b60cf1cb2bf89db18e1735cb567a76173d414a438f107e145cef07d6980",
       ".python-version": "673e2ba07f95bfcfe0a543258b8e267954e403d1f466481c546f467f86b31d46",
@@ -36,13 +37,13 @@
       "scripts/baseline.py": "7e69b0b07bea53b5308ec5a67d31d1f866cd44c12aca53c73d04df3bf55120ea",
       "scripts/check_docs.py": "4c10903193422d52ddb5bc2f9226f023a0e5eef8a041f0afc9ffdcf9c6604c19",
       "scripts/contracts.py": "7d5b10264248d2a731bb7e83d13d1dbd57f5501823ecf4965847520441d62d4f",
-      "scripts/datacon.py": "269fbf9c2fc311e07d65d8db2ffc2ed238003643f3475143d228d6a089ecb690",
+      "scripts/datacon.py": "61a7a23023d10fba1683ffdcdbea69f0d5fd97ad233654a177e06aaf6e003553",
       "scripts/diagnostics.py": "0bb022464c5f92b0367a1319ce6b51179278cedc52d990ecb69b0b57cb12952a",
       "scripts/lock_toolchain.py": "f9a40367a56e6b26c7d7d88cd75f3744b806ab285362321ccd20edca1c816657",
       "scripts/project_exec.py": "f0f0b929bd4b8b9cdb437d6eb2457d11371692d3fc573729464c6763d5be2d04",
       "scripts/projects.py": "92f6d80119a9dada6afd3a7546708fd34e1def6b76295b2eb5e28f8ca88ae119",
       "scripts/qualify.py": "6e73b0ea32e4adc6377848aefee1f04919b0dd196eae8e4c09ed1fa1d275c298",
-      "scripts/qualify_projects.py": "78ca1e748156b2e589fb58a8cfe265c6ee48998a6b15beb2b01a01f046af96fd",
+      "scripts/qualify_projects.py": "0d0dc3a337bbe513947c4122c7b12af54c39942b00bc347a59ec2d179b0826ab",
       "scripts/qualify_toolchain.py": "a39aa9e192257eb55d29327e1390979b2916f6ca92dc24d0c9a407562dc4ce42",
       "scripts/reference.py": "0e0d259e674481c4e9ec8eb2ec32fc92034ba08ed70886af1904525505eeb701",
       "scripts/smoke.py": "8d657210463d94ee65ecdb91305ce4f7e5086e7770c7cfe3b397bfb3225746d3",
@@ -51,27 +52,27 @@
     },
     "release": null,
     "release_status": "development; no approved immutable release published",
-    "working_tree_dirty": true
+    "working_tree_dirty": false
   },
   "paths": {
     "repository": "/Users/mmcgrath/Documents/dev/00-base/datacon",
-    "state": "/Users/mmcgrath/Documents/dev/00-base/datacon/.local/instances/qual-20261030074241-4cbb320c",
+    "state": "/Users/mmcgrath/Documents/dev/00-base/datacon/.local/instances/qual-20261030080108-1c03da2f",
     "state_exists": true,
     "state_parent_writable": true,
-    "host_free_bytes": 15114092544,
+    "host_free_bytes": 14282567680,
     "credentials_complete": true
   },
   "services": {
     "workspace": {
       "status": "running",
       "health": "healthy",
-      "image": "sha256:c633e0188d5db824f5fa581ba15dcc0cecb13d565201d80db6940ed6972cdbfb",
+      "image": "sha256:bf03897cc7578d0ffcaf762627fb2e44b6f312a57806dd7c034eedc7e2eb878b",
       "memory_limit_bytes": 805306368,
       "cpu_limit_nanocpus": 1000000000,
       "restart": "unless-stopped",
       "architecture": "arm64",
       "digests": [],
-      "runtime_inputs_sha256": "3fcbe27239e78e4573b31e126db687218cf518014fb1b69c0faa3dc787123820",
+      "runtime_inputs_sha256": "4df59c2375359f8189cdda533725cbb0115b68e00b15e56393ab8656442920cb",
       "matches_checkout": true
     },
     "warehouse": {
@@ -91,6 +92,7 @@
   "ready": true,
   "baseline_matches": true,
   "native_architecture_match": true,
+  "images_native": true,
   "resource_target": {
     "cpus": 2,
     "memory_bytes": 4294967296,

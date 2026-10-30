@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "timestamp": "2026-10-30T08:03:45+00:00",
+  "python": "3.14.8",
+  "architecture": "x86_64",
+  "uid": 1001,
+  "packages": {
+    "great-expectations": "1.24.1",
+    "SQLAlchemy": "2.1.6",
+    "psycopg2-binary": "2.9.13",
+    "snowflake-connector-python": "5.1.0",
+    "snowflake-sqlalchemy": "2.1.0",
+    "datacontract-cli": "1.2.8",
+    "PyYAML": "6.0.3"
+  },
+  "offline": {
+    "3.1.0-json": true,
+    "3.1.0-yaml": true,
+    "3.2.0-json": true,
+    "3.2.0-yaml": true,
+    "gx_export_expectations": 5,
+    "tampered_schema_rejected": true,
+    "unsupported_version_rejected": true,
+    "snowflake_connector_and_dialect": "loaded; SQL compiled; native execution NOT_EXECUTED"
+  }
+}

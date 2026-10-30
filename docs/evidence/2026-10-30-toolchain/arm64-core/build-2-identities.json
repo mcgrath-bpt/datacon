@@ -1,9 +1,9 @@
 {
   "workspace": {
-    "image": "sha256:c633e0188d5db824f5fa581ba15dcc0cecb13d565201d80db6940ed6972cdbfb",
+    "image": "sha256:bf03897cc7578d0ffcaf762627fb2e44b6f312a57806dd7c034eedc7e2eb878b",
     "restart": "unless-stopped",
     "status": "running",
-    "id": "sha256:c633e0188d5db824f5fa581ba15dcc0cecb13d565201d80db6940ed6972cdbfb",
+    "id": "sha256:bf03897cc7578d0ffcaf762627fb2e44b6f312a57806dd7c034eedc7e2eb878b",
     "architecture": "arm64",
     "digests": []
   },

@@ -1,127 +1,127 @@
 {
-  "instance": "tools-20261030074014-0d5b21",
-  "started_at": "2026-10-30T07:40:14+00:00",
+  "instance": "tools-20261030080109-cca096",
+  "started_at": "2026-10-30T08:01:09+00:00",
   "passed": true,
   "steps": [
     {
       "name": "revision",
-      "started_at": "2026-10-30T07:40:14+00:00",
-      "finished_at": "2026-10-30T07:40:14+00:00",
+      "started_at": "2026-10-30T08:01:09+00:00",
+      "finished_at": "2026-10-30T08:01:09+00:00",
       "exit_code": 0
     },
     {
       "name": "working-tree",
-      "started_at": "2026-10-30T07:40:14+00:00",
-      "finished_at": "2026-10-30T07:40:14+00:00",
+      "started_at": "2026-10-30T08:01:09+00:00",
+      "finished_at": "2026-10-30T08:01:09+00:00",
       "exit_code": 0
     },
     {
       "name": "doctor",
-      "started_at": "2026-10-30T07:40:14+00:00",
-      "finished_at": "2026-10-30T07:40:15+00:00",
+      "started_at": "2026-10-30T08:01:09+00:00",
+      "finished_at": "2026-10-30T08:01:09+00:00",
       "exit_code": 0
     },
     {
       "name": "initialise",
-      "started_at": "2026-10-30T07:40:15+00:00",
-      "finished_at": "2026-10-30T07:40:15+00:00",
+      "started_at": "2026-10-30T08:01:09+00:00",
+      "finished_at": "2026-10-30T08:01:10+00:00",
       "exit_code": 0
     },
     {
       "name": "warehouse-start",
-      "started_at": "2026-10-30T07:40:15+00:00",
-      "finished_at": "2026-10-30T07:40:21+00:00",
+      "started_at": "2026-10-30T08:01:10+00:00",
+      "finished_at": "2026-10-30T08:01:15+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1",
-      "started_at": "2026-10-30T07:40:21+00:00",
-      "finished_at": "2026-10-30T07:40:46+00:00",
+      "started_at": "2026-10-30T08:01:15+00:00",
+      "finished_at": "2026-10-30T08:01:43+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-image",
-      "started_at": "2026-10-30T07:40:46+00:00",
-      "finished_at": "2026-10-30T07:40:46+00:00",
+      "started_at": "2026-10-30T08:01:43+00:00",
+      "finished_at": "2026-10-30T08:01:43+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-pip-check",
-      "started_at": "2026-10-30T07:40:46+00:00",
-      "finished_at": "2026-10-30T07:40:47+00:00",
+      "started_at": "2026-10-30T08:01:43+00:00",
+      "finished_at": "2026-10-30T08:01:43+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-inventory",
-      "started_at": "2026-10-30T07:40:47+00:00",
-      "finished_at": "2026-10-30T07:40:47+00:00",
+      "started_at": "2026-10-30T08:01:43+00:00",
+      "finished_at": "2026-10-30T08:01:44+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-offline",
-      "started_at": "2026-10-30T07:40:47+00:00",
-      "finished_at": "2026-10-30T07:40:51+00:00",
+      "started_at": "2026-10-30T08:01:44+00:00",
+      "finished_at": "2026-10-30T08:01:48+00:00",
       "exit_code": 0
     },
     {
       "name": "build-1-smoke",
-      "started_at": "2026-10-30T07:40:51+00:00",
-      "finished_at": "2026-10-30T07:40:55+00:00",
+      "started_at": "2026-10-30T08:01:48+00:00",
+      "finished_at": "2026-10-30T08:01:52+00:00",
       "exit_code": 0
     },
     {
       "name": "reject-toolchain-wheel-hash",
-      "started_at": "2026-10-30T07:40:55+00:00",
-      "finished_at": "2026-10-30T07:40:56+00:00",
+      "started_at": "2026-10-30T08:01:52+00:00",
+      "finished_at": "2026-10-30T08:01:53+00:00",
       "exit_code": 1
     },
     {
       "name": "build-2",
-      "started_at": "2026-10-30T07:40:56+00:00",
-      "finished_at": "2026-10-30T07:41:19+00:00",
+      "started_at": "2026-10-30T08:01:53+00:00",
+      "finished_at": "2026-10-30T08:02:18+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-image",
-      "started_at": "2026-10-30T07:41:19+00:00",
-      "finished_at": "2026-10-30T07:41:19+00:00",
+      "started_at": "2026-10-30T08:02:18+00:00",
+      "finished_at": "2026-10-30T08:02:18+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-pip-check",
-      "started_at": "2026-10-30T07:41:19+00:00",
-      "finished_at": "2026-10-30T07:41:20+00:00",
+      "started_at": "2026-10-30T08:02:18+00:00",
+      "finished_at": "2026-10-30T08:02:18+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-inventory",
-      "started_at": "2026-10-30T07:41:20+00:00",
-      "finished_at": "2026-10-30T07:41:20+00:00",
+      "started_at": "2026-10-30T08:02:18+00:00",
+      "finished_at": "2026-10-30T08:02:19+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-offline",
-      "started_at": "2026-10-30T07:41:20+00:00",
-      "finished_at": "2026-10-30T07:41:24+00:00",
+      "started_at": "2026-10-30T08:02:19+00:00",
+      "finished_at": "2026-10-30T08:02:23+00:00",
       "exit_code": 0
     },
     {
       "name": "build-2-smoke",
-      "started_at": "2026-10-30T07:41:24+00:00",
-      "finished_at": "2026-10-30T07:41:28+00:00",
+      "started_at": "2026-10-30T08:02:23+00:00",
+      "finished_at": "2026-10-30T08:02:29+00:00",
       "exit_code": 0
     },
     {
       "name": "stop-qualification",
-      "started_at": "2026-10-30T07:41:28+00:00",
-      "finished_at": "2026-10-30T07:41:28+00:00",
+      "started_at": "2026-10-30T08:02:29+00:00",
+      "finished_at": "2026-10-30T08:02:29+00:00",
       "exit_code": 0
     }
   ],
-  "platform_commit": "dbc609095ac25b260c8b7a3cb7833bd4926b4809",
-  "working_tree": " M .devcontainer/Dockerfile\n M .dockerignore\n M .github/workflows/core-qualification.yml\n M compose.yaml\n M scripts/datacon.py\n M scripts/projects.py\n M scripts/qualify.py\n?? containers/toolchain/\n?? platform/schemas.json\n?? platform/schemas/\n?? requirements/toolchain-wheels.json\n?? requirements/toolchain.in\n?? requirements/toolchain.txt\n?? scripts/baseline.py\n?? scripts/contracts.py\n?? scripts/diagnostics.py\n?? scripts/lock_toolchain.py\n?? scripts/qualify_toolchain.py\n?? scripts/toolchain_smoke.py\n?? tests/test_toolchain.py\n",
+  "platform_commit": "b5b1bef7d1c1b816f9cc44f44a0f1b355755f958",
+  "working_tree": "",
   "baseline": {
-    "runtime_inputs_sha256": "46588e8e5c186ecf168c3482de58f4f195aba0b56c2ad2f7e0ac60e65777cf92",
+    "runtime_inputs_sha256": "4df59c2375359f8189cdda533725cbb0115b68e00b15e56393ab8656442920cb",
     "inputs": {
       ".devcontainer/Dockerfile": "96a70b60cf1cb2bf89db18e1735cb567a76173d414a438f107e145cef07d6980",
       ".python-version": "673e2ba07f95bfcfe0a543258b8e267954e403d1f466481c546f467f86b31d46",
@@ -141,13 +141,13 @@
       "scripts/baseline.py": "7e69b0b07bea53b5308ec5a67d31d1f866cd44c12aca53c73d04df3bf55120ea",
       "scripts/check_docs.py": "4c10903193422d52ddb5bc2f9226f023a0e5eef8a041f0afc9ffdcf9c6604c19",
       "scripts/contracts.py": "7d5b10264248d2a731bb7e83d13d1dbd57f5501823ecf4965847520441d62d4f",
-      "scripts/datacon.py": "f42aae32bac752699e8d57cc0df8cf8b26aa033b0a6ec0fa71529eef2bb3f0f5",
-      "scripts/diagnostics.py": "7cffac846512cba90c2393770b98a589006a7449293d70d5a7a65e11f85a067d",
+      "scripts/datacon.py": "61a7a23023d10fba1683ffdcdbea69f0d5fd97ad233654a177e06aaf6e003553",
+      "scripts/diagnostics.py": "0bb022464c5f92b0367a1319ce6b51179278cedc52d990ecb69b0b57cb12952a",
       "scripts/lock_toolchain.py": "f9a40367a56e6b26c7d7d88cd75f3744b806ab285362321ccd20edca1c816657",
       "scripts/project_exec.py": "f0f0b929bd4b8b9cdb437d6eb2457d11371692d3fc573729464c6763d5be2d04",
       "scripts/projects.py": "92f6d80119a9dada6afd3a7546708fd34e1def6b76295b2eb5e28f8ca88ae119",
       "scripts/qualify.py": "6e73b0ea32e4adc6377848aefee1f04919b0dd196eae8e4c09ed1fa1d275c298",
-      "scripts/qualify_projects.py": "78ca1e748156b2e589fb58a8cfe265c6ee48998a6b15beb2b01a01f046af96fd",
+      "scripts/qualify_projects.py": "0d0dc3a337bbe513947c4122c7b12af54c39942b00bc347a59ec2d179b0826ab",
       "scripts/qualify_toolchain.py": "a39aa9e192257eb55d29327e1390979b2916f6ca92dc24d0c9a407562dc4ce42",
       "scripts/reference.py": "0e0d259e674481c4e9ec8eb2ec32fc92034ba08ed70886af1904525505eeb701",
       "scripts/smoke.py": "8d657210463d94ee65ecdb91305ce4f7e5086e7770c7cfe3b397bfb3225746d3",
@@ -163,5 +163,5 @@
   "negative_checks_passed": true,
   "snowflake_native": "NOT_EXECUTED; DC-014\u2013DC-016 require a target account",
   "containers_removed_volumes_retained": true,
-  "finished_at": "2026-10-30T07:41:28+00:00"
+  "finished_at": "2026-10-30T08:02:29+00:00"
 }

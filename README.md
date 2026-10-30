@@ -30,7 +30,7 @@ Snowflake Semantic Views and the existing Opharma Power BI TMDL model are distin
 ## Next implementation batch
 
 1. **DC-001: finish repository/release setup.** The GitHub remote is configured. Establish review controls and immutable release conventions.
-2. **DC-007: complete the optional toolchain.** The [toolchain guide](docs/TOOLCHAIN.md) adds an isolated Python 3.14.8 job for GX, contract tooling and SQL drivers, while retaining the Python 3.15.2 workspace. Hash-locked native ARM64 qualification passed; the new native AMD64 job is pending. `doctor --require-ready` verifies core readiness and checkout identity. DC-008's local reference remains complete.
+2. **DC-007: toolchain qualification complete.** The [toolchain guide](docs/TOOLCHAIN.md) adds an isolated Python 3.14.8 job for GX, contract tooling and SQL drivers, while retaining the Python 3.15.2 workspace. Hash-locked native ARM64 and AMD64 qualification passed; [final evidence](docs/evidence/2026-10-30-toolchain.md) records both architectures and the actual CI run. `doctor --require-ready` verifies core readiness and checkout identity. DC-008's local reference remains complete.
 3. **DC-002/DC-003: finish broader acceptance.** The core delivery workflow and Mac graphical attachment are implemented. Fresh-machine/Windows acceptance, optional dependency environments and approved release adoption remain; see the delivery evidence.
 4. **DC-014–DC-016: prove the target early.** Prepare Snowflake access alongside local work, then demonstrate S2/S4 and one native Semantic View. Full OpenMetadata integration follows and remains required for v1.
 

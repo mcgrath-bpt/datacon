@@ -1,6 +1,6 @@
 # Datacon backlog
 
-Updated: 2026-10-29. Source: confirmed user requirements, [PLAN.md](PLAN.md), and [Opharma PR #1](https://github.com/mcgrath-bpt/opharma/pull/1) at `b43c6897f6bdda2adcf60fc468fe8aaff31f52eb`.
+Updated: 2026-10-30. Source: confirmed user requirements, [PLAN.md](PLAN.md), and [Opharma PR #1](https://github.com/mcgrath-bpt/opharma/pull/1) at `b43c6897f6bdda2adcf60fc468fe8aaff31f52eb`.
 
 This backlog was initially committed in `601cee3`. The canonical remote is [mcgrath-bpt/datacon](https://github.com/mcgrath-bpt/datacon); no GitHub issues have been created. IDs remain stable when items are split or promoted to an issue tracker. Owners below are responsibility types, not assignments sent to individuals.
 
@@ -90,7 +90,7 @@ Turn [the working guide](docs/WORKING_GUIDE.md) into a verified onboarding path:
 
 ### DC-007 — Pin and diagnose the toolchain
 
-**P0 · M0 · OPEN · Owner: platform maintainer · Dependencies: none**
+**P0 · M0 · DONE · Owner: platform maintainer · Dependencies: none**
 
 Qualify Python, GX Core, SQLAlchemy/drivers, ODCS tooling, PostgreSQL/pg_duckdb and base images. Define any required isolated environments or optional capabilities in the Tech Lead-owned platform repository. Add a doctor command for approved baseline identity, architecture, Docker/Compose, readiness, paths and resources. Pin schemas for offline validation.
 
@@ -100,7 +100,7 @@ Core lock increment, 2026-10-29: added SHA-256 wheel locks, dated signed Debian 
 
 Handover update, 2026-10-29: user requests the latest stable Python, with 3.12 as the minimum. The workspace candidate is now `python:3.15.2-slim-bookworm`, `.python-version` records 3.15.2, and `rpds-py==2026.9.1` supplies published CPython 3.15 wheel candidates. The host launcher enforces stable Python >=3.12 and selects installed 3.14.8 on this Mac. Docker diagnostics now distinguish `access_denied`. See [HANDOVER.md](HANDOVER.md) for measured checks and remaining qualification.
 
-Toolchain increment, 2026-10-30: the [isolated toolchain](docs/TOOLCHAIN.md) pins GX 1.24.1, Data Contract CLI 1.2.8, SQLAlchemy/PostgreSQL/Snowflake drivers and all transitive wheels under Python 3.14.8, preserving workspace Python 3.15.2. Native ARM64 repeated builds, actual PostgreSQL/GX success/failure/rollback, offline schema/export checks and deliberate integrity failures passed. Schemas are vendored at an exact upstream commit; doctor now reports readiness, input/image identity, paths and resource availability without exposing secrets. Native AMD64 qualification and final evidence review are pending; DC-007 remains open until they pass. Native Snowflake execution remains DC-014–DC-016.
+Toolchain increment, 2026-10-30: the [isolated toolchain](docs/TOOLCHAIN.md) pins GX 1.24.1, Data Contract CLI 1.2.8, SQLAlchemy/PostgreSQL/Snowflake drivers and all transitive wheels under Python 3.14.8, preserving workspace Python 3.15.2. Native ARM64 repeated builds, actual PostgreSQL/GX success/failure/rollback, offline schema/export checks and deliberate integrity failures passed. Schemas are vendored at an exact upstream commit; doctor now reports readiness, input/image identity, paths and resource availability without exposing secrets. Native AMD64 [run 41023704093](https://github.com/mcgrath-bpt/datacon/actions/runs/41023704093) passed both toolchain/core builds and the full delivery workflow. All three artefacts were downloaded, digest-verified and inspected; [final evidence](docs/evidence/2026-10-30-toolchain.md) completes DC-007 technical acceptance. The isolated capability is presented for Tech Lead review in [PR #4](https://github.com/mcgrath-bpt/datacon/pull/4); no release is published. Native Snowflake execution remains DC-014–DC-016.
 
 **Done when:** locked installs work on ARM64 and AMD64; required tools do not use floating latest versions; diagnostics explain missing prerequisites without exposing secrets. Catalogue dependencies may be locked later in DC-018.
 

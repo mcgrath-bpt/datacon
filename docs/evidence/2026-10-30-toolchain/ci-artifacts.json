@@ -1,0 +1,26 @@
+{
+  "run_url": "https://github.com/mcgrath-bpt/datacon/actions/runs/41023704093",
+  "implementation_commit": "b5b1bef7d1c1b816f9cc44f44a0f1b355755f958",
+  "tested_merge_commit": "8d84387ba36aee5154a8caa95a506163c6ad4d6f",
+  "zip_sha256_verified": true,
+  "artifacts": [
+    {
+      "kind": "toolchain",
+      "id": 12963061614,
+      "sha256": "b1272da81f7a269941d646439e48bf6f5d26d8f09e930fbccd7bac81b51cdb19",
+      "size_bytes": 28963
+    },
+    {
+      "kind": "core",
+      "id": 12963165472,
+      "sha256": "2ab660c864c250205b5afb7acbba4b1f5be2c8e4be562e40d26e87decc66cf2e",
+      "size_bytes": 90206
+    },
+    {
+      "kind": "projects",
+      "id": 12963305150,
+      "sha256": "a974d41416a6183901855aec7346e1ee6d6ed5b975a20c8a1ee6f51bc3149a02",
+      "size_bytes": 35475
+    }
+  ]
+}
