@@ -24,7 +24,7 @@ Current evidence is from an existing macOS ARM64/Docker Desktop host and native 
    ```
 
    Candidate generation refuses dirty source, untracked files and ignored runtime overlays. It is deterministic and refuses to overwrite an existing file. It does not execute native qualification, attest the result or grant approval.
-4. Audit the remote with `python3 scripts/repository_rules.py`. The audit must pass in full for the first approved release. Confirm the two required native jobs and governance check succeeded for the release revision. Create a draft GitHub release at that exact commit, attach the manifest and sanitised qualification evidence, and inspect the complete draft. Keep credentials, database files and delivery checkouts out of release assets.
+4. Audit the remote with `python3 scripts/repository_rules.py`. Inspect the audit before publication. Under the user-approved interim administrator arrangement, the deferred owner-review result is not a blocker; record that exception explicitly in the release decision. Confirm the two required native jobs and governance check succeeded for the release revision. Create a draft GitHub release at that exact commit, attach the manifest and sanitised qualification evidence, and inspect the complete draft. Keep credentials, database files and delivery checkouts out of release assets.
 5. The Tech Lead approves the concrete draft and publishes it. GitHub creates the immutable release attestation. Verify the published asset with `gh release verify-asset <tag> /tmp/datacon-release.json --repo mcgrath-bpt/datacon`, and inspect the immutable flag and tag commit. Publication is a separate action; no Datacon command performs it implicitly. Corrections require a new release/version. Titles and release notes can still change, so security/compatibility decisions belong in the pinned manifest/source too.
 
 Administrative release verification currently uses GitHub CLI 2.102.0, observed on this host; a CLI supporting `release verify-asset` is required. It is not a delivery-container prerequisite. The [GitHub CLI manual](https://cli.github.com/manual/gh_release_verify-asset) describes asset verification.
@@ -59,15 +59,15 @@ For upgrades, review the release notes and pin diff, select the new commit in a 
 
 ## Repository controls and deferred reviewer
 
-[The required-check rules](../governance/github-main.json) require PRs, resolved review threads and up-to-date `core-amd64`, `toolchain-amd64` and `governance` checks from the observed GitHub Actions application ID **15368**. They deny branch deletion and force pushes and have no bypass actors. Apply and read back this configuration with:
+[The required-check rules](../governance/github-main.json) require PRs, resolved review threads and up-to-date `core-amd64`, `toolchain-amd64` and `governance` checks from the observed GitHub Actions application ID **15368**. They deny branch deletion and force pushes for ordinary contributors. On 2026-10-30 the user added repository administrators (role ID 5) with `always` bypass; this accepted interim exception also permits bypassing PR and CI requirements. Continue using tested PRs for routine changes. Apply and read back this configuration with:
 
 ```sh
 python3 scripts/repository_rules.py --apply
 ```
 
-This also enables immutability for future releases. The command intentionally exits non-zero until **both** rulesets and release immutability match: an incomplete review policy must not produce a green audit. It does not delete unrelated rulesets.
+This also enables immutability for future releases. The command intentionally exits non-zero until **both** rulesets and release immutability match. Under the user-approved interim administrator arrangement, a missing owner-review rule is a reported limitation, not an operational blocker; other mismatches still require investigation. It does not delete unrelated rulesets.
 
-The user deferred creating a second account on 2026-10-30. Required approvals are therefore **not active**. The current account `mcgrath-bpt` is the only collaborator and cannot approve its own PRs. [CODEOWNERS](../.github/CODEOWNERS) names the platform owner; this is routing, not enforcement. CI gates cannot prove Tech Lead approval and a policy-changing PR could still be merged by its author. Do not mark DC-032 complete on this basis.
+The user deferred creating a second account on 2026-10-30 and subsequently accepted administrator bypass so work can proceed without that account. Required approvals are therefore **not active**. The current account `mcgrath-bpt` is the only collaborator and cannot approve its own PRs. [CODEOWNERS](../.github/CODEOWNERS) names the platform owner; this is routing, not enforcement. CI gates cannot prove Tech Lead approval and a policy-changing PR could still be merged by its author. Do not mark DC-032 complete on this basis.
 
 After the second account has write permission, add both authorised reviewers to CODEOWNERS on the default branch, check the scope, then run:
 

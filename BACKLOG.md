@@ -42,6 +42,8 @@ Progress, 2026-10-30: [release policy and tooling](docs/RELEASES.md) prepare det
 
 Validation, 2026-10-30: required PR/CI checks and future-release immutability are active and read-back verified. All 59 host tests passed under both supported host interpreters tested; native ARM64/AMD64 core and optional-toolchain regressions passed, including full AMD64 delivery checks. Fresh independent checkout/pin and adverse adoption tests passed. [Evidence](docs/evidence/2026-10-30-release-governance.md) records exact commits, artefact hashes and the deferred review/publication gates.
 
+Decision, 2026-10-30: the user enabled repository-administrator `always` bypass and accepted proceeding without a second reviewer account. The checked-in required-check template preserves this exception. Independent review enforcement remains deferred, but is not an operational blocker.
+
 **Done when:** a fresh checkout identifies its approved platform version; release inputs are pinned; a delivery adopts releases under the Tech Lead's compatibility/upgrade policy without sharing platform source/history; initial history and remote location are recorded.
 
 ### DC-002 — Build the minimal Dev Container and core runtime

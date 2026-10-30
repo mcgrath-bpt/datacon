@@ -148,9 +148,9 @@ class ReleaseTests(unittest.TestCase):
         actual = json.loads(json.dumps(expected))
         actual['id'] = 123
         self.assertTrue(repository_rules.matches(actual, expected))
-        actual['bypass_actors'] = [{'actor_type': 'RepositoryRole', 'actor_id': 5, 'bypass_mode': 'always'}]
+        actual['bypass_actors'] = [{'actor_type': 'RepositoryRole', 'actor_id': 4, 'bypass_mode': 'always'}]
         self.assertFalse(repository_rules.matches(actual, expected))
-        actual['bypass_actors'] = []
+        actual['bypass_actors'] = expected['bypass_actors']
         actual['rules'][-1]['parameters']['required_status_checks'].pop()
         self.assertFalse(repository_rules.matches(actual, expected))
 
