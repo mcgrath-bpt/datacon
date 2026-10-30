@@ -4,7 +4,13 @@ Updated: 2026-10-30. Preserve retained Docker volumes, credentials and dirty del
 
 ## Current outcome
 
-PR #3 is merged. Work started from clean `main` at `dbc609095ac25b260c8b7a3cb7833bd4926b4809` on `feat/DC-007-toolchain`.
+PR #4 is merged at `27c215140133eb8af0aeeba2879edffa5c110130`. DC-001/DC-032 work started from that clean `main` on `codex/DC-001-DC-032-release-governance`; previous feature branches remain retained.
+
+The release/dependency increment adds deterministic manifest preparation, independently pinned capability/target verification, online immutable-release attestation/tag checks, a qualified capability catalogue, dependency requests and release/support/upgrade guidance. [Release documentation](docs/RELEASES.md) and [dependency process](docs/DEPENDENCIES.md) describe the boundaries. Initial host checks pass (59 tests on Python 3.12.15); runtime/remote evidence will be recorded separately. No approved release is published.
+
+The user explicitly deferred the second reviewer account on 2026-10-30. Only `mcgrath-bpt` currently has repository access. Required owner review must remain deferred; do not enable the separate `governance/github-review.json` rules until both authorised accounts have write permission and are CODEOWNERS. Required CI checks and release immutability can be configured independently through `scripts/repository_rules.py --apply`; its audit deliberately stays non-zero until review is active. Node/npm request DEP-001 remains pending, without installing a new dependency. Both backlog items remain open.
+
+### Previous qualified toolchain increment
 
 DC-007 now has a platform-owned optional tool image: Python 3.14.8, GX 1.24.1, Data Contract CLI 1.2.8, SQLAlchemy 2.1.6, psycopg2-binary 2.9.13, Snowflake Connector 5.1.0 and snowflake-sqlalchemy 2.1.0. GX and the contract CLI exclude Python 3.15; the main workspace remains Python 3.15.2. All 68 distributions are locked with 83 verified wheel hashes, and the optional base image is digest-pinned. Dependency/interpreter adoption is presented for Tech Lead review in the DC-007 PR.
 
@@ -64,9 +70,9 @@ The reference runner always creates a new checkout. The doctor reports prerequis
 
 1. Read repository instructions, this handover and the relevant backlog item; recheck Git/Docker access and preserve retained state.
 2. DC-003 PR #3 is merged; preserve its qualified delivery workflow. Existing-core mounts, two repositories, project identities, scoped reset and Mac graphical attachment are implemented. Broader DC-002/DC-003 criteria still include fresh-machine acceptance and approved dependency/release adoption.
-3. Review/merge DC-007 PR #4, including the isolated capability/dependency decision. Both native architectures are qualified; workspace Python remains 3.15.2. No release is claimed.
+3. DC-007 PR #4 is merged. Preserve its isolated interpreter/dependency provision and qualification evidence; workspace Python remains 3.15.2. No release is claimed.
 4. Measure DC-005 under an actual 4-GiB/two-vCPU allocation, including peak memory, VM overhead and cold start. Arrange actual Windows/WSL 3.0.3 acceptance under DC-004.
-5. Establish required review controls and immutable release identity under DC-001/DC-032. No qualified release or enforced remote review policy exists yet.
+5. Finish DC-001/DC-032: activate owner review after the second account is ready, demonstrate remote rejection/approval, approve and provision the Node/npm example, then publish/adopt an immutable release with actual qualification evidence. The prepared policy/tooling does not complete these gates.
 6. Start early Snowflake access/semantics work (DC-014–DC-016). Native Snowflake, OpenMetadata and broader RLS/concurrency acceptance have not run; basic GX/PostgreSQL capability checks have passed.
 
 For routine core checks:

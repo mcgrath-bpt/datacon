@@ -8,6 +8,8 @@ Independent deliveries can now share an instance with host/volume checkouts, sep
 
 Use the [core quick-start](docs/CORE_QUICKSTART.md) for commands, persistence behaviour and the current evidence boundary. Start with `./datacon check`, `./datacon config` and `./datacon doctor`. Use [the optional toolchain](docs/TOOLCHAIN.md) for `./datacon tools`, offline ODCS validation and GX checks.
 
+[Release preparation and adoption](docs/RELEASES.md) define immutable manifest/commit pins and upgrade support. [Dependency requests](docs/DEPENDENCIES.md) define the route from personal experiment to delivery capability. `./datacon release catalogue` lists qualified capabilities; no approved release is published yet, and required owner review awaits the second account.
+
 For the next session, read [HANDOVER.md](HANDOVER.md) first. The workspace targets Python 3.15.2; host commands require stable Python 3.12 or later. Git, Docker and GitHub access succeeded with session approval; recheck access when resuming.
 
 ## Start here

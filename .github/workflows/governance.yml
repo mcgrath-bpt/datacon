@@ -1,0 +1,27 @@
+name: Release and dependency governance
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  governance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check out the tested revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - name: Check release integrity and adverse adoption cases
+        run: ./datacon check
+      - name: Validate capability paths and documentation
+        run: |
+          ./datacon release catalogue
+          python3 scripts/check_docs.py
+          git diff --check

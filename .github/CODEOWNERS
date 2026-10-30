@@ -1,0 +1,4 @@
+# The platform owner reviews all baseline, dependency and policy changes.
+# Required owner review is deferred until a second authorised account exists.
+# CODEOWNERS alone does not enforce review: see docs/RELEASES.md.
+* @mcgrath-bpt
