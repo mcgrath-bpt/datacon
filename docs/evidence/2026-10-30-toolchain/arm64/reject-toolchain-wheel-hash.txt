@@ -1,0 +1,8 @@
+Collecting attrs==26.1.0 (from -r /tmp/tmpfwti4mp3/bad.txt (line 1))
+  Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+ Container datacon-tools-20261030080109-cca096-toolchain-run-1121fcd57b9e Creating
+ Container datacon-tools-20261030080109-cca096-toolchain-run-1121fcd57b9e Created
+ERROR: THESE PACKAGES DO NOT MATCH THE HASHES FROM THE REQUIREMENTS FILE. If you have updated the package versions, please update the hashes. Otherwise, examine the package contents carefully; someone may have tampered with them.
+    attrs==26.1.0 from https://files.pythonhosted.org/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl (from -r /tmp/tmpfwti4mp3/bad.txt (line 1)):
+        Expected sha256 0000000000000000000000000000000000000000000000000000000000000000
+             Got        c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309

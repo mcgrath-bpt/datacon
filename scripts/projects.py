@@ -73,7 +73,7 @@ def compose_overlay(state, entries):
     # Compose interpolates dollar signs even in JSON string values.
     escaped = lambda path: str(path).replace('$', '$$')
     workspace = {'volumes': [], 'secrets': []}
-    overlay = {'services': {'workspace': workspace}, 'secrets': {}}
+    overlay = {'services': {'workspace': workspace, 'toolchain': workspace}, 'secrets': {}}
     for name, entry in sorted(entries.items()):
         if entry['kind'] == 'host':
             workspace['volumes'].append({'type': 'bind', 'source': escaped(entry['source']),

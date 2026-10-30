@@ -10,6 +10,26 @@ permissions:
   contents: read
 
 jobs:
+  toolchain-amd64:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Check out the tested revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - name: Qualify native AMD64 optional toolchain twice
+        timeout-minutes: 22
+        run: python3 scripts/qualify_toolchain.py --expected-architecture amd64 --output artifacts/toolchain-qualification
+      - name: Upload sanitised toolchain evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: toolchain-amd64-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/toolchain-qualification/
+          if-no-files-found: error
+          retention-days: 30
+
   core-amd64:
     runs-on: ubuntu-24.04
     timeout-minutes: 30

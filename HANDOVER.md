@@ -1,18 +1,18 @@
 # Datacon session handover
 
-Updated: 2026-10-30. Resume this repository and its retained Docker volumes. Check Git status before changing anything; do not recreate the project or discard uncommitted files.
+Updated: 2026-10-30. Preserve retained Docker volumes, credentials and dirty delivery checkouts. Recheck Git/Docker access each session.
 
 ## Current outcome
 
-The user merged [PR #2](https://github.com/mcgrath-bpt/datacon/pull/2). Local `main` was fast-forwarded to `62d7582b00779d0acf8c409f9fef69b40101f758`, then `feat/DC-003-delivery-workspaces` was created. Previous branches and all retained runtime state are preserved.
+PR #3 is merged. Work started from clean `main` at `dbc609095ac25b260c8b7a3cb7833bd4926b4809` on `feat/DC-007-toolchain`.
 
-The new core delivery workflow registers independent host/volume Git checkouts, provisions separate SQL identities, resets only the named managed database, and generates a per-project editor folder outside delivery history. New Linux instances persist unprivileged host UID/GID for bind mounts; retained instances preserve their original ownership. Existing commands, dependency pins and restart policies are unchanged.
+DC-007 now has a platform-owned optional tool image: Python 3.14.8, GX 1.24.1, Data Contract CLI 1.2.8, SQLAlchemy 2.1.6, psycopg2-binary 2.9.13, Snowflake Connector 5.1.0 and snowflake-sqlalchemy 2.1.0. GX and the contract CLI exclude Python 3.15; the main workspace remains Python 3.15.2. All 68 distributions are locked with 83 verified wheel hashes, and the optional base image is digest-pinned. Dependency/interpreter adoption is presented for Tech Lead review in the DC-007 PR.
 
-Native ARM64 two-project acceptance and two uncached core regression builds passed. There are 41 host tests, passing on Python 3.14.8 and 3.12.15. Actual VS Code graphical attachment, the project terminal database identity and saving/reopening a delivery file also passed on this Mac. See [delivery evidence](docs/evidence/2026-10-30-delivery-workspaces.md) and [the guide](docs/DELIVERY_WORKSPACES.md). Native AMD64 [run 40972038473](https://github.com/mcgrath-bpt/datacon/actions/runs/40972038473) passed both core builds and the full two-project workflow, including Linux UID 1001 host mounts. Both artefacts were downloaded, digest-verified and selected reports archived. [PR #3](https://github.com/mcgrath-bpt/datacon/pull/3) is open; implementation commit is `68ff25f`, followed by the evidence update. No release is claimed.
+`./datacon tools` runs a finite non-root job. It shares registered checkout mounts and project secrets while keeping its interpreter/home separate. ODCS 3.1/3.2 schemas are pinned to an upstream commit and SHA-256, with offline JSON/YAML validation. `doctor --require-ready` checks healthy core services, workspace input fingerprint, warehouse digest and matching native architecture; ordinary doctor remains usable before initialisation. No approved immutable release is claimed.
 
-The ARM64 core builds and runs with Python 3.15.2. Host checks, SQL/RLS smoke, the pinned Opharma reference and real retained/fresh lifecycle checks passed. DC-008’s local reference acceptance is complete. This is a development increment, not a qualified v1 release.
+Native ARM64 toolchain qualification passed two uncached builds with identical OS/Python inventories, PostgreSQL/GX pass/fail/rollback, network-disabled schema/export checks and deliberate wheel/schema integrity failures. The two-build core regression and project workflow passed, including actual toolchain access to host/volume checkouts and a restricted project database. All 48 host tests passed under Python 3.14.8 and 3.12.15. Native AMD64 [run 41023704093](https://github.com/mcgrath-bpt/datacon/actions/runs/41023704093) passed both toolchain/core builds and the full delivery workflow. All three artefacts were downloaded, digest-verified and inspected. DC-007 technical acceptance is complete; [PR #4](https://github.com/mcgrath-bpt/datacon/pull/4) presents the change for Tech Lead review. Implementation commit is `b5b1bef7d1c1b816f9cc44f44a0f1b355755f958`; the following evidence commit changes documentation only. See [the toolchain guide](docs/TOOLCHAIN.md) and [evidence](docs/evidence/2026-10-30-toolchain.md).
 
-Read [the runtime acceptance report](docs/evidence/2026-10-29-core-runtime.md) for machine-readable evidence, exact image identities, timings and limitations. The [initial candidate report](docs/evidence/2026-10-29-core-candidate.md) retains the earlier access failures as history.
+The default workspace and warehouse remain running/healthy, and their original file/database retention probes were rechecked intact. Doctor correctly reports the retained older workspace as unmatched; it was not rebuilt. New qualification instances have had only their containers/networks removed; volumes, credentials and dirty fixture checkouts remain. Final committed-source evidence is under `.local/toolchain-qualification/2026-10-30-arm64-committed/`, `.local/qualification/2026-10-30-dc007-committed/` and `.local/project-qualification/2026-10-30-dc007-tools/`. An earlier project regression is also retained under `.local/project-qualification/2026-10-30-dc007/`. Use each `qualification.json` for its unique instance name. None of these is a release or native Snowflake acceptance.
 
 ## Decisions to preserve
 
@@ -63,11 +63,11 @@ The reference runner always creates a new checkout. The doctor reports prerequis
 ## Next work
 
 1. Read repository instructions, this handover and the relevant backlog item; recheck Git/Docker access and preserve retained state.
-2. Review the DC-003 delivery-workspace PR and its actual AMD64 CI results. Existing-core mounts, two repositories, project identities, scoped reset and Mac graphical attachment are implemented. Broader DC-002/DC-003 criteria still include fresh-machine acceptance and approved dependency/release adoption.
-3. Qualify GX/Snowflake dependencies under DC-007 before making them delivery prerequisites. A platform-owned isolated environment requires Tech Lead agreement; do not silently downgrade the workspace.
+2. DC-003 PR #3 is merged; preserve its qualified delivery workflow. Existing-core mounts, two repositories, project identities, scoped reset and Mac graphical attachment are implemented. Broader DC-002/DC-003 criteria still include fresh-machine acceptance and approved dependency/release adoption.
+3. Review/merge DC-007 PR #4, including the isolated capability/dependency decision. Both native architectures are qualified; workspace Python remains 3.15.2. No release is claimed.
 4. Measure DC-005 under an actual 4-GiB/two-vCPU allocation, including peak memory, VM overhead and cold start. Arrange actual Windows/WSL 3.0.3 acceptance under DC-004.
 5. Establish required review controls and immutable release identity under DC-001/DC-032. No qualified release or enforced remote review policy exists yet.
-6. Start early Snowflake access/semantics work (DC-014–DC-016). Native Snowflake, GX, OpenMetadata and broader RLS/concurrency acceptance have not run.
+6. Start early Snowflake access/semantics work (DC-014–DC-016). Native Snowflake, OpenMetadata and broader RLS/concurrency acceptance have not run; basic GX/PostgreSQL capability checks have passed.
 
 For routine core checks:
 

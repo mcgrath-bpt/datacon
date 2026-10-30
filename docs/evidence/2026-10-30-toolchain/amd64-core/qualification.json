@@ -1,0 +1,327 @@
+{
+  "instance": "qual-20261030080142-399c925d",
+  "started_at": "2026-10-30T08:01:42+00:00",
+  "passed": true,
+  "steps": [
+    {
+      "name": "revision",
+      "started_at": "2026-10-30T08:01:42+00:00",
+      "finished_at": "2026-10-30T08:01:42+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "working-tree",
+      "started_at": "2026-10-30T08:01:42+00:00",
+      "finished_at": "2026-10-30T08:01:42+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "doctor",
+      "started_at": "2026-10-30T08:01:42+00:00",
+      "finished_at": "2026-10-30T08:01:43+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "host-tests",
+      "started_at": "2026-10-30T08:01:43+00:00",
+      "finished_at": "2026-10-30T08:01:43+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "compose-validation",
+      "started_at": "2026-10-30T08:01:43+00:00",
+      "finished_at": "2026-10-30T08:01:44+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "documentation",
+      "started_at": "2026-10-30T08:01:44+00:00",
+      "finished_at": "2026-10-30T08:01:44+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "whitespace",
+      "started_at": "2026-10-30T08:01:44+00:00",
+      "finished_at": "2026-10-30T08:01:44+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "initialise",
+      "started_at": "2026-10-30T08:01:44+00:00",
+      "finished_at": "2026-10-30T08:01:44+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1",
+      "started_at": "2026-10-30T08:01:44+00:00",
+      "finished_at": "2026-10-30T08:02:01+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-start",
+      "started_at": "2026-10-30T08:02:01+00:00",
+      "finished_at": "2026-10-30T08:02:18+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-ready",
+      "started_at": "2026-10-30T08:02:18+00:00",
+      "finished_at": "2026-10-30T08:02:19+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-os-check",
+      "started_at": "2026-10-30T08:02:19+00:00",
+      "finished_at": "2026-10-30T08:02:19+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-workspace-os",
+      "started_at": "2026-10-30T08:02:19+00:00",
+      "finished_at": "2026-10-30T08:02:19+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-python-packages",
+      "started_at": "2026-10-30T08:02:19+00:00",
+      "finished_at": "2026-10-30T08:02:20+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-versions",
+      "started_at": "2026-10-30T08:02:20+00:00",
+      "finished_at": "2026-10-30T08:02:20+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-warehouse-os",
+      "started_at": "2026-10-30T08:02:20+00:00",
+      "finished_at": "2026-10-30T08:02:20+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-database-version",
+      "started_at": "2026-10-30T08:02:20+00:00",
+      "finished_at": "2026-10-30T08:02:20+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-workspace-id",
+      "started_at": "2026-10-30T08:02:20+00:00",
+      "finished_at": "2026-10-30T08:02:20+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-workspace-identity",
+      "started_at": "2026-10-30T08:02:20+00:00",
+      "finished_at": "2026-10-30T08:02:20+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-workspace-image",
+      "started_at": "2026-10-30T08:02:20+00:00",
+      "finished_at": "2026-10-30T08:02:20+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-warehouse-id",
+      "started_at": "2026-10-30T08:02:20+00:00",
+      "finished_at": "2026-10-30T08:02:20+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-warehouse-identity",
+      "started_at": "2026-10-30T08:02:20+00:00",
+      "finished_at": "2026-10-30T08:02:20+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-warehouse-image",
+      "started_at": "2026-10-30T08:02:20+00:00",
+      "finished_at": "2026-10-30T08:02:20+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-smoke",
+      "started_at": "2026-10-30T08:02:20+00:00",
+      "finished_at": "2026-10-30T08:02:21+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-reference",
+      "started_at": "2026-10-30T08:02:21+00:00",
+      "finished_at": "2026-10-30T08:03:12+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-reference-reports",
+      "started_at": "2026-10-30T08:03:12+00:00",
+      "finished_at": "2026-10-30T08:03:13+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "reject-os-inventory",
+      "started_at": "2026-10-30T08:03:13+00:00",
+      "finished_at": "2026-10-30T08:03:13+00:00",
+      "exit_code": 1
+    },
+    {
+      "name": "reject-wheel-hash",
+      "started_at": "2026-10-30T08:03:13+00:00",
+      "finished_at": "2026-10-30T08:03:14+00:00",
+      "exit_code": 1
+    },
+    {
+      "name": "build-2",
+      "started_at": "2026-10-30T08:03:14+00:00",
+      "finished_at": "2026-10-30T08:03:28+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-start",
+      "started_at": "2026-10-30T08:03:28+00:00",
+      "finished_at": "2026-10-30T08:03:39+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-ready",
+      "started_at": "2026-10-30T08:03:39+00:00",
+      "finished_at": "2026-10-30T08:03:40+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-os-check",
+      "started_at": "2026-10-30T08:03:40+00:00",
+      "finished_at": "2026-10-30T08:03:40+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-workspace-os",
+      "started_at": "2026-10-30T08:03:40+00:00",
+      "finished_at": "2026-10-30T08:03:40+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-python-packages",
+      "started_at": "2026-10-30T08:03:40+00:00",
+      "finished_at": "2026-10-30T08:03:41+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-versions",
+      "started_at": "2026-10-30T08:03:41+00:00",
+      "finished_at": "2026-10-30T08:03:41+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-warehouse-os",
+      "started_at": "2026-10-30T08:03:41+00:00",
+      "finished_at": "2026-10-30T08:03:41+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-database-version",
+      "started_at": "2026-10-30T08:03:41+00:00",
+      "finished_at": "2026-10-30T08:03:41+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-workspace-id",
+      "started_at": "2026-10-30T08:03:41+00:00",
+      "finished_at": "2026-10-30T08:03:41+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-workspace-identity",
+      "started_at": "2026-10-30T08:03:41+00:00",
+      "finished_at": "2026-10-30T08:03:41+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-workspace-image",
+      "started_at": "2026-10-30T08:03:41+00:00",
+      "finished_at": "2026-10-30T08:03:41+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-warehouse-id",
+      "started_at": "2026-10-30T08:03:41+00:00",
+      "finished_at": "2026-10-30T08:03:41+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-warehouse-identity",
+      "started_at": "2026-10-30T08:03:41+00:00",
+      "finished_at": "2026-10-30T08:03:41+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-warehouse-image",
+      "started_at": "2026-10-30T08:03:41+00:00",
+      "finished_at": "2026-10-30T08:03:41+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-smoke",
+      "started_at": "2026-10-30T08:03:41+00:00",
+      "finished_at": "2026-10-30T08:03:42+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-reference",
+      "started_at": "2026-10-30T08:03:42+00:00",
+      "finished_at": "2026-10-30T08:04:33+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-reference-reports",
+      "started_at": "2026-10-30T08:04:33+00:00",
+      "finished_at": "2026-10-30T08:04:33+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "stop-qualification",
+      "started_at": "2026-10-30T08:04:33+00:00",
+      "finished_at": "2026-10-30T08:04:33+00:00",
+      "exit_code": 0
+    }
+  ],
+  "platform_commit": "8d84387ba36aee5154a8caa95a506163c6ad4d6f",
+  "working_tree": "",
+  "input_sha256": {
+    ".devcontainer/Dockerfile": "96a70b60cf1cb2bf89db18e1735cb567a76173d414a438f107e145cef07d6980",
+    "compose.yaml": "0e6aba37e0e42abd8b6e03a8fd863c484378c2b2c1198fa2d4e189af17f89db5",
+    ".python-version": "673e2ba07f95bfcfe0a543258b8e267954e403d1f466481c546f467f86b31d46",
+    "requirements/os/bookworm-amd64.tsv": "48a853fbbba4b893a1e4fbcab1da4c539318db8c08e6ee322c75790fa901cfa0",
+    "requirements/os/bookworm-arm64.tsv": "a165d74f6b278c1450609c810584cde10939aef01ce36e4a277618097a863dea",
+    "requirements/os/debian.sources": "80880fc61c4d2dd228976d45c1ffa13698bfcf317d1aa22d7bc1d46ab5d04b83",
+    "requirements/toolchain-wheels.json": "cb87b5927e837db6f4a66079dcdec06d3298e09fd343a4e326cb101ee4dc5a75",
+    "requirements/toolchain.in": "b2fb158144fa01078d0f43c7828084c6a21c94481f795ea3c7b4396db7ac7516",
+    "requirements/toolchain.txt": "4add8954e4500fbc898b31790e2fe6c2d20a9ea622a98356ebc573dac050c575",
+    "requirements/workspace-wheels.json": "a824f5ed7d42a6f1b3671b4a90f1ef50eba0ebb59794883b0f375d17182ced78",
+    "requirements/workspace.txt": "c5fb7630519e0d0402f125e4641663f51d2ca24c92958899cefc77cbaf7b51ef",
+    "scripts/baseline.py": "7e69b0b07bea53b5308ec5a67d31d1f866cd44c12aca53c73d04df3bf55120ea",
+    "scripts/check_docs.py": "4c10903193422d52ddb5bc2f9226f023a0e5eef8a041f0afc9ffdcf9c6604c19",
+    "scripts/contracts.py": "7d5b10264248d2a731bb7e83d13d1dbd57f5501823ecf4965847520441d62d4f",
+    "scripts/datacon.py": "61a7a23023d10fba1683ffdcdbea69f0d5fd97ad233654a177e06aaf6e003553",
+    "scripts/diagnostics.py": "0bb022464c5f92b0367a1319ce6b51179278cedc52d990ecb69b0b57cb12952a",
+    "scripts/lock_toolchain.py": "f9a40367a56e6b26c7d7d88cd75f3744b806ab285362321ccd20edca1c816657",
+    "scripts/project_exec.py": "f0f0b929bd4b8b9cdb437d6eb2457d11371692d3fc573729464c6763d5be2d04",
+    "scripts/projects.py": "92f6d80119a9dada6afd3a7546708fd34e1def6b76295b2eb5e28f8ca88ae119",
+    "scripts/qualify.py": "6e73b0ea32e4adc6377848aefee1f04919b0dd196eae8e4c09ed1fa1d275c298",
+    "scripts/qualify_projects.py": "0d0dc3a337bbe513947c4122c7b12af54c39942b00bc347a59ec2d179b0826ab",
+    "scripts/qualify_toolchain.py": "a39aa9e192257eb55d29327e1390979b2916f6ca92dc24d0c9a407562dc4ce42",
+    "scripts/reference.py": "0e0d259e674481c4e9ec8eb2ec32fc92034ba08ed70886af1904525505eeb701",
+    "scripts/smoke.py": "8d657210463d94ee65ecdb91305ce4f7e5086e7770c7cfe3b397bfb3225746d3",
+    "scripts/toolchain_smoke.py": "3ddf99e3d63f6dd00b32c8258b455edda15ba6e16343e4d6b2e40ba3cf45ad4a",
+    "scripts/verify_os.py": "97ff61f1eccbcbf40964628c7211f1a60bf47fbfec6046ed60f124dc4d891c37",
+    "platform/reference.json": "cb7537e18b3ed6e270f301072edec75e31e6201dea326cb027a2de4e330215d0",
+    "platform/schemas.json": "10f2ea007d09de39ec26ac118646f5e8ce6b8df4a2fbecab7f024e735f27397c"
+  },
+  "architecture": "amd64",
+  "native": true,
+  "negative_checks_passed": true,
+  "repeated_inventories_identical": true,
+  "containers_removed_volumes_retained": true,
+  "finished_at": "2026-10-30T08:04:33+00:00"
+}

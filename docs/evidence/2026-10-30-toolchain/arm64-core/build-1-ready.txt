@@ -1,0 +1,103 @@
+{
+  "instance": "qual-20261030080108-1c03da2f",
+  "host": "Darwin",
+  "architecture": "arm64",
+  "host_python": "3.14.8",
+  "host_python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+  "workspace_python_target": "3.15.2",
+  "platform_commit": "b5b1bef7d1c1b816f9cc44f44a0f1b355755f958",
+  "git_client": "git version 2.56.0",
+  "docker_client": "Docker version 29.9.2, build a82e528",
+  "compose": "5.6.1",
+  "daemon_available": true,
+  "docker_error": null,
+  "runtime_qualification": "NOT_EXECUTED",
+  "docker_server": "29.9.2",
+  "daemon_architecture": "aarch64",
+  "cpus": 4,
+  "memory_bytes": 14636896256,
+  "baseline": {
+    "runtime_inputs_sha256": "4df59c2375359f8189cdda533725cbb0115b68e00b15e56393ab8656442920cb",
+    "inputs": {
+      ".devcontainer/Dockerfile": "96a70b60cf1cb2bf89db18e1735cb567a76173d414a438f107e145cef07d6980",
+      ".python-version": "673e2ba07f95bfcfe0a543258b8e267954e403d1f466481c546f467f86b31d46",
+      "compose.yaml": "0e6aba37e0e42abd8b6e03a8fd863c484378c2b2c1198fa2d4e189af17f89db5",
+      "containers/postgres/20-datacon.sh": "031f8efb2f80db42ef3ce1c7f01b12545c4219a864e8ae03a773dae69736220c",
+      "containers/toolchain/Dockerfile": "f0ccbf869b0faee4dc236b9e6167d36ec7428645243eb571c0e505ef1be7d04c",
+      "datacon": "dea00cb0279c2ca8475cf50b74afc04909f70bed3f7cbcd7fd727668661c6810",
+      "platform/reference.json": "cb7537e18b3ed6e270f301072edec75e31e6201dea326cb027a2de4e330215d0",
+      "platform/schemas/odcs-3.1.0.json": "f99a3093a5d65326837f96278654067ffdc10de314fc1f45b9dbfeb1d3429f84",
+      "platform/schemas/odcs-3.2.0.json": "edb41f33ec46e84780e99872ab2bd67f074959d2bf3e9c9fc54e61f8982b0d93",
+      "platform/schemas.json": "10f2ea007d09de39ec26ac118646f5e8ce6b8df4a2fbecab7f024e735f27397c",
+      "requirements/os/bookworm-amd64.tsv": "48a853fbbba4b893a1e4fbcab1da4c539318db8c08e6ee322c75790fa901cfa0",
+      "requirements/os/bookworm-arm64.tsv": "a165d74f6b278c1450609c810584cde10939aef01ce36e4a277618097a863dea",
+      "requirements/os/debian.sources": "80880fc61c4d2dd228976d45c1ffa13698bfcf317d1aa22d7bc1d46ab5d04b83",
+      "requirements/toolchain.txt": "4add8954e4500fbc898b31790e2fe6c2d20a9ea622a98356ebc573dac050c575",
+      "requirements/workspace.txt": "c5fb7630519e0d0402f125e4641663f51d2ca24c92958899cefc77cbaf7b51ef",
+      "scripts/baseline.py": "7e69b0b07bea53b5308ec5a67d31d1f866cd44c12aca53c73d04df3bf55120ea",
+      "scripts/check_docs.py": "4c10903193422d52ddb5bc2f9226f023a0e5eef8a041f0afc9ffdcf9c6604c19",
+      "scripts/contracts.py": "7d5b10264248d2a731bb7e83d13d1dbd57f5501823ecf4965847520441d62d4f",
+      "scripts/datacon.py": "61a7a23023d10fba1683ffdcdbea69f0d5fd97ad233654a177e06aaf6e003553",
+      "scripts/diagnostics.py": "0bb022464c5f92b0367a1319ce6b51179278cedc52d990ecb69b0b57cb12952a",
+      "scripts/lock_toolchain.py": "f9a40367a56e6b26c7d7d88cd75f3744b806ab285362321ccd20edca1c816657",
+      "scripts/project_exec.py": "f0f0b929bd4b8b9cdb437d6eb2457d11371692d3fc573729464c6763d5be2d04",
+      "scripts/projects.py": "92f6d80119a9dada6afd3a7546708fd34e1def6b76295b2eb5e28f8ca88ae119",
+      "scripts/qualify.py": "6e73b0ea32e4adc6377848aefee1f04919b0dd196eae8e4c09ed1fa1d275c298",
+      "scripts/qualify_projects.py": "0d0dc3a337bbe513947c4122c7b12af54c39942b00bc347a59ec2d179b0826ab",
+      "scripts/qualify_toolchain.py": "a39aa9e192257eb55d29327e1390979b2916f6ca92dc24d0c9a407562dc4ce42",
+      "scripts/reference.py": "0e0d259e674481c4e9ec8eb2ec32fc92034ba08ed70886af1904525505eeb701",
+      "scripts/smoke.py": "8d657210463d94ee65ecdb91305ce4f7e5086e7770c7cfe3b397bfb3225746d3",
+      "scripts/toolchain_smoke.py": "3ddf99e3d63f6dd00b32c8258b455edda15ba6e16343e4d6b2e40ba3cf45ad4a",
+      "scripts/verify_os.py": "97ff61f1eccbcbf40964628c7211f1a60bf47fbfec6046ed60f124dc4d891c37"
+    },
+    "release": null,
+    "release_status": "development; no approved immutable release published",
+    "working_tree_dirty": false
+  },
+  "paths": {
+    "repository": "/Users/mmcgrath/Documents/dev/00-base/datacon",
+    "state": "/Users/mmcgrath/Documents/dev/00-base/datacon/.local/instances/qual-20261030080108-1c03da2f",
+    "state_exists": true,
+    "state_parent_writable": true,
+    "host_free_bytes": 13304795136,
+    "credentials_complete": true
+  },
+  "services": {
+    "workspace": {
+      "status": "running",
+      "health": "healthy",
+      "image": "sha256:923fb6a71737e109e3d780a36ea36e1c412d7cb6df57f881f5017b641532a008",
+      "memory_limit_bytes": 805306368,
+      "cpu_limit_nanocpus": 1000000000,
+      "restart": "unless-stopped",
+      "architecture": "arm64",
+      "digests": [],
+      "runtime_inputs_sha256": "4df59c2375359f8189cdda533725cbb0115b68e00b15e56393ab8656442920cb",
+      "matches_checkout": true
+    },
+    "warehouse": {
+      "status": "running",
+      "health": "healthy",
+      "image": "sha256:c624136bd728eafd9b0baca834a86d56dac52d771f88e4db3ff7c30860b76638",
+      "memory_limit_bytes": 1610612736,
+      "cpu_limit_nanocpus": 1000000000,
+      "restart": "unless-stopped",
+      "architecture": "arm64",
+      "digests": [
+        "pgduckdb/pgduckdb@sha256:302d06d005b6b26512ed68f3d752842641c3c36504d18e8a76e60e3354e00d22"
+      ],
+      "matches_checkout": true
+    }
+  },
+  "ready": true,
+  "baseline_matches": true,
+  "native_architecture_match": true,
+  "images_native": true,
+  "resource_target": {
+    "cpus": 2,
+    "memory_bytes": 4294967296,
+    "qualified": false
+  },
+  "resource_target_available": true,
+  "next_step": "Run up, smoke and reference. Resource and supported-host acceptance remain separate checks."
+}

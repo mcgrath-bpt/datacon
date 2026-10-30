@@ -195,6 +195,7 @@ with tempfile.TemporaryDirectory() as directory:
                 prefix = "build-" + str(iteration)
                 self.compose(prefix, "build", "--pull", "--no-cache", "workspace", timeout=720)
                 self.cli(prefix + "-start", "up", timeout=240)
+                self.cli(prefix + "-ready", "doctor", "--json", "--require-ready")
                 inventories.append(self.inventory(iteration, architecture))
                 self.cli(prefix + "-smoke", "smoke")
                 try:

@@ -1,6 +1,6 @@
 # Core dependency locks and qualification
 
-Recorded: 2026-10-29. This covers the existing Python/JSON Schema workspace and PostgreSQL/pg_duckdb core. GX, Snowflake adapters, catalogue dependencies, WSL, graphical editor acceptance, resource certification and release publication remain separate gates. DC-007 remains open.
+Recorded: 2026-10-29; updated: 2026-10-30. This covers the Python/JSON Schema workspace and PostgreSQL/pg_duckdb core. The [optional toolchain](TOOLCHAIN.md) separately locks GX, contract tooling and SQL drivers. Native Snowflake, catalogue dependencies, WSL, resource certification and release publication remain separate gates.
 
 ## Locked inputs
 
@@ -33,7 +33,7 @@ The host, daemon and image architectures must agree. Emulated builds can prepare
 
 Evidence defaults to `.local/qualification/<instance>/`. CI uses `artifacts/core-qualification/` and uploads it even on failure, retaining the artefact for 30 days. Only command transcripts, selected identity fields, package inventories and the four named reference JSON reports are collected. Instance secret values and authenticated URLs are redacted; full Docker inspect/environment output, credentials, databases, fixture directories and checkouts are never copied. Review evidence before committing it. A run failing before Docker starts still leaves a failure summary. A forced runner termination may interrupt cleanup; GitHub discards its VM.
 
-Normal completion or failure removes only that qualification instance's containers using `datacon --instance <name> down`. All named volumes and local credentials remain. No prune or volume deletion is performed. Existing instances and dirty delivery checkouts remain untouched. The script does not change the existing CLI or certify branch protection.
+Normal completion or failure removes only that qualification instance's containers using `datacon --instance <name> down`. All named volumes and local credentials remain. No prune or volume deletion is performed. Existing instances and dirty delivery checkouts remain untouched. The script does not certify branch protection.
 
 ## Deliberate refresh procedure
 
@@ -49,4 +49,4 @@ Normal completion or failure removes only that qualification instance's containe
    Repeat with `amd64`. Inspect complete diffs against the committed inventories; only copy reviewed candidates into `requirements/os/bookworm-<architecture>.tsv`. Do not remove the verification stage to make a build pass.
 4. For any wheel change, query the exact release's PyPI JSON metadata, select only the supported wheel filenames, download them, and calculate SHA-256 independently. Compare it with the published digest; update both the requirements hashes and provenance JSON. Keep every transitive requirement pinned. Do not add source distributions or unapproved wheels as a workaround.
 5. Run the shared qualification on native ARM64 and native AMD64, including both uncached builds and deliberate failure checks. Record actual run URLs, revisions, versions and sanitised evidence. Review inventory differences and compatibility; retain all prior qualification instances until explicitly authorised for removal.
-6. Update the handover/backlog and obtain normal PR review. Lock refresh does not publish a release or satisfy the wider DC-007 capability gates.
+6. Update the handover/backlog and obtain normal PR review. Lock refresh does not publish a release; qualify the optional capabilities with the separate toolchain procedure.
