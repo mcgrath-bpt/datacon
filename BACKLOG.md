@@ -100,6 +100,8 @@ Core lock increment, 2026-10-29: added SHA-256 wheel locks, dated signed Debian 
 
 Handover update, 2026-10-29: user requests the latest stable Python, with 3.12 as the minimum. The workspace candidate is now `python:3.15.2-slim-bookworm`, `.python-version` records 3.15.2, and `rpds-py==2026.9.1` supplies published CPython 3.15 wheel candidates. The host launcher enforces stable Python >=3.12 and selects installed 3.14.8 on this Mac. Docker diagnostics now distinguish `access_denied`. See [HANDOVER.md](HANDOVER.md) for measured checks and remaining qualification.
 
+Toolchain increment, 2026-10-30: the [isolated toolchain](docs/TOOLCHAIN.md) pins GX 1.24.1, Data Contract CLI 1.2.8, SQLAlchemy/PostgreSQL/Snowflake drivers and all transitive wheels under Python 3.14.8, preserving workspace Python 3.15.2. Native ARM64 repeated builds, actual PostgreSQL/GX success/failure/rollback, offline schema/export checks and deliberate integrity failures passed. Schemas are vendored at an exact upstream commit; doctor now reports readiness, input/image identity, paths and resource availability without exposing secrets. Native AMD64 qualification and final evidence review are pending; DC-007 remains open until they pass. Native Snowflake execution remains DC-014–DC-016.
+
 **Done when:** locked installs work on ARM64 and AMD64; required tools do not use floating latest versions; diagnostics explain missing prerequisites without exposing secrets. Catalogue dependencies may be locked later in DC-018.
 
 ## Reference delivery, contracts and execution

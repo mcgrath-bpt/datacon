@@ -1,0 +1,74 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 727B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.60kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.14.8-slim-bookworm@sha256:44e000a07b48bef1517a2b14adc93c17af728ca98858b5e24c6e1b18de1b2ef2
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 617B done
+#4 DONE 0.0s
+
+#5 [ 1/14] FROM docker.io/library/python:3.14.8-slim-bookworm@sha256:44e000a07b48bef1517a2b14adc93c17af728ca98858b5e24c6e1b18de1b2ef2
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 2.96kB done
+#6 DONE 0.0s
+
+#7 [ 2/14] COPY requirements/toolchain.txt /opt/datacon/requirements/toolchain.txt
+#7 CACHED
+
+#8 [ 3/14] RUN python -m venv /opt/datacon/venv     && /opt/datacon/venv/bin/pip install --no-cache-dir --only-binary=:all: --require-hashes        -r /opt/datacon/requirements/toolchain.txt     && /opt/datacon/venv/bin/pip check
+#8 CACHED
+
+#9 [ 4/14] RUN test "1000" -gt 0 && test "1000" -gt 0     && groupadd --gid "1000" developer     && useradd --uid "1000" --gid "1000" --create-home developer     && mkdir -p /workspaces && chown developer:developer /workspaces
+#9 CACHED
+
+#10 [ 5/14] COPY scripts /opt/datacon/scripts
+#10 DONE 0.0s
+
+#11 [ 6/14] COPY platform /opt/datacon/platform
+#11 DONE 0.0s
+
+#12 [ 7/14] COPY requirements /opt/datacon/requirements
+#12 DONE 0.0s
+
+#13 [ 8/14] COPY .devcontainer/Dockerfile /opt/datacon/.devcontainer/Dockerfile
+#13 DONE 0.0s
+
+#14 [ 9/14] COPY containers/toolchain/Dockerfile /opt/datacon/containers/toolchain/Dockerfile
+#14 DONE 0.0s
+
+#15 [10/14] COPY compose.yaml /opt/datacon/compose.yaml
+#15 DONE 0.0s
+
+#16 [11/14] COPY containers/postgres /opt/datacon/containers/postgres
+#16 DONE 0.0s
+
+#17 [12/14] COPY .python-version datacon /opt/datacon/
+#17 DONE 0.0s
+
+#18 [13/14] RUN python /opt/datacon/scripts/baseline.py > /opt/datacon/baseline.json
+#18 DONE 0.1s
+
+#19 [14/14] WORKDIR /workspaces
+#19 DONE 0.0s
+
+#20 exporting to image
+#20 exporting layers 0.0s done
+#20 writing image sha256:80834ec4067524050c052451229b3b3c3b2baddc2f387d69e75bfe9b3a2a2d81 done
+#20 naming to docker.io/library/datacon-projects-20261030074517-bf03af-toolchain done
+#20 DONE 0.0s
+
+#21 resolving provenance for metadata file
+#21 DONE 0.0s
+{"host_and_volume_mounts": true, "project_database_identity": true, "uid": 1000}
+ Image datacon-projects-20261030074517-bf03af-toolchain Building
+ Image datacon-projects-20261030074517-bf03af-toolchain Built
+ Container datacon-projects-20261030074517-bf03af-toolchain-run-d73fd9cd0f1a Creating
+ Container datacon-projects-20261030074517-bf03af-toolchain-run-d73fd9cd0f1a Created

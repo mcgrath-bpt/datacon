@@ -1,6 +1,32 @@
 name: datacon-${DATACON_INSTANCE:-default}
 
 services:
+  toolchain:
+    # Finite optional job; ordinary up never starts it.
+    profiles: ["tools"]
+    restart: "no"
+    build:
+      context: .
+      dockerfile: containers/toolchain/Dockerfile
+      args:
+        WORKSPACE_UID: ${DATACON_UID:-1000}
+        WORKSPACE_GID: ${DATACON_GID:-1000}
+    init: true
+    user: developer
+    working_dir: /workspaces
+    mem_limit: 1536m
+    cpus: 1.0
+    environment:
+      PGHOST: warehouse
+      PGPORT: "5432"
+      PGDATABASE: datacon
+      PGUSER: developer
+      PGCONNECT_TIMEOUT: "10"
+    secrets:
+      - developer_password
+    volumes:
+      - workspaces:/workspaces
+
   workspace:
     restart: unless-stopped
     build:

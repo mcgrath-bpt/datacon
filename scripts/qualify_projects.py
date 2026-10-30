@@ -87,6 +87,20 @@ def main():
         assert (host / 'from-container.txt').read_text() == 'container write\n'
         (host / 'from-host.txt').write_text('host write\n')
         execute('read-through-bind', 'sample', 'python', '-c', "from pathlib import Path; assert Path('from-host.txt').read_text()=='host write\\n'")
+        runner.cli('toolchain-project-mounts', 'tools', '--', 'python', '-c', """import json,os,psycopg2
+from pathlib import Path
+assert os.getuid()!=0
+assert Path('/projects/sample/from-host.txt').read_text()=='host write\\n'
+assert Path('/workspaces/opharma/unfinished.txt').read_text()=='Retain Opharma work.\\n'
+Path('/projects/sample/from-toolchain.txt').write_text('toolchain write\\n')
+with psycopg2.connect(host='warehouse',dbname='dc_sample',user='dc_sample',connect_timeout=10,
+ password=Path('/run/secrets/project_sample').read_text().strip()) as connection:
+ with connection.cursor() as cursor:
+  cursor.execute('SELECT value FROM workspace.probe')
+  assert cursor.fetchone()==(7,)
+print(json.dumps({'host_and_volume_mounts':True,'project_database_identity':True,'uid':os.getuid()}))
+""", timeout=600)
+        assert (host / 'from-toolchain.txt').read_text() == 'toolchain write\n'
         snapshot_code = """import hashlib,json,subprocess
 from pathlib import Path
 root=Path(subprocess.check_output(['git','rev-parse','--show-toplevel'],text=True).strip())
@@ -117,6 +131,7 @@ print(json.dumps({'revision':subprocess.check_output(['git','rev-parse','HEAD'],
             cross_project_access_denied=True, scoped_reset_preserved_other_project=True,
             recreation_preserved_dirty_checkouts=True, credentials_preserved=True,
             bidirectional_host_mount=True, host_path_contains_spaces_and_dollar=True,
+            toolchain_project_mounts_and_identity=True,
             editor_folder=editor, graphical_editor='NOT_EXECUTED')
     except (OSError, ValueError, RuntimeError, AssertionError, subprocess.SubprocessError) as error:
         runner.summary['error'] = str(error) or type(error).__name__

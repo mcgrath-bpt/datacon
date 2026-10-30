@@ -70,6 +70,7 @@ class ProjectTests(unittest.TestCase):
         self.assertEqual(mount['source'], str(self.repo.resolve()).replace('$', '$$'))
         self.assertEqual(mount['target'], '/projects/delivery-a')
         self.assertFalse(mount['bind']['create_host_path'])
+        self.assertEqual(overlay['services']['workspace'], overlay['services']['toolchain'])
         self.assertIn(str(self.state / 'projects.compose.json'), datacon.compose('test', 'up', root=self.root))
         self.assertEqual(overlay['secrets']['project_delivery-a']['file'], str(self.state / 'projects/delivery-a/password'))
 

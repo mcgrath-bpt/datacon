@@ -122,7 +122,18 @@ class CommandTests(unittest.TestCase):
             self.assertEqual(cli.doctor("default", as_json=True), 1)
         report = json.loads(output.getvalue())
         self.assertEqual(report["docker_error"], "access_denied")
+        self.assertIn("access is denied", report["next_step"])
         self.assertNotIn("Start Docker", report["next_step"])
+
+    def test_missing_git_is_a_failure_with_an_actionable_diagnostic(self):
+        output = io.StringIO()
+        def probe(command):
+            return '5.6.1' if command[:3] == ['docker', 'compose', 'version'] else None
+        with patch.object(cli, 'probe', side_effect=probe), \
+             patch.object(cli, 'docker_status', return_value=({'ServerVersion': '29.9.2'}, None)), \
+             contextlib.redirect_stdout(output):
+            self.assertEqual(cli.doctor('default', as_json=True), 1)
+        self.assertIn('Install Git', json.loads(output.getvalue())['next_step'])
 
     def test_docker_error_classification_does_not_leak_credentials(self):
         error = subprocess.CalledProcessError(1, ["docker"], stderr="permission denied password=private-value")

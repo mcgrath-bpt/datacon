@@ -14,6 +14,7 @@ import sys
 # Also support host tests loading this file by absolute path.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import projects
+import diagnostics
 
 ROOT = Path(__file__).resolve().parents[1]
 INSTANCE_PATTERN = re.compile(r"[a-z][a-z0-9-]{0,39}\Z")
@@ -134,7 +135,8 @@ def docker_status():
         return {}, "invalid_response"
 
 
-def doctor(instance, as_json=False):
+def doctor(instance, as_json=False, require_ready=False):
+    git_version = probe(["git", "--version"])
     revision = probe(["git", "-C", str(ROOT), "rev-parse", "HEAD"])
     docker_version = probe(["docker", "--version"])
     compose_version = probe(["docker", "compose", "version", "--short"])
@@ -142,19 +144,38 @@ def doctor(instance, as_json=False):
     report = {"instance": instance, "host": platform.system(), "architecture": platform.machine(),
               "host_python": platform.python_version(), "host_python_executable": sys.executable,
               "workspace_python_target": (ROOT / ".python-version").read_text().strip(), "platform_commit": revision,
-              "docker_client": docker_version, "compose": compose_version,
+              "git_client": git_version, "docker_client": docker_version, "compose": compose_version,
               "daemon_available": bool(info), "docker_error": docker_error,
               "runtime_qualification": "NOT_EXECUTED"}
     if info:
         report.update(docker_server=info.get("ServerVersion"),
                       daemon_architecture=info.get("Architecture"), cpus=info.get("NCPU"),
                       memory_bytes=info.get("MemTotal"))
+    report.update(diagnostics.inspect(ROOT, instance, probe, bool(info)))
+    host_arch = diagnostics.ARCHITECTURES.get(platform.machine())
+    daemon_arch = diagnostics.ARCHITECTURES.get(info.get('Architecture'))
+    report['native_architecture_match'] = bool(host_arch and host_arch == daemon_arch)
+    report['images_native'] = bool(daemon_arch and len(report['services']) == 2 and all(
+        diagnostics.ARCHITECTURES.get(service.get('architecture')) == daemon_arch
+        for service in report['services'].values()))
+    report['resource_target'] = {'cpus': 2, 'memory_bytes': 4 * 1024**3, 'qualified': False}
+    report['resource_target_available'] = bool(info.get('NCPU', 0) >= 2 and info.get('MemTotal', 0) >= 4 * 1024**3)
     if docker_error == "access_denied":
         report["next_step"] = "Docker access is denied to this process. Check session permissions or run from an authorised terminal; restarting Docker will not change a sandbox restriction."
     elif not report["daemon_available"]:
         report["next_step"] = "Start Docker Desktop or your Linux Docker daemon if needed. If it is already running, check the selected Docker context and this session's socket access."
     elif not compose_version:
         report["next_step"] = "Install a supported Docker Compose plugin."
+    elif not git_version:
+        report['next_step'] = "Install Git and ensure it is available on PATH."
+    elif not report['ready']:
+        report['next_step'] = "Run up for this instance and inspect status; core services are absent, stopped or unhealthy."
+    elif not report.get('baseline_matches'):
+        report['next_step'] = "Running core differs from this checkout or has no recorded identity. Run up to rebuild; retained volumes are preserved."
+    elif not report['native_architecture_match'] or not report['images_native']:
+        report['next_step'] = "Use a supported native ARM64 or AMD64 host, daemon and images; emulation is not native qualification."
+    elif not report['paths']['credentials_complete']:
+        report['next_step'] = "Restore this instance's missing credential files from backup; do not rotate credentials for retained database volumes."
     else:
         report["next_step"] = "Run up, smoke and reference. Resource and supported-host acceptance remain separate checks."
     if as_json:
@@ -162,7 +183,10 @@ def doctor(instance, as_json=False):
     else:
         for key, value in report.items():
             print(f"{key}: {value}")
-    return 0 if report["daemon_available"] and compose_version else 1
+    prerequisites = report['daemon_available'] and compose_version and git_version
+    ready = (report['ready'] and report.get('baseline_matches') and report['native_architecture_match']
+             and report['images_native'] and report['paths']['credentials_complete'])
+    return 0 if prerequisites and (not require_ready or ready) else 1
 
 
 def assert_unused(instance, env):
@@ -190,6 +214,7 @@ def main(argv=None):
     commands.add_parser("init", help="Create local credentials once; preserve existing credentials")
     diagnostic = commands.add_parser("doctor", help="Report prerequisites without exposing secrets")
     diagnostic.add_argument("--json", action="store_true")
+    diagnostic.add_argument("--require-ready", action="store_true", help="Fail unless core is healthy and matches this checkout")
     start = commands.add_parser("up", help="Build and start the core; resume persistent volumes")
     start.add_argument("--workspace-only", action="store_true")
     fresh = commands.add_parser("fresh", help="Start a new named instance without altering retained work")
@@ -203,6 +228,8 @@ def main(argv=None):
     execute.add_argument("command", nargs=argparse.REMAINDER)
     commands.add_parser("smoke", help="Check non-root tools, database access, RLS and DuckDB execution")
     commands.add_parser("reference", help="Clone and test the pinned Opharma reference in a new checkout")
+    toolchain = commands.add_parser("tools", help="Run a finite command in the isolated toolchain (default: smoke)")
+    toolchain.add_argument("command", nargs=argparse.REMAINDER)
     commands.add_parser("check", help="Run host-side unit tests without Docker or network access")
     projects.add_parser(commands)
     args = parser.parse_args(argv)
@@ -212,7 +239,13 @@ def main(argv=None):
         if args.action == "project":
             return projects.handle(args, instance, ROOT, compose, env)
         if args.action == "doctor":
-            return doctor(instance, args.json)
+            return doctor(instance, args.json, args.require_ready)
+        if args.action == "tools":
+            if not state_path(instance).is_dir():
+                raise DataconError("Run init or up for this instance before using tools.")
+            command = args.command[1:] if args.command[:1] == ["--"] else args.command
+            run(compose(instance, "run", "--rm", "--no-deps", "--build", "-T", "toolchain", *command), env=env)
+            return 0
         if args.action == "check":
             run([sys.executable, "-m", "unittest", "discover", "-s", str(ROOT / "tests"), "-v"])
             return 0

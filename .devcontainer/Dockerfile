@@ -29,6 +29,13 @@ RUN test "$WORKSPACE_UID" -gt 0 && test "$WORKSPACE_GID" -gt 0 \
 
 COPY scripts /opt/datacon/scripts
 COPY platform /opt/datacon/platform
+COPY requirements /opt/datacon/requirements
+COPY .devcontainer/Dockerfile /opt/datacon/.devcontainer/Dockerfile
+COPY containers/toolchain/Dockerfile /opt/datacon/containers/toolchain/Dockerfile
+COPY compose.yaml /opt/datacon/compose.yaml
+COPY containers/postgres /opt/datacon/containers/postgres
+COPY .python-version datacon /opt/datacon/
+RUN python /opt/datacon/scripts/baseline.py > /opt/datacon/baseline.json
 COPY docs /opt/datacon/docs
 COPY AGENTS.md README.md PLAN.md BACKLOG.md CONTRIBUTING.md HANDOVER.md .python-version /opt/datacon/
 ENV PATH="/opt/datacon/venv/bin:${PATH}" \

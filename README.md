@@ -6,7 +6,7 @@ A versioned development environment and working method for building governed dat
 
 Independent deliveries can now share an instance with host/volume checkouts, separate SQL identities and scoped database reset. The [delivery workspace guide](docs/DELIVERY_WORKSPACES.md) explains the commands; [acceptance evidence](docs/evidence/2026-10-30-delivery-workspaces.md) records native ARM64/AMD64 two-project checks and actual Mac graphical attachment.
 
-Use the [core quick-start](docs/CORE_QUICKSTART.md) for commands, persistence behaviour and the current evidence boundary. Start with `./datacon check`, `./datacon config` and `./datacon doctor`.
+Use the [core quick-start](docs/CORE_QUICKSTART.md) for commands, persistence behaviour and the current evidence boundary. Start with `./datacon check`, `./datacon config` and `./datacon doctor`. Use [the optional toolchain](docs/TOOLCHAIN.md) for `./datacon tools`, offline ODCS validation and GX checks.
 
 For the next session, read [HANDOVER.md](HANDOVER.md) first. The workspace targets Python 3.15.2; host commands require stable Python 3.12 or later. Git, Docker and GitHub access succeeded with session approval; recheck access when resuming.
 
@@ -30,7 +30,7 @@ Snowflake Semantic Views and the existing Opharma Power BI TMDL model are distin
 ## Next implementation batch
 
 1. **DC-001: finish repository/release setup.** The GitHub remote is configured. Establish review controls and immutable release conventions.
-2. **DC-007: finish toolchain qualification.** Image digests are pinned and ARM64 reference acceptance passed. The [core lock/CI increment](docs/CORE_LOCKS.md) adds dated OS snapshots, full package inventories, wheel hashes and native AMD64 CI. Native ARM64 and AMD64 runs passed; GX and additional adapters remain open. DC-008's local reference is complete.
+2. **DC-007: complete the optional toolchain.** The [toolchain guide](docs/TOOLCHAIN.md) adds an isolated Python 3.14.8 job for GX, contract tooling and SQL drivers, while retaining the Python 3.15.2 workspace. Hash-locked native ARM64 qualification passed; the new native AMD64 job is pending. `doctor --require-ready` verifies core readiness and checkout identity. DC-008's local reference remains complete.
 3. **DC-002/DC-003: finish broader acceptance.** The core delivery workflow and Mac graphical attachment are implemented. Fresh-machine/Windows acceptance, optional dependency environments and approved release adoption remain; see the delivery evidence.
 4. **DC-014–DC-016: prove the target early.** Prepare Snowflake access alongside local work, then demonstrate S2/S4 and one native Semantic View. Full OpenMetadata integration follows and remains required for v1.
 
