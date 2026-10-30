@@ -23,8 +23,8 @@ Do not mark a backlog item done until its acceptance criteria have evidence. For
 
 ## Review and release policy
 
-The Tech Lead reviews baseline, dependency and release changes. Required checks and review protection must be configured on the remote before claiming enforcement; written conventions alone do not enforce them. The exact reviewer account/team and repository settings remain to be established in DC-001/DC-032.
+The Tech Lead reviews baseline, dependency and release changes. [Release and repository controls](docs/RELEASES.md) define reproducible required checks and the separately deferred owner-review rules. The user deferred a second account on 2026-10-30; CODEOWNERS names `mcgrath-bpt`, but required owner approval is not active. Written conventions alone do not enforce review. Use [the dependency process](docs/DEPENDENCIES.md) for new or changed delivery prerequisites, including native target packages.
 
-The initial documentation commit is not a runtime release. Under DC-007, record and qualify exact image and tool versions. Under DC-001, publish an immutable release reference, supported hosts/capabilities, compatibility notes and upgrade guidance. A project records the approved Datacon release used for acceptance; platform and project histories remain separate.
+The initial documentation commit is not a runtime release. Under DC-007, record and qualify exact image and tool versions. Under DC-001, prepare a content-bound manifest from a clean committed checkout, qualify that revision and publish an approved immutable release through the documented process. A project records the release, commit, manifest SHA-256 and selected capabilities in its own reviewed pin; platform and project histories remain separate. No approved release is published yet.
 
 See [the working guide](docs/WORKING_GUIDE.md) for evidence, secrets, clean acceptance, date formatting and daily delivery conventions.

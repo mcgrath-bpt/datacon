@@ -1,0 +1,20 @@
+{
+  "workspace": {
+    "image": "sha256:6e2a08f4121e59dba18fcb473b8033479b22e1d189fbd364b692fb77348bef20",
+    "restart": "unless-stopped",
+    "status": "running",
+    "id": "sha256:6e2a08f4121e59dba18fcb473b8033479b22e1d189fbd364b692fb77348bef20",
+    "architecture": "arm64",
+    "digests": []
+  },
+  "warehouse": {
+    "image": "sha256:c624136bd728eafd9b0baca834a86d56dac52d771f88e4db3ff7c30860b76638",
+    "restart": "unless-stopped",
+    "status": "running",
+    "id": "sha256:c624136bd728eafd9b0baca834a86d56dac52d771f88e4db3ff7c30860b76638",
+    "architecture": "arm64",
+    "digests": [
+      "pgduckdb/pgduckdb@sha256:302d06d005b6b26512ed68f3d752842641c3c36504d18e8a76e60e3354e00d22"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "artifact_id": 13006085345,
+    "scope": "amd64-core",
+    "sha256": "8d7bd73aaaca75d54127e43512aaed473c8f6795742396139fcca026132401d5",
+    "digest_verified": true,
+    "qualification_passed": true,
+    "run_url": "https://github.com/mcgrath-bpt/datacon/actions/runs/41113741812",
+    "pull_request_head": "be7f025689340e119673036a90e7167d72498512",
+    "tested_merge_commit": "ebec119a3a2de7c06ee1c6ba4355243dedf1d6a7",
+    "tree_matches_head": true,
+    "tree": "e96875985022b0ea0e998fc1f2cf982b45d4de31"
+  },
+  {
+    "artifact_id": 13004667270,
+    "scope": "amd64-toolchain",
+    "sha256": "4d0c4986bf21f43774a08dd97cf24efa1e65a177f504278f435c73d28cddaa9a",
+    "digest_verified": true,
+    "qualification_passed": true,
+    "run_url": "https://github.com/mcgrath-bpt/datacon/actions/runs/41113741812",
+    "pull_request_head": "be7f025689340e119673036a90e7167d72498512",
+    "tested_merge_commit": "ebec119a3a2de7c06ee1c6ba4355243dedf1d6a7",
+    "tree_matches_head": true,
+    "tree": "e96875985022b0ea0e998fc1f2cf982b45d4de31"
+  },
+  {
+    "artifact_id": 13003784400,
+    "scope": "amd64-projects",
+    "sha256": "eef4267f56c51c6f8a3091563eaa99297d089d7c6bacb31a0b58246c2dc7f36e",
+    "digest_verified": true,
+    "qualification_passed": true,
+    "run_url": "https://github.com/mcgrath-bpt/datacon/actions/runs/41113741812",
+    "pull_request_head": "be7f025689340e119673036a90e7167d72498512",
+    "tested_merge_commit": "ebec119a3a2de7c06ee1c6ba4355243dedf1d6a7",
+    "tree_matches_head": true,
+    "tree": "e96875985022b0ea0e998fc1f2cf982b45d4de31"
+  }
+]

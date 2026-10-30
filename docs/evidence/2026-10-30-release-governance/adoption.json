@@ -1,0 +1,84 @@
+{
+  "started_at": "2026-10-30T19:15:55+00:00",
+  "steps": [
+    {
+      "name": "clone-platform",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "platform-commit",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "candidate",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "initialise-independent-delivery",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "stage-delivery-pin",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "commit-delivery-pin",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "content-verification",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "name": "reject-unpublished-release",
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "name": "reject-v1-core-preview",
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "name": "reject-unapproved-node",
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "name": "reject-altered-manifest",
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "name": "delivery-commit",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    }
+  ],
+  "published_release": false,
+  "platform_commit": "be7f025689340e119673036a90e7167d72498512",
+  "delivery_commit": "4c2705e6544765367f21c83f3f9bb47f63d78c1c",
+  "runtime_inputs_sha256": "a6f51c09ae7d441395cf61015f665ac05dd09e9e7fbed50a485a6d1f1e52a9c0",
+  "manifest_sha256": "13ef4fc5187e47a0d01c4d3acdba27629d9aab722c48025a510928bbbb45f874",
+  "content_verification": {
+    "release": "v0.1.0-rc.1",
+    "commit": "be7f025689340e119673036a90e7167d72498512",
+    "capabilities": [
+      "workspace-python",
+      "postgres-duckdb",
+      "quality-contracts"
+    ],
+    "target": "local-linux-arm64",
+    "status": "CONTENT_ONLY",
+    "delivery_approval": "Required through the delivery repository review controls; not inferred by this command."
+  },
+  "finished_at": "2026-10-30T19:15:57+00:00",
+  "passed": true
+}

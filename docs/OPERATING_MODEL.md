@@ -1,6 +1,6 @@
 # Platform and delivery operating model
 
-Recorded: 2026-10-29. This is the clarified direction for Datacon and the first Opharma delivery. Enforcement remains implementation work.
+Recorded: 2026-10-29; updated: 2026-10-30. This is the clarified direction for Datacon and the first Opharma delivery. [Release controls](RELEASES.md) and [dependency requests](DEPENDENCIES.md) implement part of this model; required owner review and delivery enforcement remain outstanding.
 
 ## Shared platform and separate deliveries
 

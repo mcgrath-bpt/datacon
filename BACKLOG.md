@@ -38,6 +38,12 @@ Create the platform Git repository/history, agree its remote, and commit the des
 
 Progress, 2026-10-29: the user created initial commit `601cee3` on `main`, containing the design and repository conventions. Approved Git writes created `feat/DC-002-core-runtime` with all existing work preserved. The user subsequently supplied the public GitHub repository, now configured as `origin`; its initial MIT licence commit `6b955ac` is preserved alongside the local history. Protected reviews and release policy/locks remain outstanding, so this item stays open.
 
+Progress, 2026-10-30: [release policy and tooling](docs/RELEASES.md) prepare deterministic content-bound manifests and verify independent delivery pins, immutable publication, signed asset attestations and tag commits. The capability catalogue records qualified targets and exclusions; v1 preparation is rejected while scope remains a core preview. Required-check rules and a separate owner-review configuration are reproducible. The user deferred creating the second reviewer account. No approved release has been published; this item remains open.
+
+Validation, 2026-10-30: required PR/CI checks and future-release immutability are active and read-back verified. All 59 host tests passed under both supported host interpreters tested; native ARM64/AMD64 core and optional-toolchain regressions passed, including full AMD64 delivery checks. Fresh independent checkout/pin and adverse adoption tests passed. [Evidence](docs/evidence/2026-10-30-release-governance.md) records exact commits, artefact hashes and the deferred review/publication gates.
+
+Decision, 2026-10-30: the user enabled repository-administrator `always` bypass and accepted proceeding without a second reviewer account. The checked-in required-check template preserves this exception. Independent review enforcement remains deferred, but is not an operational blocker.
+
 **Done when:** a fresh checkout identifies its approved platform version; release inputs are pinned; a delivery adopts releases under the Tech Lead's compatibility/upgrade policy without sharing platform source/history; initial history and remote location are recorded.
 
 ### DC-002 — Build the minimal Dev Container and core runtime
@@ -317,6 +323,8 @@ Provide a shared catalogue and, if needed, remote compute for laptops below the 
 **P0 · M0/M1 · OPEN · Owner: Tech Lead · Dependencies: DC-001, DC-007**
 
 Define the personal-experiment-to-delivery-dependency process, approved capability catalogue, platform release/support policy and review responsibilities. Any new tool/package/version that becomes a delivery prerequisite must be agreed and reproducibly provisioned through the platform repo, even for one consumer. Projects may record approved application dependencies in lockfiles; they cannot introduce a competing baseline. Use platform-owned optional features/environments to limit image growth.
+
+Progress, 2026-10-30: [the dependency process](docs/DEPENDENCIES.md), request template, capability/target checks and whole-platform CODEOWNERS are implemented. Adverse tests reject undeclared Node/npm capability selection, native Snowflake claims and altered baseline pins. DEP-001 records the Node/npm example as pending a real decision and provision. Required owner review is explicitly deferred at the user's request until a second account exists; delivery-repository enforcement and the full approved example remain outstanding. Automated checks alone do not complete this item.
 
 **Done when:** an npm/Node-style experimental requirement is taken through request, decision, platform provision and clean delivery use; ownership and required-review controls are configured on the relevant repository paths; an unapproved dependency/baseline change is prevented from ordinary merge. CODEOWNERS alone is not counted as enforcement. Target-runtime dependencies, including Snowflake packages, are explicitly considered.
 

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "capabilities": {
+    "workspace-python": {
+      "description": "Non-root Python 3.15.2 workspace, Git, SQL clients and offline JSON Schema validation",
+      "status": "qualified",
+      "provision": [".devcontainer/Dockerfile", "requirements/workspace.txt", "requirements/os/bookworm-arm64.tsv", "requirements/os/bookworm-amd64.tsv"],
+      "targets": ["local-linux-arm64", "local-linux-amd64"],
+      "evidence": ["docs/evidence/2026-10-30-toolchain.md"]
+    },
+    "postgres-duckdb": {
+      "description": "PostgreSQL 17.7 with pg_duckdb SQL extension 1.1.0, restricted project identities and retained data",
+      "status": "qualified",
+      "provision": ["compose.yaml", "containers/postgres/20-datacon.sh"],
+      "targets": ["local-linux-arm64", "local-linux-amd64"],
+      "evidence": ["docs/evidence/2026-10-30-delivery-workspaces.md", "docs/evidence/2026-10-30-toolchain.md"]
+    },
+    "quality-contracts": {
+      "description": "Finite Python 3.14.8 job: GX 1.24.1, Data Contract CLI 1.2.8, SQLAlchemy 2.1.6 and offline ODCS 3.1/3.2",
+      "status": "qualified",
+      "provision": ["containers/toolchain/Dockerfile", "requirements/toolchain.txt", "platform/schemas.json"],
+      "targets": ["local-linux-arm64", "local-linux-amd64"],
+      "evidence": ["docs/evidence/2026-10-30-toolchain.md"]
+    },
+    "snowflake-client": {
+      "description": "Snowflake Connector 5.1.0 and SQLAlchemy dialect 2.1.0; imports and SQL compilation only",
+      "status": "qualified",
+      "provision": ["containers/toolchain/Dockerfile", "requirements/toolchain.txt"],
+      "targets": ["local-linux-arm64", "local-linux-amd64"],
+      "evidence": ["docs/evidence/2026-10-30-toolchain.md"]
+    }
+  },
+  "not_qualified": ["native-snowflake", "windows-wsl", "fresh-machine-onboarding", "4-gib-2-vcpu", "openmetadata", "node-npm"],
+  "approval": "Qualification records observed technical capability. Delivery approval requires an immutable release and Tech Lead review of the delivery pin."
+}

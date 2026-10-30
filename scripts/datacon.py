@@ -15,6 +15,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import projects
 import diagnostics
+import releases
 
 ROOT = Path(__file__).resolve().parents[1]
 INSTANCE_PATTERN = re.compile(r"[a-z][a-z0-9-]{0,39}\Z")
@@ -232,10 +233,13 @@ def main(argv=None):
     toolchain.add_argument("command", nargs=argparse.REMAINDER)
     commands.add_parser("check", help="Run host-side unit tests without Docker or network access")
     projects.add_parser(commands)
+    releases.add_parser(commands)
     args = parser.parse_args(argv)
     try:
         instance = instance_name(args.name if args.action == "fresh" else args.instance)
         env = environment(instance)
+        if args.action == "release":
+            return releases.handle(args, ROOT)
         if args.action == "project":
             return projects.handle(args, instance, ROOT, compose, env)
         if args.action == "doctor":
@@ -280,7 +284,7 @@ def main(argv=None):
             flags = [] if sys.stdin.isatty() and args.action in ("shell", "exec") else ["-T"]
             run(compose(instance, "exec", *flags, "workspace", *command), env=env)
         return 0
-    except (DataconError, projects.ProjectError) as error:
+    except (DataconError, projects.ProjectError, releases.ReleaseError) as error:
         print("datacon: " + str(error), file=sys.stderr)
         return 1
     except subprocess.CalledProcessError as error:

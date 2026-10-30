@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "repository": "mcgrath-bpt/datacon",
+  "next_version": "0.1.0",
+  "release_status": "development",
+  "scope": "core-preview",
+  "host_evidence": {
+    "macos-arm64-docker-desktop": "observed on existing development host",
+    "linux-amd64": "observed on native GitHub Actions runner"
+  },
+  "limitations": [
+    "OpenMetadata and project catalogue integration remain required before v1.",
+    "Actual Windows/WSL, fresh-machine onboarding and the 4-GiB/two-vCPU allocation remain unqualified.",
+    "Snowflake clients are qualified locally; target packages and native execution require separate approval and evidence.",
+    "A candidate manifest is not a published or approved release."
+  ]
+}

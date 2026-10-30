@@ -1,0 +1,171 @@
+{
+  "instance": "tools-20261030191704-20ec01",
+  "started_at": "2026-10-30T19:17:04+00:00",
+  "passed": true,
+  "steps": [
+    {
+      "name": "revision",
+      "started_at": "2026-10-30T19:17:04+00:00",
+      "finished_at": "2026-10-30T19:17:04+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "working-tree",
+      "started_at": "2026-10-30T19:17:04+00:00",
+      "finished_at": "2026-10-30T19:17:04+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "doctor",
+      "started_at": "2026-10-30T19:17:04+00:00",
+      "finished_at": "2026-10-30T19:17:05+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "initialise",
+      "started_at": "2026-10-30T19:17:05+00:00",
+      "finished_at": "2026-10-30T19:17:05+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "warehouse-start",
+      "started_at": "2026-10-30T19:17:05+00:00",
+      "finished_at": "2026-10-30T19:17:11+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1",
+      "started_at": "2026-10-30T19:17:11+00:00",
+      "finished_at": "2026-10-30T19:17:41+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-image",
+      "started_at": "2026-10-30T19:17:41+00:00",
+      "finished_at": "2026-10-30T19:17:41+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-pip-check",
+      "started_at": "2026-10-30T19:17:41+00:00",
+      "finished_at": "2026-10-30T19:17:42+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-inventory",
+      "started_at": "2026-10-30T19:17:42+00:00",
+      "finished_at": "2026-10-30T19:17:42+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-offline",
+      "started_at": "2026-10-30T19:17:42+00:00",
+      "finished_at": "2026-10-30T19:17:48+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-1-smoke",
+      "started_at": "2026-10-30T19:17:48+00:00",
+      "finished_at": "2026-10-30T19:17:52+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "reject-toolchain-wheel-hash",
+      "started_at": "2026-10-30T19:17:52+00:00",
+      "finished_at": "2026-10-30T19:17:53+00:00",
+      "exit_code": 1
+    },
+    {
+      "name": "build-2",
+      "started_at": "2026-10-30T19:17:53+00:00",
+      "finished_at": "2026-10-30T19:18:17+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-image",
+      "started_at": "2026-10-30T19:18:17+00:00",
+      "finished_at": "2026-10-30T19:18:17+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-pip-check",
+      "started_at": "2026-10-30T19:18:17+00:00",
+      "finished_at": "2026-10-30T19:18:18+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-inventory",
+      "started_at": "2026-10-30T19:18:18+00:00",
+      "finished_at": "2026-10-30T19:18:18+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-offline",
+      "started_at": "2026-10-30T19:18:18+00:00",
+      "finished_at": "2026-10-30T19:18:22+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "build-2-smoke",
+      "started_at": "2026-10-30T19:18:22+00:00",
+      "finished_at": "2026-10-30T19:18:26+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "stop-qualification",
+      "started_at": "2026-10-30T19:18:26+00:00",
+      "finished_at": "2026-10-30T19:18:26+00:00",
+      "exit_code": 0
+    }
+  ],
+  "platform_commit": "be7f025689340e119673036a90e7167d72498512",
+  "working_tree": "",
+  "baseline": {
+    "runtime_inputs_sha256": "a6f51c09ae7d441395cf61015f665ac05dd09e9e7fbed50a485a6d1f1e52a9c0",
+    "inputs": {
+      ".devcontainer/Dockerfile": "96a70b60cf1cb2bf89db18e1735cb567a76173d414a438f107e145cef07d6980",
+      ".python-version": "673e2ba07f95bfcfe0a543258b8e267954e403d1f466481c546f467f86b31d46",
+      "compose.yaml": "0e6aba37e0e42abd8b6e03a8fd863c484378c2b2c1198fa2d4e189af17f89db5",
+      "containers/postgres/20-datacon.sh": "031f8efb2f80db42ef3ce1c7f01b12545c4219a864e8ae03a773dae69736220c",
+      "containers/toolchain/Dockerfile": "f0ccbf869b0faee4dc236b9e6167d36ec7428645243eb571c0e505ef1be7d04c",
+      "datacon": "dea00cb0279c2ca8475cf50b74afc04909f70bed3f7cbcd7fd727668661c6810",
+      "platform/capabilities.json": "ffe95d606c87fcf0312bcb38e2a3db9f4f49b6592d7f261adf9ffb8092e17a0b",
+      "platform/reference.json": "cb7537e18b3ed6e270f301072edec75e31e6201dea326cb027a2de4e330215d0",
+      "platform/release-policy.json": "2ef687b5e721d77a570f7d4e1d5730cd416b0a5e3ef9e737192477fa6886ceaf",
+      "platform/schemas/odcs-3.1.0.json": "f99a3093a5d65326837f96278654067ffdc10de314fc1f45b9dbfeb1d3429f84",
+      "platform/schemas/odcs-3.2.0.json": "edb41f33ec46e84780e99872ab2bd67f074959d2bf3e9c9fc54e61f8982b0d93",
+      "platform/schemas.json": "10f2ea007d09de39ec26ac118646f5e8ce6b8df4a2fbecab7f024e735f27397c",
+      "requirements/os/bookworm-amd64.tsv": "48a853fbbba4b893a1e4fbcab1da4c539318db8c08e6ee322c75790fa901cfa0",
+      "requirements/os/bookworm-arm64.tsv": "a165d74f6b278c1450609c810584cde10939aef01ce36e4a277618097a863dea",
+      "requirements/os/debian.sources": "80880fc61c4d2dd228976d45c1ffa13698bfcf317d1aa22d7bc1d46ab5d04b83",
+      "requirements/toolchain.txt": "4add8954e4500fbc898b31790e2fe6c2d20a9ea622a98356ebc573dac050c575",
+      "requirements/workspace.txt": "c5fb7630519e0d0402f125e4641663f51d2ca24c92958899cefc77cbaf7b51ef",
+      "scripts/baseline.py": "7e69b0b07bea53b5308ec5a67d31d1f866cd44c12aca53c73d04df3bf55120ea",
+      "scripts/check_docs.py": "4c10903193422d52ddb5bc2f9226f023a0e5eef8a041f0afc9ffdcf9c6604c19",
+      "scripts/contracts.py": "7d5b10264248d2a731bb7e83d13d1dbd57f5501823ecf4965847520441d62d4f",
+      "scripts/datacon.py": "01e9f6e2c526b12cb6d9299170f8284c566bd8ab30fdf809d3556bdc38becc74",
+      "scripts/diagnostics.py": "0bb022464c5f92b0367a1319ce6b51179278cedc52d990ecb69b0b57cb12952a",
+      "scripts/lock_toolchain.py": "f9a40367a56e6b26c7d7d88cd75f3744b806ab285362321ccd20edca1c816657",
+      "scripts/project_exec.py": "f0f0b929bd4b8b9cdb437d6eb2457d11371692d3fc573729464c6763d5be2d04",
+      "scripts/projects.py": "92f6d80119a9dada6afd3a7546708fd34e1def6b76295b2eb5e28f8ca88ae119",
+      "scripts/qualify.py": "6e73b0ea32e4adc6377848aefee1f04919b0dd196eae8e4c09ed1fa1d275c298",
+      "scripts/qualify_projects.py": "0d0dc3a337bbe513947c4122c7b12af54c39942b00bc347a59ec2d179b0826ab",
+      "scripts/qualify_toolchain.py": "a39aa9e192257eb55d29327e1390979b2916f6ca92dc24d0c9a407562dc4ce42",
+      "scripts/reference.py": "0e0d259e674481c4e9ec8eb2ec32fc92034ba08ed70886af1904525505eeb701",
+      "scripts/releases.py": "c33dad424b307c6b179e893884d53fe9430aa905f097e92b5d070e7274270adb",
+      "scripts/repository_rules.py": "51ccf6fc29f5f574f3c2bcf6de6652f0522cbb118ad1797bcc256ef40008978b",
+      "scripts/smoke.py": "8d657210463d94ee65ecdb91305ce4f7e5086e7770c7cfe3b397bfb3225746d3",
+      "scripts/toolchain_smoke.py": "3ddf99e3d63f6dd00b32c8258b455edda15ba6e16343e4d6b2e40ba3cf45ad4a",
+      "scripts/verify_os.py": "97ff61f1eccbcbf40964628c7211f1a60bf47fbfec6046ed60f124dc4d891c37"
+    },
+    "release": null,
+    "release_status": "development; no approved immutable release published"
+  },
+  "architecture": "arm64",
+  "native": true,
+  "repeated_inventories_identical": true,
+  "negative_checks_passed": true,
+  "snowflake_native": "NOT_EXECUTED; DC-014\u2013DC-016 require a target account",
+  "containers_removed_volumes_retained": true,
+  "finished_at": "2026-10-30T19:18:26+00:00"
+}

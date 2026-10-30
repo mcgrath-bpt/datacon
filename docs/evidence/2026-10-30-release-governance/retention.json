@@ -1,0 +1,10 @@
+{
+  "checkout_probe_retained": true,
+  "home_probe_retained": true,
+  "checkout_still_dirty": true,
+  "database_probe_rows": 1,
+  "services": [
+    "datacon-default-warehouse-1 Up 26 hours (healthy)",
+    "datacon-default-workspace-1 Up 26 hours (healthy)"
+  ]
+}
